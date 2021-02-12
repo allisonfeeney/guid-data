@@ -7,8 +7,9 @@ This is a repository for data collected in the investigation of GUIDs for a stan
   
 The repository is organized as follows:
 There is a origin/main branch with subdirectories for each test case design. Currently we have three identified: The gold brick, NIST CTC01, and NIST FTC09.
-How branches are to be managed is for the team to discuss as we go forward.
+There is a subdirectory for the 442 (ap242) mim longform schema for testing.
 
+Decision: Allison will delete the non-main branches, so use only the main branch.
 There is a branch for each of the use cases in the paper.
 * origin/Compare-Two-Versions-or-Products
 * origin/Design-Change-Due-to-Manufacturing-Feedback
