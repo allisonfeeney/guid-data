@@ -3661,7 +3661,7 @@ WHERE
   WR1: NOT ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.GROUP' IN TYPEOF(SELF));
 END_TYPE;
 
-TYPE guid = STRING;
+TYPE guid = STRING(36) FIXED;
 END_TYPE;
 
 TYPE guid_attribute_select = SELECT
@@ -6935,7 +6935,7 @@ ENTITY aggregate_guid_attribute
   SUBTYPE OF (guid_attribute);
   aggregate_identified_item : SET [1 : ?] OF guid_attribute_select;
 DERIVE
-  identified_item_root : guid := SELF\guid_attribute.identifier;
+  root_for_aggregate : guid := SELF\guid_attribute.identifier;
 END_ENTITY;
 
 ENTITY aggregate_id_attribute;
