@@ -17828,13 +17828,9 @@ WHERE
 END_ENTITY;
 
 ENTITY guid_namespace;
-  organization_identification : STRING;
-  application_identification  : STRING;
-DERIVE
-  namespace_value : STRING := organization_identification + application_identification;
+  guid_value : guid;
 UNIQUE
-  UR1: organization_identification;
-  UR2: application_identification;
+  UR1: guid_value;;
 END_ENTITY;
 
 ENTITY guid_relationship;
