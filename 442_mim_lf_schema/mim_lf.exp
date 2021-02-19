@@ -17819,14 +17819,17 @@ ENTITY guid_attribute;
   identifier              : guid;
   identified_item         : guid_attribute_select;
   namespace               : guid_namespace;
-  approximate_location    : OPTIONAL placement;
-  location_representation : OPTIONAL shape_representation;
-WHERE
-  WR1: NOT (EXISTS(approximate_location) XOR EXISTS(location_representation));
-  -- If either is provided both shall be provided; only one is not permitted. If neither is provided that is valid.;
-  -- IP1 : approximate_location shall not be provided for non-shape data;;
 END_ENTITY;
 
+ENTITY guid_attribute_with_approximate_location
+  SUBTYPE OF(guid_attribute);
+  approximate_location    : placement;
+  location_representation : shape_representation;
+WHERE
+  WR1: location_representation in using_representations(placement);
+END_ENTITY;
+
+ENTITY guid_namespace;
 ENTITY guid_namespace;
   guid_value : guid;
 UNIQUE
