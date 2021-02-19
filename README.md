@@ -8,14 +8,9 @@ This is a repository for data collected in the investigation of GUIDs for a stan
 The repository is organized as follows:
 There is a origin/main branch with subdirectories for each test case design. Currently we have three identified: The gold brick, NIST CTC01, and NIST FTC09.
 There is a subdirectory for the 442 (ap242) mim longform schema for testing.
+That schema contains longform schema, plus an AGREE editor jar file plus an AP 242 mim long form. 
+There is a request for an arm longform schema.
 
-Decision: Allison will delete the non-main branches, so use only the main branch.
-There is a branch for each of the use cases in the paper.
-* origin/Compare-Two-Versions-or-Products
-* origin/Design-Change-Due-to-Manufacturing-Feedback
-* origin/Design-Change-Due-to-Test-Results
-* origin/Design-to-Manufacturing-Release
-* origin/OEMs-Collaborate-on-a-Design
 
 NIST License
 This data/work was created by employees of the National Institute of Standards and Technology (NIST), an agency of the Federal Government. Pursuant to title 17 United States Code Section 105, works of NIST employees are not subject to copyright protection in the United States.  This data/work may be subject to foreign copyright.
