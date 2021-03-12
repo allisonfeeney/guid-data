@@ -1,7 +1,9 @@
 This directory is created to store registry name value pairs in a registry file for the guid_namespace entity.
 Both name and guid are STRING. guid is the 36 character long string as defined in the schema.
 For reference the guid is a version 5 UUID.
+
 layout:
+
 name : guid
 
 example:
