@@ -1,5 +1,5 @@
 -- -*- Mode: Express -*-
-
+--modified for branch schema_rev1
 (*
    File modified from version 1.134 on STEPmod
     *)
@@ -17818,21 +17818,21 @@ END_ENTITY;
 ENTITY guid_attribute;
   identifier              : guid;
   identified_item         : guid_attribute_select;
-  namespace               : guid_namespace;
+  guid_namespace          : guid_namespace;
 END_ENTITY;
 
 ENTITY guid_attribute_with_approximate_location
   SUBTYPE OF(guid_attribute);
-  approximate_location    : placement;
+  approximate_location    : cartesian_point;
   location_representation : shape_representation;
 WHERE
-  WR1: location_representation in using_representations(placement);
+  WR1: location_representation in using_representations(approximate_location);
 END_ENTITY;
 
 ENTITY guid_namespace;
-  guid_value : guid;
+  guid_namespace_value : guid;
 UNIQUE
-  UR1: guid_value;
+  UR1: guid_namespace_value;
 END_ENTITY;
 
 ENTITY guid_relationship;
