@@ -2,6 +2,10 @@ This directory is created to store registry name value pairs in a registry file 
 Both name and guid are STRING. guid is the 36 character long string as defined in the schema.
 For reference the guid is a version 5 UUID.
 
+online v5 generator: 
+
+https://uuidonline.com/?version=5
+
 layout:
 
 name : guid
