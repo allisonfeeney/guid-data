@@ -1,0 +1,532 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.75 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Information units and views in STEP</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center><font size=+3>Information units and views in STEP</font>
+<p><a href="mailto:jfowler@pdtsolutions.co.uk">Julian Fowler</a>
+<br>Principal Consultant
+<br>PDT Solutions</center>
+
+<hr WIDTH=50% ALIGN=center>
+<p>This document is a contribution to the ISO TC184/SC4/QC document "Procedures
+for Application Interpretation", section 4: "Fundamental concepts of STEP
+IRs". This text may also be appropriate for inclusion in ISO 10303-13 "Architecture
+&amp; Methodology Reference Manual". This document was initiated during
+the <a href="http://www.pdtsolutions.co.uk/standard/meetings/ap216/report.htm">Interpretation
+Guidelines workshop</a> held at SCRA, Charleston SC (September 16-20, 1996).
+<p><font size=+2>Author's notes</font>
+<p>This is version 1 of this document, dated September 28, 1996. It is
+a draft: comments and issues should be addressed to the <a href="mailto:jfowler@pdtsolutions.co.uk">author</a>
+or to the <a href="mailto:interp@cme.nist.gov">e-mail exploder</a> established
+by the SC4 Secretariat to support the AP216 " Interpretation Guidelines
+workshop. The document is complete in that it provides the introductory
+information on the structure and content of the STEP Integrated Resources
+that were agreed as being necessary to support the "Procedures for Application
+Interpretation" document. However, there are places where the document
+would benefit from the addition of examples, from actual Application Protocols,
+that illustrate specific usages of the IT "information units" described
+here. In addition, there may be outstanding issues against some of the
+IR constructs described here: again, there may be opportunity to expand
+this document to include (references to) these issues.
+<p>JPF 1996-09-28
+<p>The contents of this document have been incorporated into the working
+drafts of the Procedures for Application Interpretation (latest version:
+Quality Committee QC N027). It is my intent to maintain this as a "standalone"
+document, but to ensure that it remains aligned with the QC documentation
+of this topic.
+<p>JPF 1998-05-01
+<br>
+<hr>
+<h1>
+Contents</h1>
+
+<menu>
+<li>
+<a href="#introduction">Introduction</a></li>
+
+<li>
+<a href="#product">Product and product context</a></li>
+
+<li>
+<a href="#formation">Identifying configurations for products</a></li>
+
+<li>
+<a href="#threeviews">Three ways of thinking about products</a></li>
+
+<li>
+<a href="#category">Classification or categorization of products</a></li>
+
+<li>
+<a href="#concept">Presenting products to the market</a></li>
+
+<li>
+<a href="#definition">Differentiating different life-cycle or discipline
+"views"</a></li>
+
+<li>
+<a href="#propertydef">Identifying properties and relating them to views</a></li>
+
+<li>
+<a href="#representation">Collecting data for properties</a></li>
+
+<li>
+<a href="#summary">Summary</a></li>
+
+<li>
+<a href="#applncontext">Usage of the application context schema</a></li>
+</menu>
+
+<hr>
+<h1>
+<a NAME="introduction"></a>Introduction</h1>
+
+<h2>
+Terminology</h2>
+Within this document, the terms and concepts of:
+<ul>
+<li>
+ISO 10303-1 "Overview and fundamental principles", and</li>
+
+<li>
+ISO 10303-13 "Architecture and methodology reference manual"</li>
+</ul>
+apply. In addition, the following term is used:
+<dl>
+<dt>
+information unit</dt>
+
+<dd>
+a grouping of relating constructs (entity data types, attributes and relationships)
+that together represent one of the high level concepts of the STEP data
+architecture</dd>
+</dl>
+
+<h2>
+Fundamental concepts</h2>
+During the Interpretation Guidelines workshop, it was suggested that there
+is insufficient information available, either from the standardized Integrated
+Resources parts of STEP, or from <a href="http://www.pdtsolutions.co.uk/standard/papers/wg10/methdocs.htm">existing
+"Methods" documents</a>, on the basic "information units" of STEP. This
+document attempts to address this issue.
+<p>The ideas that:
+<ul>
+<li>
+the STEP Integrated Resources comprise a single model for product data,</li>
+
+<li>
+this model is based on an underlying framework - the "Generic Product Data
+Model" (GPDM), and</li>
+
+<li>
+the model supports product data applications (Application Protocols) through
+different, specific usages of generic constructs</li>
+</ul>
+form the basis of the STEP Architecture and Methodology. Unfortunately,
+these concepts are not articulated clearly in the documentation of the
+ISO 10303 standards, and are therefore not widely understood. Much effort
+has been expended over the years in providing documentation that is intended
+to address this need: however, it is clear that little of this documentation
+has really reached its intended audience.
+<p>One of the associated concepts, that is similarly not widely known or
+understood, is that the (EXPRESS) entity data type is <i>not</i> a fundamental
+unit of definition for the STEP Integrated Resources. Rather, the foundation
+of the Integrated Resources is a series of inter-related and nested "information
+units" that form the core of the Generic Product Data Resources (GPDR),
+that are primarily documented in ISO 10303-41. The main information units
+are discussed in this document, and are illustrated by the diagram below.
+<center><img SRC="infounit.gif" ALT="Diagram: STEP information units" height=457 width=408>
+<p><a NAME="fig_infounit"></a><i>"Information units" of the STEP Integrated
+Resources</i></center>
+
+<p>In this diagram, the arrows should be read as "contains", so:
+<ul>
+<li>
+the <b>product category</b> information unit contains the <b>product</b>
+information unit</li>
+
+<li>
+the <b>representation</b> information unit contains the <b>product property</b>
+AND <b>product definition</b> AND <b>product</b> information units</li>
+</ul>
+etc. This structure results from the desire that any information exchanged
+using any STEP Application Protocol should be directly and explicitly related
+to both the <i>product(s)</i> to which it pertains and to the <i>context(s)</i>
+for which it is valid.
+<br>
+<hr>
+<h1>
+<a NAME="product"></a>Product and product context</h1>
+As a standard for <i>product</i> data representation, the focal point of
+the STEP Integrated Resources is the <b>product</b> entity data type. This
+data type serves two purposes:
+<ul>
+<li>
+to identify a product as being of interest, and give it a name and a description</li>
+
+<li>
+to characterize the context in which the product and its associated data
+exist and are valid</li>
+</ul>
+The entity types <b>product</b> and <b>product_context</b> (which is a
+subtype of <b>application_context_element</b> and is therefore dependent
+on <b>application_context</b>) provide Application Protocols with the capability
+to hold this information. This "information_unit" is illustrated below.
+<center><img SRC="product.gif" ALT="EXPRESS-G diagram: product" height=360 width=326>
+<p><i><b>product</b> information unit</i></center>
+
+<p>The definition of "product" is given in Part 1 of STEP:
+<dl>
+<dt>
+product</dt>
+
+<dd>
+a thing or substance produced by a natural or artificial process.</dd>
+</dl>
+This need to be distinguished from the <b>product</b> entity data type,
+which (as stated above) provides the <i>identification</i> of products
+and characterization of their <i>context</i>, as is stated in the definition
+in Part 41:
+<dl>
+<dt>
+product</dt>
+
+<dd>
+A <b>product</b> is the identification and description, in an application
+context, of a physically realizable object that is produced by a process.</dd>
+</dl>
+The usage of the <a href="#applncontext">application_context_schema</a>
+is discussed below.
+<h1>
+<a NAME="formation"></a>Identifying configurations for products</h1>
+This information unit supports requirements for identification, description
+and inter-relationships amongst different versions, variants, or configurations
+for products. As with the <b>product</b> information unit, it is important
+to recognize that the information held here is still at a very simple level:
+just as the <b>product</b> simply holds an identifier and a relationship
+to a context for a product, so <b>product_definition_formation</b> holds
+an identifier and a relationship to the product of which it is a version.
+The constructs of this information unit are illustrated below.
+<center><img SRC="prodform.gif" ALT="EXPRESS-G diagram: product_definition_formation" height=214 width=506>
+<p><i>The <b>product configuration</b> information unit</i></center>
+
+<p><i>Note: "non-standard" EXPRESS-G is used in this document: an entity
+data type whose representation is a box with a heavy outline is taken to
+represent the "information unit" that includes the data type. Thus the
+<b>product configuration</b> information unit includes, as part of its
+definition, all the constructs that define the <b>product</b> information
+unit.</i>
+<br>
+<hr>
+<h1>
+<a NAME="threeviews"></a>Three ways of thinking about products</h1>
+An understanding of the detailed structure and semantics of the STEP Integrated
+Resources is based on their "data architecture" - a high level structure
+that has been used to create and maintain the syntactic and semantic consistency
+of the model. (It is worth pointing out here that, in spite of its publication
+in multi-document, multi-schema form, the Integrated Resources are a <i>single
+conceptual model</i> for use in product data applications.)
+<p>The first aspect of the STEP data architecture is that it recognized
+three distinct, high level "views" or potential uses of product data. These
+are illustrated below. This depicts the way in which, for a given product,
+there are orthogonal concepts related to:
+<ul>
+<li>
+how the product is classified or categorized</li>
+
+<li>
+how the product is presented to the market</li>
+
+<li>
+the technical description of the product for the purpose of design, engineering,
+manufacturing, operations, maintenance, etc.</li>
+</ul>
+Each of these concepts is supported by a major information unit within
+the STEP Integrated Resources.
+<center><img SRC="3views.gif" ALT="Three views of product" height=272 width=423>
+<p><i>Three ways of thinking about products</i></center>
+
+<hr>
+<h1>
+<a NAME="category"></a>Classification or categorization of products</h1>
+One of the common requirements of many different application domains is
+to be able to <i>classify</i> or <i>categorize</i> products. This requirement
+is supported by the STEP Integrated Resources illustrated below.
+<center><img SRC="prodcat.gif" ALT="EXPRESS-G diagram: product_category" height=311 width=476>
+<p><i>The <b>product category</b> information unit</i></center>
+
+<p>The constructs within this information allow different applications
+to use common, generic data model elements for the following requirements:
+<ul>
+<li>
+identifying and describing classes/categories of products (<b>product_category</b>)</li>
+
+<li>
+establishing relationships between different classes of product (<b>product_category_relationship</b>;
+a typical usage of this construct is to describe subclass/superclass relationships</li>
+
+<li>
+identifying the product(s) (instances of the <b>product</b> entity data
+type) that are classified as being members of a class (<b>product_related_product_category</b>)</li>
+</ul>
+This information unit therefore provides a <i>classification</i> view of
+products.
+<br>
+<hr>
+<h1>
+<a NAME="concept"></a>Presenting products to the market</h1>
+Products are not just designed and manufactured: they are also sold and
+marketed to (potential) customers. This is represented in the STEP Integrated
+Resources by an information unit that focuses on the "marketing" view of
+products, and the relationship of this information to the technical description
+(design) of the products concerned. The major constructs of this information
+unit are illustrated below.
+<center><img SRC="prodcncp.gif" ALT="EXPRESS-G diagram: product_concept" height=408 width=506>
+<p><i>The <b>product_concept</b> information unit</i></center>
+
+<p>This information unit may be used in Application Protocols to exchange
+information about the way in which a product is identified and presented
+to the market. The "central" entity data type is <b>product_concept</b>:
+this identifies, names and describes, for a given market (<b>product_concept_context</b>),
+something that is (or is to be) sold and supplied. One possible usage of
+this construct is to identify and hold information about a particular make
+and model of automobile or aeroplane.
+<p>The remaining constructs in this information unit provide the capability
+to identify and describe different items (<b>configuration_item</b>) that
+fulfil the requirements of a product concept, and to associate (<b>configuration_design</b>)
+these items with the technical information for their design, etc.
+<p>This information unit therefore provides the <i>marketing</i> view of
+products.
+<br>
+<hr>
+<h1>
+<a NAME="definition"></a>Differentiating different life-cycle or discipline
+"views"</h1>
+The third "axis" of the STEP data architecture comprises the information
+units that hold all the scientific, engineering, and other technical information
+that is created and used throughout the product life cycle. Any engineered
+product will obviously have a great deal of information related to it:
+however, for the purposes of exchanging data it is rarely (if ever) required
+that <i>all</i> this information is exchanged at the same time. Different
+information will be generated and used in different life cycle phases,
+and by the different disciplines that contribute to the definition of the
+product.
+<p>The STEP Integrated Resources provide a capability that allows Application
+Protocols to specify how technical information is aggregated for these
+different life-cycle and/or discipline purposes. This <b>product definition</b>
+information unit is illustrated below.
+<center><img SRC="proddef.gif" ALT="EXPRESS-G diagram: product_definition" height=467 width=476>
+<p><i>The <b>product definition</b> information unit</i></center>
+The <b>product_definition</b> entity data type is used in Application Protocols
+to denote a definition of a product that pertains to a particular life-cycle
+phase (<b>product_definition_context</b>). Product definitions are then
+used as the "aggregator" for properties and other information that is valid
+for that context. Product definitions may be associated with other product
+definitions (<b>product_definition_relationship</b>). This latter entity
+data type is the basis for STEP's capabilities to describe the composition
+of products, assembly structures, connectivity.
+<hr>
+<h1>
+<a NAME="propertydef"></a>Identifying properties and relating them to views</h1>
+As noted above, the <b>product definition</b> information unit provides
+Application Protocols with the capability to identify, describe and inter-relate
+definitions that are used to aggregate the properties that pertain to different
+life-cycle phases and/or disciplines. These properties must, of course,
+themselves be defined. Within the STEP Integrated Resources properties
+are defined such that they are dependent on elements within the <b>product
+definition</b> information unit (i.e., a property is always a property
+"of" something. Properties are, however, <i>in</i>dependent of the data
+values that may be used to describe or represent the property. This means
+that within an Application Protocol a property (such as shape or material)
+may be identified for a product, and that zero, one or many collections
+of data that represent this property may be described separately.
+<p>This information unit is illustrated below.
+<center><img SRC="propdef.gif" ALT="EXPRESS-G diagram: property_definition" height=369 width=491>
+<p><i>The <b>property definition</b> information unit</i></center>
+
+<p>Notes:
+<ol>
+<li>
+Again, "non-standard" EXPRESS-G is used here: the broken relationship between
+<b>property_definition</b> and <b>characterized_definition</b> indicates
+that the actual resource model contains additional constructs here. This
+detail is unnecessary for the high-level discussion here.</li>
+
+<li>
+The <b>property_definition_relationship</b> entity data type is defined
+in ISO 10303-45.</li>
+</ol>
+The constructs shown here allow properties to be identified and described
+(<b>property_definition</b>) for the <b>product_definition</b> or <b>product_definition_relationship</b>
+that possesses the property. They also allow property definitions to be
+associated with other property definitions (<b>property_definition_relationship</b>).
+<p>Other elements of the STEP Integrated Resources specialize the constructs
+in this information unit for particular types of property. For example:
+<ul>
+<li>
+the <b>product_property_definition_schema</b> (ISO 10303-41) includes the
+constructs that are used to identify shape properties</li>
+
+<li>
+the <b>material_property_definition_schema</b> (ISO 10303-45) includes
+the constructs that are used to identify material properties</li>
+</ul>
+
+<hr>
+<h1>
+<a NAME="representation"></a>Collecting data for properties</h1>
+The final core information unit of the STEP Integrated Resources provides
+Application Protocols with the capability to create coherent collections
+of data items and to relate these collections to property definitions.
+The constructs within this information unit are illustrated below.
+<center><img SRC="rep.gif" ALT="EXPRESS-G diagram: representation" height=408 width=603>
+<p><i>The <b>representation</b> information unit</i></center>
+
+<p>This information unit allows Application Protocols to collect data elements
+(<b>representation_item</b>). The collection is a <b>representation</b>,
+which also provides the frame of reference (<b>representation_context</b>)
+that makes it possible to understand the relationships between items. Many
+of the more domain or discipline-specific Integrated Resources are concerned
+with the specification of types of <b>representation_item</b>. Sometimes
+<b>representation_items</b> may be purely descriptive (textual), sometimes
+they may be name-value pairs, whilst some are complex data structures of
+themselves (geometry, presentation).
+<p>Collections of data items may be associated (<b>representation_relationship)</b>
+with other collections; through a mechanism not shown here (the <b>mapped_item</b>
+construct defined in ISO 10303-43) one collection may be used as part of
+the definition of another.
+<p>Each <b>representation</b> may be associated (<b>property_definition_representation</b>)
+with one or more property definitions. This is a "many-to-many association.
+For example:
+<ul>
+<li>
+a behavioral property may be represented by an equation, or by tabular
+data values, or by the shape of a graph</li>
+
+<li>
+one set of tabular data values may be used to represent many different
+behavioral properties (which may be the properties of the same product
+or of different products)</li>
+</ul>
+
+<hr>
+<h1>
+<a NAME="summary"></a>Summary</h1>
+This document has described the major "information units" that form the
+basis of the STEP Integrated Resources. Understanding of the Integrated
+Resources as a whole, their usage in Application Protocols, and the discipline
+of Application Interpretation depends on a thorough understanding of these
+underlying structures.
+<br>
+<hr>
+<h1>
+<a NAME="applncontext"></a>Usage of the application_context_schema</h1>
+The <b>application_context_schema</b> (defined in ISO 10303-41) is the
+basis for capturing "meta-data" for a given Application Protocol, i.e.,
+it provides a number of entity data types whose populations will qualify
+or constrain the applicability of product data. This section expands on
+the definitions of this schema given in Part 41, and provides a basis of
+a "usage guide" for AP developers, implementors, and end-users.
+<p>The <b>application_context_schema</b> is illustrated below.
+<center><img SRC="appcntxt.gif" ALT="EXPRESS-G diagram: application_context_schema" height=418 width=564></center>
+
+<p>The use of the <b>application_context_schema</b> is illustrated by the
+two scenarios illustrated below, taken from AP216.
+<center><img SRC="scenar1.gif" ALT="IDEF0 diagram: scenario A" height=330 width=540></center>
+
+<p>In Scenario "A" (above), naval architects within a shipyard produce
+a shape model of a hull moulded form, within a <b>design ship</b> activity.
+This shape model is exchanged with a model basin, where naval architects
+undertake the <b>analyze design</b> activity and provide feedback.
+<center><img SRC="scenar2.gif" ALT="IDEF0 diagram: scenario B" BORDER=0 height=330 width=540></center>
+
+<p>In Scenario "B" (above), naval architects within a shipyard produce
+a shape model of a hull moulded form, as before. This shape model is in
+this case exchanged with a classification society, which undertakes the
+<b>approve design</b> activity and provide feedback.
+<p>The table below illustrates a possible population of the entity data
+types of the application_context_schema for these two scenarios.
+<br>&nbsp;
+<table BORDER WIDTH="100%" >
+<tr>
+<th>Attribute</th>
+
+<th>Scenario "A"</th>
+
+<th>Scenario "B"</th>
+</tr>
+
+<tr>
+<td>product_context.discipline_type</td>
+
+<td>'naval architecture'</td>
+
+<td>'naval architecture'</td>
+</tr>
+
+<tr>
+<td>product_context\application_context_element.name</td>
+
+<td>'ship'</td>
+
+<td>'ship'</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>product_context\application_context_element.
+<br>frame_of_reference\application_context.application</td>
+
+<td>'shipbuilding'</td>
+
+<td>'ship classification'</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>product_definition_context.life_cycle_stage</td>
+
+<td>'design'</td>
+
+<td>'design'</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>product_definition_context\
+<br>application_context_element.name</td>
+
+<td>'physical design'</td>
+
+<td>'physical design'</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>product_definition_context\
+<br>application_context_element.
+<br>frame_of_reference\application_context.application</td>
+
+<td>'hull fairing'</td>
+
+<td>'design for approval'</td>
+</tr>
+</table>
+
+<p>It was agreed at the Interpretation Guidelines workshop that:
+<ul>
+<li>
+part of the role of the SC4 Quality Committee should be to maintain a dictionary
+of all standardized values for <b>application_context_schema</b> attributes
+and their usages</li>
+
+<li>
+each Application Protocol project should perform a consistency check to
+ensure that the standardized values for <b>application_context_schema</b>
+attributes fit with the usage scenarios described for the Application Protocol</li>
+</ul>
+
+<hr>
+<p>&copy; Product Data Technology Solutions Limited, 1996
+</body>
+</html>
