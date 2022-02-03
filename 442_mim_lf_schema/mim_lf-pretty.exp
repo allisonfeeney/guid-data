@@ -1,5 +1,7 @@
 -- -*- Mode: Express -*-
---modified for branch schema_rev1
+
+-- -*- Mode: Express -*-
+-- modified for branch schema_rev1
 (*
    File modified from version 1.134 on STEPmod
     *)
@@ -32,10 +34,34 @@
 (* Rules:                     57 *)
 (* Procedures:                 0 *)
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
+(* Pretty Printed by Express Engine
+   5.1.4 (GIT eeng-5.1.4)
+   Steel Bank CL 2.0.11 (64-bits)
+
+   eengine --pretty
+   -schema mim_lf.exp
+   -mode mim_longform
+   Line Width: 120
+   Commandline:
+   eengine --pretty
+   -schema mim_lf.exp
+   -mode mim_longform
+    *)
+(* File: /Users/tom/test_git/guid-data/guid-data/442_mim_lf_schema/mim_lf.exp *)
+(* 1 Schema: AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF *)
+(* Interfaces:                 0 *)
+(* Constants:                 29 *)
+(* Types:                    457 *)
+(* Entities:               2,142 *)
+(* Subtype_Constraints:        0 *)
+(* Functions:                320 *)
+(* Rules:                     57 *)
+(* Procedures:                 0 *)
+-- Schema ap242_managed_model_based_3d_engineering_mim_lf;
 
 (* Pretty Printed by Express Engine
-      5.1.4 (GIT eeng-5.1.4)
-      Steel Bank CL 2.0.11 (64-bits)
+      5.1.8 (GIT eeng-5.1.4-27-g5d4aa94)
+      Steel Bank CL 2.2.0 (64-bits)
 
      eengine --pretty
        -schema mim_lf.exp
@@ -53,7 +79,7 @@
 (*  Interfaces:                 0 *)
 (*  Constants:                 29 *)
 (*  Types:                    457 *)
-(*  Entities:               2,142 *)
+(*  Entities:               2,147 *)
 (*  Subtype_Constraints:        0 *)
 (*  Functions:                320 *)
 (*  Rules:                     57 *)
@@ -3661,14 +3687,13 @@ WHERE
   WR1: NOT ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.GROUP' IN TYPEOF(SELF));
 END_TYPE;
 
-TYPE guid = STRING(36) FIXED;
+TYPE guid = STRING;
 END_TYPE;
 
 TYPE guid_attribute_select = SELECT
-    (id_attribute,
-    identification_assignment);
+  (id_attribute,
+   identification_assignment);
 END_TYPE;
-
 
 TYPE guid_relationship_role = ENUMERATION OF
   (supersedes,
@@ -3701,33 +3726,7 @@ TYPE id_attribute_select = SELECT
 END_TYPE;
 
 TYPE identification_item = SELECT
-  (application_context,
-characterized_object,
-characterized_object_relationship,
-context_dependent_shape_representation,
-derived_unit,
-dimension_related_tolerance_zone_element,
-dimensional_characteristic_representation,
-dimensional_location,
-founded_item,
-geometric_tolerance_auxiliary_classification,
-geometric_tolerance_relationship,
-gps_filter,
-gps_filtration_specification,
-invisibility,
-item_identified_representation_usage,
-limits_and_fits,
-measure_qualification,
-measure_with_unit,
-named_unit,
-plus_minus_tolerance,
-representation_item,
-representation_item_relationship,
-runout_zone_orientation,
-tolerance_value,
-tolerance_zone_definition,
-tolerance_zone_form,
-action,
+  (action,
    action_directive,
    action_directive_relationship,
    action_method,
@@ -3740,6 +3739,7 @@ action,
    alternative_solution_relationship,
    analysis_assignment,
    analysis_representation_context,
+   application_context,
    applied_action_assignment,
    applied_action_method_assignment,
    applied_action_request_assignment,
@@ -3776,16 +3776,23 @@ action,
    certification,
    change_group,
    characterized_class,
+   characterized_object,
+   characterized_object_relationship,
    class,
    class_system,
    configuration_effectivity,
    configuration_item,
    configuration_item_relationship,
+   context_dependent_shape_representation,
    contract,
    contract_relationship,
    date_and_time_assignment,
    date_assignment,
    degenerate_pcurve,
+   derived_unit,
+   dimension_related_tolerance_zone_element,
+   dimensional_characteristic_representation,
+   dimensional_location,
    dimensional_size,
    dimensional_size_with_path,
    directed_action_assignment,
@@ -3803,9 +3810,14 @@ action,
    evidence,
    exclusive_product_concept_feature_category,
    executed_action,
+   founded_item,
    general_property,
    general_property_relationship,
    generic_property_relationship,
+   geometric_tolerance_auxiliary_classification,
+   geometric_tolerance_relationship,
+   gps_filter,
+   gps_filtration_specification,
    group,
    group_relationship,
    identification_assignment_relationship,
@@ -3822,12 +3834,18 @@ action,
    interface_definition_for,
    interface_specification_definition,
    interface_specification_version,
+   invisibility,
+   item_identified_representation_usage,
+   limits_and_fits,
    link_motion_relationship,
    material_designation,
    material_designation_characterization,
+   measure_qualification,
    measure_representation_item,
+   measure_with_unit,
    mechanical_design_geometric_presentation_representation,
    message_relationship,
+   named_unit,
    organization,
    organization_relationship,
    organizational_address,
@@ -3837,6 +3855,7 @@ action,
    person,
    person_and_organization,
    person_and_organization_address,
+   plus_minus_tolerance,
    point_on_surface,
    presentation_area,
    process_operation,
@@ -3868,12 +3887,15 @@ action,
    property_definition_representation,
    representation,
    representation_context,
+   representation_item,
+   representation_item_relationship,
    representation_relationship,
    requirement_assignment,
    requirement_for_action_resource,
    requirement_source,
    retention,
    rule_set,
+   runout_zone_orientation,
    satisfies_requirement,
    security_classification,
    security_classification_level,
@@ -3892,6 +3914,9 @@ action,
    structured_message,
    time_interval,
    time_interval_relationship,
+   tolerance_value,
+   tolerance_zone_definition,
+   tolerance_zone_form,
    usage_association,
    validation,
    verification,
@@ -17801,65 +17826,44 @@ ENTITY group_relationship;
 END_ENTITY;
 
 ENTITY guid_attribute
-  ABSTRACT SUPERTYPE OF(ONEOF(
-    v5_guid_attribute,
-    v4_guid_attribute)
-    ANDOR guid_attribute_with_approximate_location);
-  identifier              : guid;
+  ABSTRACT SUPERTYPE OF (ONEOF(v5_guid_attribute, v4_guid_attribute) ANDOR guid_attribute_with_approximate_location);
+  identifier      : guid;
   identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
- UNIQUE
-  UR1 : identifier;
-END_ENTITY;
-
-ENTITY v5_guid_attribute
-  SUBTYPE OF (guid_attribute);
-  namespace : OPTIONAL guid;
-END_ENTITY;
-
-ENTITY hash_based_v5_guid_attribute
-  SUBTYPE OF (v5_guid_attribute);
-  hash_function : STRING;
- WHERE
-  WR1 : hash_function <> '';
-END_ENTITY;
-
-ENTITY v4_guid_attribute
-  SUBTYPE OF (guid_attribute);
+UNIQUE
+  UR1: identifier;
 END_ENTITY;
 
 ENTITY guid_attribute_with_approximate_location
-  SUBTYPE OF(guid_attribute);
+  SUBTYPE OF (guid_attribute);
   approximate_location    : cartesian_point;
   location_representation : shape_representation;
 WHERE
-  WR1: location_representation in using_representations(approximate_location);
+  WR1: location_representation IN using_representations(approximate_location);
 END_ENTITY;
 
 ENTITY guid_context_role;
   identifier : guid;
-  role : STRING;
- UNIQUE
-  UR1 : identifier;
- WHERE
-  WR1 : role <> '';
+  role       : STRING;
+UNIQUE
+  UR1: identifier;
+WHERE
+  WR1: role <> '';
 END_ENTITY;
 
 ENTITY guid_provenance;
   identifier : guid;
-  content : LIST [1:?] OF UNIQUE guid_relationship;
- UNIQUE
-  UR1 : identifier;
+  content    : LIST [1 : ?] OF UNIQUE guid_relationship;
+UNIQUE
+  UR1: identifier;
 END_ENTITY;
 
 ENTITY guid_relationship;
- identifier : guid;
- guid_1 : guid;
- guid_2 : guid;
- role : guid_relationship_role;
+  identifier : guid;
+  guid_1     : guid;
+  guid_2     : guid;
+  role       : guid_relationship_role;
 UNIQUE
- UR1 : identifier;
---  IP1 : acyclic_guid_relationship(SELF, guid_1, guid_2);
--- A guid_relationship shall be acyclic
+  UR1: identifier;
 END_ENTITY;
 
 ENTITY half_space_2d
@@ -17918,6 +17922,13 @@ END_ENTITY;
 
 ENTITY harness_segment
   SUBTYPE OF (shape_aspect);
+END_ENTITY;
+
+ENTITY hash_based_v5_guid_attribute
+  SUBTYPE OF (v5_guid_attribute);
+  hash_function : STRING;
+WHERE
+  WR1: hash_function <> '';
 END_ENTITY;
 
 ENTITY hexahedron_volume
@@ -33935,6 +33946,15 @@ END_ENTITY;
 ENTITY user_selected_shape_elements
   SUBTYPE OF (user_selected_elements);
   SELF\user_selected_elements.picked_items : SET [1 : ?] OF shape_representation_item;
+END_ENTITY;
+
+ENTITY v4_guid_attribute
+  SUBTYPE OF (guid_attribute);
+END_ENTITY;
+
+ENTITY v5_guid_attribute
+  SUBTYPE OF (guid_attribute);
+  namespace : OPTIONAL guid;
 END_ENTITY;
 
 ENTITY validation
