@@ -3671,11 +3671,12 @@ END_TYPE;
 
 
 TYPE guid_relationship_role = ENUMERATION OF
-  (supersedes,
+  (derive_from,
    merge,
+   parent_child,
+   same_as,
    split,
-   derive_from,
-   same_as);
+   supersedes);
 END_TYPE;
 
 TYPE hour_in_day = INTEGER;
@@ -17813,13 +17814,14 @@ END_ENTITY;
 
 ENTITY v5_guid_attribute
   SUBTYPE OF (guid_attribute);
-  namespace : OPTIONAL guid;
 END_ENTITY;
 
 ENTITY hash_based_v5_guid_attribute
   SUBTYPE OF (v5_guid_attribute);
   hash_function : STRING;
- WHERE
+DERIVE
+  root_for_aggregate : guid_attribute_select := SELF\guid_attribute.identified_item[1];
+WHERE
   WR1 : hash_function <> '';
 END_ENTITY;
 
@@ -17856,10 +17858,23 @@ ENTITY guid_relationship;
  guid_1 : guid;
  guid_2 : guid;
  role : guid_relationship_role;
+ tree_root  : OPTIONAL guid_tree_root;
 UNIQUE
  UR1 : identifier;
---  IP1 : acyclic_guid_relationship(SELF, guid_1, guid_2);
+WHERE 
+ WR1 : guid_1 <> guid_2;
+ WR2 : guid_1 <> identifier;
+ WR3 : identifier <> guid_2;
+ WR4 : NOT ((parent_child) = role) OR EXISTS(tree_root);
+--not yet available
+-- WR5 : acyclic_guid_relationship(SELF, guid_1, guid_2);
 -- A guid_relationship shall be acyclic
+END_ENTITY;
+
+ENTITY guid_tree_root
+  SUBTYPE OF (guid_context_role);
+  INVERSE
+   members : SET [1:?] OF guid_relationship FOR tree_root;
 END_ENTITY;
 
 ENTITY half_space_2d

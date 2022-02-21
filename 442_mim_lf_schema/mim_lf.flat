@@ -1,8 +1,8 @@
 -- -*- Mode: Express -*-
 
 -- Written by Express Engine
---    5.1.4 (GIT eeng-5.1.4-3-g61de398)
---    Steel Bank CL 2.1.1 (64-bits)
+--    5.1.8 (GIT eeng-5.1.4-27-g5d4aa94)
+--    Steel Bank CL 2.2.0 (64-bits)
 
 -- Express Engine Command Line:
 --   eengine --flat
@@ -11,7 +11,7 @@
 -- File: /Users/tom/test_git/guid-data/guid-data/442_mim_lf_schema/mim_lf.exp
 -- 1 Schema: AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF
 
-(*  Entities:               2,143 *)
+(*  Entities:               2,148 *)
 (*  Functions:                320 *)
 (*  Procedures:                 0 *)
 (*  Rules:                     57 *)
@@ -1645,22 +1645,12 @@ TYPE guid = STRING;
 END_TYPE; -- guid
 
 TYPE guid_attribute_select = SELECT (
-  application_context, characterized_object, characterized_object_relationship, context_dependent_shape_representation,
-  datum_feature, datum_system, derived_unit, dimension_related_tolerance_zone_element,
-  dimensional_characteristic_representation, dimensional_location, dimensional_size, founded_item, general_property,
-  general_property_relationship, geometric_tolerance, geometric_tolerance_auxiliary_classification,
-  geometric_tolerance_relationship, gps_filter, gps_filtration_specification, invisibility,
-  item_identified_representation_usage, limits_and_fits, measure_qualification, measure_with_unit, named_unit,
-  placed_datum_target_feature, plus_minus_tolerance, product, product_definition, product_definition_formation,
-  product_definition_formation_relationship, product_definition_relationship, property_definition,
-  property_definition_representation, representation, representation_context, representation_item,
-  representation_relationship, runout_zone_orientation, shape_aspect, shape_aspect_relationship, tolerance_value,
-  tolerance_zone_definition, tolerance_zone_form, topological_representation_item
+  id_attribute, identification_assignment
   );
 END_TYPE; -- guid_attribute_select
 
 TYPE guid_relationship_role = ENUMERATION OF (
-  supersedes, merge, split, derive_from
+  derive_from, merge, parent_child, same_as, split, supersedes
 );
 END_TYPE; -- guid_relationship_role
 
@@ -1670,12 +1660,19 @@ TYPE hour_in_day = INTEGER;
 END_TYPE; -- hour_in_day
 
 TYPE identification_item = SELECT (
-  action, action_directive, action_directive_relationship, action_method, action_method_relationship, action_property,
-  action_property_representation, action_relationship, address, alternate_product_relationship,
-  alternative_solution_relationship, analysis_assignment, analysis_representation_context, applied_action_assignment,
-  applied_action_method_assignment, applied_action_request_assignment, applied_approval_assignment,
-  applied_certification_assignment, applied_classification_assignment_relationship, applied_contract_assignment,
-  applied_description_text_assignment, applied_description_text_assignment_relationship, applied_document_reference,
+  application_context, characterized_object, characterized_object_relationship, context_dependent_shape_representation,
+  derived_unit, dimension_related_tolerance_zone_element, dimensional_characteristic_representation,
+  dimensional_location, founded_item, geometric_tolerance_auxiliary_classification, geometric_tolerance_relationship,
+  gps_filter, gps_filtration_specification, invisibility, item_identified_representation_usage, limits_and_fits,
+  measure_qualification, measure_with_unit, named_unit, plus_minus_tolerance, representation_item,
+  representation_item_relationship, runout_zone_orientation, tolerance_value, tolerance_zone_definition,
+  tolerance_zone_form, action, action_directive, action_directive_relationship, action_method,
+  action_method_relationship, action_property, action_property_representation, action_relationship, address,
+  alternate_product_relationship, alternative_solution_relationship, analysis_assignment,
+  analysis_representation_context, applied_action_assignment, applied_action_method_assignment,
+  applied_action_request_assignment, applied_approval_assignment, applied_certification_assignment,
+  applied_classification_assignment_relationship, applied_contract_assignment, applied_description_text_assignment,
+  applied_description_text_assignment_relationship, applied_document_reference,
   applied_document_usage_constraint_assignment, applied_effectivity_assignment, applied_event_occurrence_assignment,
   applied_external_identification_assignment, applied_external_identification_assignment_relationship,
   applied_identification_assignment, applied_ineffectivity_assignment, applied_organization_assignment,
@@ -4160,11 +4157,12 @@ END_ENTITY; -- agc_with_dimension
 ENTITY aggregate_guid_attribute
     SUBTYPE OF (guid_attribute);
    -- guid_attribute.identifier : guid;
-   -- guid_attribute.identified_item : guid_attribute_select;
-   -- guid_attribute.guid_namespace : guid_namespace;
+   -- guid_attribute.identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
    aggregate_identified_item : SET [1 : ?] OF guid_attribute_select;
  DERIVE
    root_for_aggregate : guid := SELF\guid_attribute.identifier;
+ -- UNIQUE
+   -- guid_attribute.UR1: identifier;
 END_ENTITY; -- aggregate_guid_attribute
 
 -- -typeof option set to 'no'
@@ -17553,30 +17551,44 @@ ENTITY group_relationship;
 END_ENTITY; -- group_relationship
 
 -- -typeof option set to 'no'
-ENTITY guid_attribute;
+ENTITY guid_attribute
+    ABSTRACT SUPERTYPE OF (ONEOF(v5_guid_attribute,v4_guid_attribute) ANDOR guid_attribute_with_approximate_location);
    identifier : guid;
-   identified_item : guid_attribute_select;
-   guid_namespace : guid_namespace;
+   identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
+ UNIQUE
+   UR1: identifier;
 END_ENTITY; -- guid_attribute
 
 -- -typeof option set to 'no'
 ENTITY guid_attribute_with_approximate_location
     SUBTYPE OF (guid_attribute);
    -- guid_attribute.identifier : guid;
-   -- guid_attribute.identified_item : guid_attribute_select;
-   -- guid_attribute.guid_namespace : guid_namespace;
+   -- guid_attribute.identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
    approximate_location : cartesian_point;
    location_representation : shape_representation;
+ -- UNIQUE
+   -- guid_attribute.UR1: identifier;
  WHERE
    WR1 : location_representation IN using_representations(approximate_location);
 END_ENTITY; -- guid_attribute_with_approximate_location
 
 -- -typeof option set to 'no'
-ENTITY guid_namespace;
-   guid_namespace_value : guid;
+ENTITY guid_context_role;
+   identifier : guid;
+   role : STRING;
  UNIQUE
-   UR1: guid_namespace_value;
-END_ENTITY; -- guid_namespace
+   UR1: identifier;
+ WHERE
+   WR1 : role <> '';
+END_ENTITY; -- guid_context_role
+
+-- -typeof option set to 'no'
+ENTITY guid_provenance;
+   identifier : guid;
+   content : LIST [1 : ?] OF UNIQUE guid_relationship;
+ UNIQUE
+   UR1: identifier;
+END_ENTITY; -- guid_provenance
 
 -- -typeof option set to 'no'
 ENTITY guid_relationship;
@@ -17584,9 +17596,34 @@ ENTITY guid_relationship;
    guid_1 : guid;
    guid_2 : guid;
    role : guid_relationship_role;
+   tree_root : OPTIONAL guid_tree_root;
  UNIQUE
    UR1: identifier;
+ WHERE
+   WR1 : guid_1 <> guid_2;
+   WR2 : guid_1 <> identifier;
+   WR3 : identifier <> guid_2;
+   WR4 : NOT ((parent_child) = role) OR EXISTS(tree_root);
+   -- not yet available
+;
+   -- WR5 : acyclic_guid_relationship(SELF, guid_1, guid_2);
+;
+   -- A guid_relationship shall be acyclic
+;
 END_ENTITY; -- guid_relationship
+
+-- -typeof option set to 'no'
+ENTITY guid_tree_root
+    SUBTYPE OF (guid_context_role);
+   -- guid_context_role.identifier : guid;
+   -- guid_context_role.role : STRING;
+ INVERSE
+   members : SET [1:?] OF guid_relationship FOR tree_root;
+ -- UNIQUE
+   -- guid_context_role.UR1: identifier;
+ -- WHERE
+   -- guid_context_role.WR1 : role <> '';
+END_ENTITY; -- guid_tree_root
 
 -- -typeof option set to 'no'
 ENTITY half_space_2d
@@ -17664,6 +17701,20 @@ ENTITY harness_segment
  -- WHERE
    -- shape_aspect.WR1 : SIZEOF(USEDIN(SELF,'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.ID_ATTRIBUTE.IDENTIFIED_ITEM')) <= 1;
 END_ENTITY; -- harness_segment
+
+-- -typeof option set to 'no'
+ENTITY hash_based_v5_guid_attribute
+    SUBTYPE OF (v5_guid_attribute);
+   -- guid_attribute.identifier : guid;
+   -- guid_attribute.identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
+   hash_function : STRING;
+ DERIVE
+   root_for_aggregate : guid_attribute_select := SELF\guid_attribute.identified_item[1];
+ -- UNIQUE
+   -- guid_attribute.UR1: identifier;
+ WHERE
+   WR1 : hash_function <> '';
+END_ENTITY; -- hash_based_v5_guid_attribute
 
 -- -typeof option set to 'no'
 ENTITY hexahedron_volume
@@ -35588,6 +35639,24 @@ ENTITY user_selected_shape_elements
  -- WHERE
    -- representation_item.WR1 : SIZEOF(using_representations(SELF)) > 0;
 END_ENTITY; -- user_selected_shape_elements
+
+-- -typeof option set to 'no'
+ENTITY v4_guid_attribute
+    SUBTYPE OF (guid_attribute);
+   -- guid_attribute.identifier : guid;
+   -- guid_attribute.identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
+ -- UNIQUE
+   -- guid_attribute.UR1: identifier;
+END_ENTITY; -- v4_guid_attribute
+
+-- -typeof option set to 'no'
+ENTITY v5_guid_attribute
+    SUBTYPE OF (guid_attribute);
+   -- guid_attribute.identifier : guid;
+   -- guid_attribute.identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
+ -- UNIQUE
+   -- guid_attribute.UR1: identifier;
+END_ENTITY; -- v5_guid_attribute
 
 -- -typeof option set to 'no'
 ENTITY validation
