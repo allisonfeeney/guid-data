@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this data and software, please cite it using these metadata."
+abstract: "The repository contains modified ISO/TS 10303-442 information models that support development of GUID research in ISO 10303. It contains compiled jar files of the modified ISO/TS 10303-442 that may be used with the AGREE(™) software from Kth. It contains example data sets in ISO 10303-21 format that comply to the modified information models. Some of the data sets are provided by NIST. Some by other interested parties.
+Please note this is a first pass at the citation file and it is necessarily imcomplete as not all contributors 
+have been included."
+authors: 
+  -
+    affiliation: "TRThurman Consulting"
+    family-names: "Thurman"
+    given-names: "Thomas"
+  -
+    affiliation: "NIST"
+    family-names: "Barnard-Feeney"
+    given-names: "Allison"
+  -
+    affiliation: "tbd"
+    family-names: "Hedlind"
+    given-names: "Mikael"
+title: "Research software and data for GUIDs for ISO/TC 184/SC 4"
+...
