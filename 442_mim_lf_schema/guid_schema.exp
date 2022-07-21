@@ -46,7 +46,7 @@ provided in identified_item.
 *)
   ENTITY guid_attribute
     ABSTRACT
-    SUPERTYPE OF (ONEOF(v5_guid_attribute, v4_guid_attribute) ANDOR guid_attribute_with_approximate_location);
+    SUPERTYPE OF (ONEOF(v5_guid_attribute, v4_guid_attribute) ANDOR guid_attribute_with_approximate_geometric_location);
       identifier      : guid;
       identified_item : LIST [1:?] OF UNIQUE guid_attribute_select;
     UNIQUE
@@ -94,12 +94,12 @@ version 4 of the relevant rfc.
   END_ENTITY;
 
 (*
-[[guid_attribute_with_approximate_location]]
-A guid_attribute_with_approximate_location is a guid_attribute that provides an
+[[guid_attribute_with_approximate_geometric_location]]
+A guid_attribute_with_approximate_geometric_location is a guid_attribute that provides an
 approximate location in cartesian space of an item or items that has a UUID
 assigned.
 *)
-  ENTITY guid_attribute_with_approximate_location
+  ENTITY guid_attribute_with_approximate_geometric_location
     SUBTYPE OF(guid_attribute);
       location_representation : shape_representation;
       approximate_location    : cartesian_point;
