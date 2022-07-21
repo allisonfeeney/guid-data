@@ -56,8 +56,8 @@ provided in identified_item.
 (*
 [[v5_guid_attribute]]
 A v5_guid_attribute is a guid_attribute that provides a UUID that conforms to
-version 5 of the relevant rfc. The name is not provided. The namespace may not
-be provided.
+version 5 of the relevant rfc. The name is not provided. The namespace is not
+provided.
 *)
   ENTITY v5_guid_attribute
     SUBTYPE OF(guid_attribute);
