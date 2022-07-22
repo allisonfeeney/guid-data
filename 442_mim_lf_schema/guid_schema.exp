@@ -1,4 +1,4 @@
-SCHEMA GUID_SCHEMA_20220721_00;
+SCHEMA GUID_SCHEMA_20220722_00;
 
 (*
 [[guid_attribute_select]]
@@ -252,6 +252,8 @@ A guid_context_role associates a role to an guid.
     SUBTYPE OF(guid_context_role);
     INVERSE
       members : SET [1:?] OF guid_relationship FOR tree_root;
-  END_ENTITY;
+  DERIVE
+   SELF\guid_context_role.role = 'root';
+ END_ENTITY;
 
 END_SCHEMA;
