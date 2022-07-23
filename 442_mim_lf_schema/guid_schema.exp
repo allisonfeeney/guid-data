@@ -250,10 +250,10 @@ A guid_context_role associates a role to an guid.
 
   ENTITY guid_tree_root
     SUBTYPE OF(guid_context_role);
+  DERIVE
+   SELF\guid_context_role.role : STRING := 'root';
     INVERSE
       members : SET [1:?] OF guid_relationship FOR tree_root;
-  DERIVE
-   SELF\guid_context_role.role = 'root';
  END_ENTITY;
 
 END_SCHEMA;
