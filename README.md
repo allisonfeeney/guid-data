@@ -36,7 +36,7 @@ This is a repository for data collected in the investigation of GUIDs for a stan
 
 ## Most recent data
 
-- repository branch -- 'origin/rev2' (critical as that affects all data validity)
+- repository branch -- 'origin/main' (critical as that affects all data validity)
 
 - Test case directory -- guid-data/ISO_14405-1_2016_Figure_17a
 
