@@ -6,29 +6,29 @@ This is a repository for data collected in the investigation of GUIDs for a stan
 
 ## Standards in scope are:
 
-1. ISO 10303 Industrial automation systems and integration -- Product data presentation and exchange
-1. ANSI Quality Information Framework Standard v3.0, Dimensional Metrology Standards Consortium
+-. ISO 10303 Industrial automation systems and integration -- Product data presentation and exchange
+-. ANSI Quality Information Framework Standard v3.0, Dimensional Metrology Standards Consortium
 
 ## Five use cases are considered:
   
-1. Design to manufacturing release
-1. OEMs collaborate on a design iteration
-1.   Design change due to manufacturing feedback
-1.   Compare different versions or products
-1.   Design change due to test results
+-. Design to manufacturing release
+-. OEMs collaborate on a design iteration
+-.   Design change due to manufacturing feedback
+-.   Compare different versions or products
+-.   Design change due to test results
 
 ## The repository is organized as follows:
 
-1.   There is a origin/main branch with subdirectories for each test case design. 
-1.   There is a subdirectory for the 442 (ap242) mim longform schema for testing. 
-1.   That schema contains longform schema, plus an AGREE editor jar file plus an AP 242 mim long form. A description of the proposed entities for the long form schema is in file 442_mim_lf_schema/20210414_guid_descriptions.docx.
-1.   There is a registry directory for namespace and UUID name-value pairs.
+-.   There is a origin/main branch with subdirectories for each test case design. 
+-.   There is a subdirectory for the 442 (ap242) mim longform schema for testing. 
+-.   That schema contains longform schema, plus an AGREE editor jar file plus an AP 242 mim long form. A description of the proposed entities for the long form schema is in file 442_mim_lf_schema/20210414_guid_descriptions.docx.
+-.   There is a registry directory for namespace and UUID name-value pairs.
 
 ## Most recent data
 
-1. repository branch -- 'origin/rev2' (critical as that affects all data validity)
-1. Test case directory -- guid-data/ISO_14405-1_2016_Figure_17a
-1. 442 long form schema file --guid-data/442_mim_lf_schema/mim_lf.exp
+-. repository branch -- 'origin/rev2' (critical as that affects all data validity)
+-. Test case directory -- guid-data/ISO_14405-1_2016_Figure_17a
+-. 442 long form schema file --guid-data/442_mim_lf_schema/mim_lf.exp
 
 ## NIST License
 This data/work was created by employees of the National Institute of Standards and Technology (NIST), an agency of the Federal Government. Pursuant to title 17 United States Code Section 105, works of NIST employees are not subject to copyright protection in the United States.  This data/work may be subject to foreign copyright.
