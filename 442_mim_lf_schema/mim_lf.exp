@@ -1,7 +1,6 @@
 (*
    Modified from ISO TC184/SC4/WG12 N10962 - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
-   Based on GUID_SCHEMA commit id -- eb22637.
-   Removed ENTITY aggregate_guid_attribute.
+   Based on GUID_SCHEMA commit id -- 63784a9a.
 *)
 
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
