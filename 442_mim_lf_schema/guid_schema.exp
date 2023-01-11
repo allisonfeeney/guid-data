@@ -1,4 +1,4 @@
-SCHEMA GUID_SCHEMA_20220722_00;
+SCHEMA GUID_SCHEMA;
 
 (*
 [[guid_attribute_select]]
