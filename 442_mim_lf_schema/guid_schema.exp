@@ -101,8 +101,8 @@ assigned.
 *)
   ENTITY guid_attribute_with_approximate_geometric_location
     SUBTYPE OF(guid_attribute);
-      location_representation : shape_representation;
       approximate_location    : cartesian_point;
+      location_representation : shape_representation;
     WHERE
       WR1 : location_representation IN using_representations(approximate_location);
   END_ENTITY;
@@ -209,8 +209,8 @@ A guid_relationship relates two guids and provides a role for that relationship.
 *)
   ENTITY guid_relationship;
       identifier : guid;
-      guid_2     : guid;
       guid_1     : guid;
+      guid_2     : guid;
       role       : guid_relationship_role;
       tree_root  : OPTIONAL guid_tree_root;
     UNIQUE
@@ -229,8 +229,8 @@ provides historical record of those relationshps. The sequence is a simple list
 form.
 *)
   ENTITY guid_provenance;
-      content    : LIST [1:?] OF UNIQUE guid_relationship;
       identifier : guid;
+      content    : LIST [1:?] OF UNIQUE guid_relationship;
     UNIQUE
       UR1 : identifier;
   END_ENTITY;
@@ -240,8 +240,8 @@ form.
 A guid_context_role associates a role to an guid.
 *)
   ENTITY guid_context_role;
-      role       : STRING;
       identifier : guid;
+      role       : STRING;
     UNIQUE
       UR1 : identifier;
     WHERE
