@@ -1,6 +1,8 @@
 (*
    Modified from ISO TC184/SC4/WG12 N10962 - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
-   Based on GUID_SCHEMA_20220722_00*)
+   Based on GUID_SCHEMA commit id -- eb22637.
+   Removed ENTITY aggregate_guid_attribute.
+*)
 
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
 
@@ -6957,13 +6959,6 @@ END_ENTITY;
 ENTITY agc_with_dimension
   SUBTYPE OF (angle_geometric_constraint);
   angle_value : plane_angle_measure;
-END_ENTITY;
-
-ENTITY aggregate_guid_attribute
-  SUBTYPE OF (guid_attribute);
-  aggregate_identified_item : SET [1 : ?] OF guid_attribute_select;
-DERIVE
-  root_for_aggregate : guid := SELF\guid_attribute.identifier;
 END_ENTITY;
 
 ENTITY aggregate_id_attribute;
