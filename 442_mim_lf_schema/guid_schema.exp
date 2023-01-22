@@ -6,7 +6,8 @@ A guid_attribute_select provides a selection of id_attribute or identification
 assignment.
 *)
   TYPE guid_attribute_select = SELECT
-    (id_attribute,
+    (guid_attribute,
+     id_attribute,
      identification_assignment);
   END_TYPE;
 
