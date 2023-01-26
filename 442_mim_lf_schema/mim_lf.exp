@@ -1,6 +1,6 @@
 (*
    Modified from ISO TC184/SC4/WG12 N10962 - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
-   Based on GUID_SCHEMA commit id -- 63784a9a.
+   Based on GUID_SCHEMA commit id -- d7c1981f9eac5572dccaf02c63f54ad5b978aebd.
 *)
 
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
@@ -3676,7 +3676,8 @@ TYPE guid = STRING(36) FIXED;
 END_TYPE;
 
 TYPE guid_attribute_select = SELECT
-    (id_attribute,
+    (guid_attribute,
+    id_attribute,
     identification_assignment);
 END_TYPE;
 
