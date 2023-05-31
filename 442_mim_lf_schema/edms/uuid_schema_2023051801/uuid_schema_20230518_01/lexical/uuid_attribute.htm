@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content ="text/html; charset=ISO-8859-1">
+<title>uuid_attribute</title>
+</head>
+<body>
+<img src="../img/entity_navbar.gif" alt="Navigation" height="24" width="625" border="0" usemap="#entity-navbar"/><br/>
+<map name="entity-navbar">
+  <area shape="rect" coords="0,0,62,23" alt="Navigate"href="none">
+  <area shape="rect" coords="63,0,141,23" alt="Navigate"href="../uuid_schema_20230518_01.htm">
+  <area shape="rect" coords="142,0,244,23" alt="Navigate"href="../diagrams/diagram_0001.htm">
+  <area shape="rect" coords="245,0,323,23" alt="Navigate"href="#definition">
+  <area shape="rect" coords="324,0,398,23" alt="Navigate"href="#attribute_description">
+  <area shape="rect" coords="399,0,442,23" alt="Navigate"href="#constraint_description">
+  <area shape="rect" coords="443,0,526,23" alt="Navigate"href="#inheritance">
+  <area shape="rect" coords="527,0,623,23" alt="Navigate"href="uuid_attribute.htm#references">
+</map><p><font face="Times New Roman" size="5" color="#000000"><b>uuid_attribute</b></font></p><font face="Times New Roman" size="3" color="#000000">                A guid_attribute associates a UUID with an ordered collection of product data items.</font><p><font face="Times New Roman" size="3" color="#000000"><u>EXPRESS specification:</u></font></p>
+                <table width="100%" cellspacing="0" cellpadding="0">
+                  <tr valign="top">
+                    <td width="2%">
+                    </td>
+                    <td>
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td><font face="Courier New" size="3" color="#000000"><b><a name="definition">ENTITY</a></b> uuid_attribute</font>
+                          </td>
+                        </tr>
+                      </table>
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td width="2%">
+                          </td>
+                          <td>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tr valign="top">
+                                <td width="1%"><font face="Courier New" size="3" color="#000000"><b>ABSTRACT</b></font>
+                                </td>
+                                <td height="1%"><font face="Courier New" size="3" color="#000000">(<b>ONEOF</b>(<a href="v5_uuid_attribute.htm">v5_uuid_attribute</a>, <a href="v4_uuid_attribute.htm">v4_uuid_attribute</a>) <b>ANDOR</b> <a href="uuid_attribute_with_approximate_location.htm">uuid_attribute_with_approximate_location</a>);</font>
+                                </td>
+                              </tr>
+                            </table>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tr valign="top">
+                                <td width="2%">
+                                </td>
+                                <td>
+                                  <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr valign="top">
+                                      <td width="30%" nowrap><font face="Courier New" size="3" color="#000000">identified_item</font>
+                                      </td>
+                                      <td width="1%"><font face="Courier New" size="3" color="#000000">&nbsp;:&nbsp;</font>
+                                      </td>
+                                      <td><font face="Courier New" size="3" color="#000000"><b>LIST</b> [1:?]<b>OF</b> <b>UNIQUE</b> <a href="uuid_attribute_select.htm">uuid_attribute_select</a>;</font>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr valign="top">
+                                      <td width="30%" nowrap><font face="Courier New" size="3" color="#000000">identifier</font>
+                                      </td>
+                                      <td width="1%"><font face="Courier New" size="3" color="#000000">&nbsp;:&nbsp;</font>
+                                      </td>
+                                      <td><font face="Courier New" size="3" color="#000000"><a href="isolated_or_leaf_uuid_node.htm">isolated_or_leaf_uuid_node</a>;</font>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tr valign="top">
+                                <td><font face="Courier New" size="3" color="#000000"><b><b>UNIQUE</b></b></font>
+                                </td>
+                              </tr>
+                            </table>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tr valign="top">
+                                <td width="2%">
+                                </td>
+                                <td>
+                                  <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr valign="top">
+                                      <td width="20%"><font face="Courier New" size="3" color="#000000">UR1</font>
+                                      </td>
+                                      <td width="1%"><font face="Courier New" size="3" color="#000000">&nbsp;:&nbsp;</font>
+                                      </td>
+                                      <td><font face="Courier New" size="3" color="#000000">identifier;</font>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td><font face="Courier New" size="3" color="#000000"><b>END_ENTITY</b>;</font>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table><p><font face="Times New Roman" size="4" color="#000000"><b><a name="References">References (3):</a></b></font></p>
+                <table width="100%" border="1" cellspacing="0" cellpadding="1">
+                  <tr valign="top">
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000"><b>Name</b></font>
+                    </td>
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000"><b>Type</b></font>
+                    </td>
+                    <td width="40%"><font face="Times New Roman" size="3" color="#000000"><b>Referred through</b></font>
+                    </td>
+                    <td width="40%"><font face="Times New Roman" size="3" color="#000000"><b>Express-G</b></font>
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000"><a href="uuid_attribute_with_approximate_location.htm">uuid_attribute_with_approximate_location</a></font>
+                    </td>
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000">Entity</font>
+                    </td>
+                    <td width="40%">
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td width="100%"><font face="Times New Roman" size="3" color="#000000">Supertype</font>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td width="40%"><font face="Times New Roman" size="3" color="#000000"><a href="../diagrams/diagram_0001.htm">Diagram 1</a></font>
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000"><a href="v4_uuid_attribute.htm">v4_uuid_attribute</a></font>
+                    </td>
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000">Entity</font>
+                    </td>
+                    <td width="40%">
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td width="100%"><font face="Times New Roman" size="3" color="#000000">Supertype</font>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td width="40%"><font face="Times New Roman" size="3" color="#000000"><a href="../diagrams/diagram_0001.htm">Diagram 1</a></font>
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000"><a href="v5_uuid_attribute.htm">v5_uuid_attribute</a></font>
+                    </td>
+                    <td width="10%"><font face="Times New Roman" size="3" color="#000000">Entity</font>
+                    </td>
+                    <td width="40%">
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td width="100%"><font face="Times New Roman" size="3" color="#000000">Supertype</font>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td width="40%"><font face="Times New Roman" size="3" color="#000000"><a href="../diagrams/diagram_0001.htm">Diagram 1</a></font>
+                    </td>
+                  </tr>
+                </table><p><font face="Times New Roman" size="4" color="#000000"><b><a name="inheritance">Inheritance graph</a></b></font></p>
+                <table width="100%" cellspacing="0" cellpadding="0">
+                  <tr valign="top">
+                    <td width="2%">
+                    </td>
+                    <td>
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td><font face="Courier New" size="3" color="#000000"><b>ENTITY</b> uuid_attribute;</font>
+                          </td>
+                        </tr>
+                      </table>
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td width="2%">
+                          </td>
+                          <td>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tr valign="top">
+                                <td width="100%"><font face="Courier New" size="3" color="#000000"><b>ENTITY</b> <a href="uuid_attribute.htm">uuid_attribute</a>;</font>
+                                </td>
+                              </tr>
+                            </table>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tr valign="top">
+                                <td width="2%">
+                                </td>
+                                <td>
+                                  <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr valign="top">
+                                      <td width="30%" nowrap><font face="Courier New" size="3" color="#000000">identified_item</font>
+                                      </td>
+                                      <td width="1%"><font face="Courier New" size="3" color="#000000">&nbsp;:&nbsp;</font>
+                                      </td>
+                                      <td><font face="Courier New" size="3" color="#000000"><b>LIST</b> [1:?]<b>OF</b> <b>UNIQUE</b> <a href="uuid_attribute_select.htm">uuid_attribute_select</a>;</font>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr valign="top">
+                                      <td width="30%" nowrap><font face="Courier New" size="3" color="#000000">identifier</font>
+                                      </td>
+                                      <td width="1%"><font face="Courier New" size="3" color="#000000">&nbsp;:&nbsp;</font>
+                                      </td>
+                                      <td><font face="Courier New" size="3" color="#000000"><a href="isolated_or_leaf_uuid_node.htm">isolated_or_leaf_uuid_node</a>;</font>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                          <td><font face="Courier New" size="3" color="#000000"><b>END_ENTITY</b>;</font>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+</body>
+</html>

@@ -1,0 +1,391 @@
+SCHEMA UUID_SCHEMA_20230518_01;
+(*
+WARNING: there are syntax errors in this file.!
+230531 added comments to correlate updates to the mim_lf.exp
+no content change so did not regeneate this schema
+[[uuid_attribute_select]]
+A guid_attribute_select provides a selection of id_attribute or identification
+assignment.
+*)
+-- updated long form
+TYPE uuid_attribute_select = SELECT
+    (id_attribute,
+     identification_assignment);
+  END_TYPE;
+
+-- updated long form
+TYPE isolated_or_leaf_uuid_node = SELECT
+    (uuid_isolated_node,
+     uuid_leaf_node);
+  END_TYPE;
+
+  TYPE uuid = STRING (36) FIXED;
+  END_TYPE;
+
+(*
+[[uuid_relationship_role]]
+A guid_relationship_role enumerates the permitted roles associated with a
+guid_relationship.
+*)
+-- updated long form
+TYPE uuid_relationship_role = ENUMERATION OF
+    (SUPERSEDES,
+     MERGE,
+     SPLIT,
+     DERIVE_FROM,
+     SAME_AS,
+     SIMILAR_TO);
+  END_TYPE;
+
+  ENTITY characterized_object;
+  END_ENTITY;
+
+  ENTITY general_property;
+  END_ENTITY;
+
+  ENTITY product;
+  END_ENTITY;
+
+(*
+[[uuid_attribute]]
+A guid_attribute associates a UUID with an ordered collection of product data
+items.
+*)
+-- updated long form
+ENTITY uuid_attribute
+    ABSTRACT
+    SUPERTYPE OF (ONEOF(v5_uuid_attribute, v4_uuid_attribute) ANDOR uuid_attribute_with_approximate_location);
+      identified_item : LIST [1:?] OF UNIQUE uuid_attribute_select;
+      identifier      : isolated_or_leaf_uuid_node;
+    UNIQUE
+      UR1 : ;
+  END_ENTITY;
+
+(*
+[[v5_uuid_attribute]]
+A v5_guid_attribute is a guid_attribute that provides a UUID that conforms to
+version 5 of the relevant rfc. The name is not provided. The namespace may not
+be provided.
+*)
+--no change
+ENTITY v5_uuid_attribute
+    SUBTYPE OF(uuid_attribute);
+  END_ENTITY;
+
+(*
+[[v4_uuid_attribute]]
+A v4_guid_attribute is a guid_attribute that provides a UUID that conforms to
+version 4 of the relevant rfc.
+*)
+--no change
+  ENTITY v4_uuid_attribute
+    SUBTYPE OF(uuid_attribute);
+  END_ENTITY;
+
+(*
+[[uuid_attribute_with_approximate_location]]
+A guid_attribute_with_approximate_location is a guid_attribute that provides an
+approximate location in cartesian space of an item or items that has a UUID
+assigned.
+*)
+--no change
+  ENTITY uuid_attribute_with_approximate_location
+    SUBTYPE OF(uuid_attribute);
+      location_representation : shape_representation;
+      approximate_location    : cartesian_point;
+    WHERE
+      WR1 : location_representation IN using_representations(approximate_location);
+  END_ENTITY;
+
+  ENTITY shape_representation;
+  END_ENTITY;
+
+  ENTITY cartesian_point;
+  END_ENTITY;
+
+  ENTITY id_attribute;
+  END_ENTITY;
+
+  ENTITY identification_assignment;
+  END_ENTITY;
+
+(*
+[[uuid_isolated_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+-- updated long form
+  ENTITY uuid_isolated_node
+    SUBTYPE OF(uuid_tree_node);
+      hash_function : OPTIONAL STRING;
+    WHERE
+      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
+      WR2 : SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 0;
+      WR3 : SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=0;
+  END_ENTITY;
+
+(*
+[[uuid_tree_node]]
+Only leaf node specifies data content, which is proposed to be a
+v5_uuid_attribute.
+*)
+-- updated long form
+  ENTITY uuid_tree_node
+    ABSTRACT
+    SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_isolated_node, uuid_internal_node));
+      identifier : uuid;
+      node_2     : OPTIONAL uuid_tree_node;
+      node_1     : OPTIONAL uuid_tree_node;
+    WHERE
+      WR1 : node_1 <> node_2;
+  END_ENTITY;
+
+(*
+[[uuid_leaf_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+-- updated long form
+  ENTITY uuid_leaf_node
+    SUBTYPE OF(uuid_tree_node);
+    DERIVE
+      leaf_operand : STRING (1) FIXED := '0';
+    WHERE
+      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
+      WR2 : (SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR (SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 1);;
+  END_ENTITY;
+
+(*
+[[uuid_internal_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+-- updated long form
+  ENTITY uuid_internal_node
+    SUBTYPE OF(uuid_tree_node);
+    DERIVE
+      internal_operand : STRING (1) FIXED := '1';
+    WHERE
+      WR1 : EXISTS(node_1) AND EXISTS(node_2);
+      WR2 : ('UUID_SCHEMA.UUID.TREE_ROOT_NODE' IN TYPEOF(SELF)) OR (SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR (SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 1);;
+  END_ENTITY;
+
+(*
+[[uuid_root_node]]
+The root node hash shall be different from the leaf node hash.
+reference: Tree Hash EXchange format (THEX)
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+-- updated long form
+ ENTITY uuid_root_node
+    SUBTYPE OF(uuid_internal_node);
+      hash_function : STRING;
+    WHERE
+      WR1 : SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1)) = 0;;
+      WR2 : SIZEOF(USEDIN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 0;;
+  END_ENTITY;
+(*
+*Attribute definitions*
+[[hash_function]]
+temporarily typing hash function as a string. Need to specialize as a urn.
+*Item Property Description Constraint*
+[[WR1]]
+There shall be no owner for a root node.
+*)
+
+  ENTITY dimensional_location;
+  END_ENTITY;
+
+  ENTITY characterized_object_relationship;
+  END_ENTITY;
+
+  ENTITY datum_feature;
+  END_ENTITY;
+
+  ENTITY datum_system;
+  END_ENTITY;
+
+  ENTITY dimension_related_tolerance_zone_element;
+  END_ENTITY;
+
+  ENTITY dimensional_characteristic_representation;
+  END_ENTITY;
+
+  ENTITY dimensional_size;
+  END_ENTITY;
+
+  ENTITY general_property_relationship;
+  END_ENTITY;
+
+  ENTITY geometric_tolerance;
+  END_ENTITY;
+
+  ENTITY geometric_tolerance_auxiliary_classification;
+  END_ENTITY;
+
+  ENTITY gps_filter;
+  END_ENTITY;
+
+  ENTITY gps_filtration_specification;
+  END_ENTITY;
+
+  ENTITY limits_and_fits;
+  END_ENTITY;
+
+  ENTITY placed_datum_target_feature;
+  END_ENTITY;
+
+  ENTITY plus_minus_tolerance;
+  END_ENTITY;
+
+  ENTITY product_definition;
+  END_ENTITY;
+
+  ENTITY product_definition_formation;
+  END_ENTITY;
+
+  ENTITY product_definition_formation_relationship;
+  END_ENTITY;
+
+  ENTITY product_definition_relationship;
+  END_ENTITY;
+
+  ENTITY property_definition;
+  END_ENTITY;
+
+  ENTITY representation;
+  END_ENTITY;
+
+  ENTITY representation_item;
+  END_ENTITY;
+
+  ENTITY runout_zone_orientation;
+  END_ENTITY;
+
+  ENTITY topological_representation_item;
+  END_ENTITY;
+
+  ENTITY tolerance_with_statistical_distribution;
+  END_ENTITY;
+
+  ENTITY tolerance_value;
+  END_ENTITY;
+
+  ENTITY shape_aspect;
+  END_ENTITY;
+
+  ENTITY shape_aspect_relationship;
+  END_ENTITY;
+
+  ENTITY tolerance_zone_form;
+  END_ENTITY;
+
+  ENTITY tolerance_zone_definition;
+  END_ENTITY;
+
+(*
+[[uuid_relationship]]
+A guid_relationship relates two guids and provides a role for that relationship.
+*)
+-- updated long form
+ENTITY uuid_relationship;
+      identifier : uuid;
+      uuid_2     : uuid;
+      uuid_1     : uuid;
+      role       : uuid_relationship_role;
+    UNIQUE
+      UR1 : identifier;
+    WHERE
+      IP1 : (* acyclic_guid_relationship(SELF, guid_1, guid_2) *) ;
+  END_ENTITY;
+(*
+*Item Property Description Constraint*
+[[IP1]]
+-- A guid_relationship shall be acyclic.
+*)
+
+(*
+[[uuid_provenance]]
+A guid_provenance is the specification of a sequence of guid_relationships that
+provides historical record of those relationshps. The sequence is a simple list
+form.
+*)
+--no change
+  ENTITY uuid_provenance;
+      content    : LIST [1:?] OF UNIQUE uuid_relationship;
+      identifier : uuid;
+    UNIQUE
+      UR1 : identifier;
+  END_ENTITY;
+
+(*
+[[uuid_context_role]]
+A guid_context_role associates a role to an guid.
+*)
+--no change
+  ENTITY uuid_context_role;
+      role       : STRING;
+      identifier : uuid;
+    UNIQUE
+      UR1 : identifier;
+    WHERE
+      WR1 : role <> '';
+  END_ENTITY;
+
+END_SCHEMA;

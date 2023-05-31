@@ -1,6 +1,6 @@
 (*
    Modified from ISO TC184/SC4/WG12 N10962 - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
-   Based on GUID_SCHEMA commit id -- d7c1981f9eac5572dccaf02c63f54ad5b978aebd.
+   Based on UUID_SCHEMA_20230518_01.exp commit id -- 2de6da90.
 *)
 
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
@@ -3672,20 +3672,23 @@ WHERE
   WR1: NOT ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.GROUP' IN TYPEOF(SELF));
 END_TYPE;
 
-TYPE guid = STRING(36) FIXED;
+TYPE uuid = STRING(36) FIXED;
 END_TYPE;
 
-TYPE guid_attribute_select = SELECT
-    (guid_attribute,
-    id_attribute,
+TYPE uuid_attribute_select = SELECT
+    (id_attribute,
     identification_assignment);
 END_TYPE;
 
+TYPE isolated_or_leaf_uuid_node = SELECT
+  (uuid_isolated_node,
+   uuid_leaf_node);
+END_TYPE;
 
-TYPE guid_relationship_role = ENUMERATION OF
+--updated from uuid_schema_20230518_01
+TYPE uuid_relationship_role = ENUMERATION OF
   (derive_from,
    merge,
-   parent_child,
    same_as,
    similar_to,
    split,
@@ -7258,9 +7261,9 @@ WHERE
                TYPEOF(SELF\annotation_placeholder_leader_line.model_end)) =
         0) AND
        (SIZEOF(['AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.APLL_POINT_WITH_SURFACE'] * TYPEOF(start_end)) = 0);
-  -- The geometric_elements inherited from annotation_placeholder_leader_line shall not start nor end on the part model.;;;
-  -- IP1: An annotation_to_annotation_leader_line shall start and end at annotation boundary curves when the placeholder is replaced with annotation with rendered boundary curves.;;;
-  -- IP2: When rendered by the receiving system the leader line shall start and end on different annotation instances.;;;
+  -- The geometric_elements inherited from annotation_placeholder_leader_line shall not start nor end on the part model.;
+  -- IP1: An annotation_to_annotation_leader_line shall start and end at annotation boundary curves when the placeholder is replaced with annotation with rendered boundary curves.;
+  -- IP2: When rendered by the receiving system the leader line shall start and end on different annotation instances.;
 END_ENTITY;
 
 ENTITY annotation_to_model_leader_line
@@ -7271,10 +7274,10 @@ WHERE
   WR1: SIZEOF(['AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.APLL_POINT_WITH_SURFACE'] *
               TYPEOF(SELF\annotation_placeholder_leader_line.model_end)) =
        1;
-  -- The geometric_elements inherited from annotation_placeholder_leader_line shall end on the part model.;;;
-  -- Bug 8420;;;
+  -- The geometric_elements inherited from annotation_placeholder_leader_line shall end on the part model.;
+  -- Bug 8420;
   WR2: SIZEOF(['AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.APLL_POINT_WITH_SURFACE'] * TYPEOF(start_end)) = 0;
-  -- The geometric_elements inherited from annotation_placeholder_leader_line shall not start on the part model.;;;
+  -- The geometric_elements inherited from annotation_placeholder_leader_line shall not start on the part model.;
 END_ENTITY;
 
 ENTITY ap242_assignment_object_relationship
@@ -7925,13 +7928,13 @@ DERIVE
 WHERE
   WR1: SELF\annotation_placeholder_leader_line.container :=:
        controlling_leader_line\annotation_placeholder_leader_line.container;
-  -- An auxiliary_leader_line shall be associated to the same annotation_placeholder_occurrence_with_leader_line that the controlling_leader_line is associated to.;;;
+  -- An auxiliary_leader_line shall be associated to the same annotation_placeholder_occurrence_with_leader_line that the controlling_leader_line is associated to.;
   WR2: SIZEOF(['AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.APLL_POINT_WITH_SURFACE'] * TYPEOF(free_space_end)) = 0;
-  -- The geometric_elements inherited from annotation_placeholder_leader_line shall not start on the part model.;;;
+  -- The geometric_elements inherited from annotation_placeholder_leader_line shall not start on the part model.;
   WR3: SIZEOF(['AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.APLL_POINT_WITH_SURFACE'] *
               TYPEOF(SELF\annotation_placeholder_leader_line.model_end)) =
        1;
-  -- The geometric_elements inherited from annotation_placeholder_leader_line shall end on the part model.;;;
+  -- The geometric_elements inherited from annotation_placeholder_leader_line shall end on the part model.;
 END_ENTITY;
 
 ENTITY axis1_placement
@@ -8292,7 +8295,7 @@ WHERE
   WR1: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.PRODUCT_DEFINITION' IN
        TYPEOF(SELF\shape_aspect.of_shape\property_definition.definition);
   WR2: SELF\shape_aspect.product_definitional = TRUE;
-  -- desc: The placement of the hole shall be on the surface of the item.;;;
+  -- desc: The placement of the hole shall be on the surface of the item.;
 END_ENTITY;
 
 ENTITY basic_round_hole_occurrence_in_assembly
@@ -11087,15 +11090,15 @@ WHERE
             TYPEOF(drilled_hole_diameter_tolerance)) OR
            ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.LENGTH_MEASURE_WITH_UNIT' IN
             TYPEOF(drilled_hole_diameter_tolerance\tolerance_value.upper_bound));
-  -- Informal proposition;;;
-  -- - IP1: counterbore members shall in ascending order in the list organized according to their drilled_hole_diameter;;;
-  -- - IP2: counterbore[1] shall have a larger diameter than drilled_hole_diameter.;;;
-  -- - IP3: The axis2_placement_3d in the inherited placement shall define the reference position and orientation for the counterbore_hole_definition.;;;
-  -- - IP4: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;;;
-  -- - IP5: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;;;
-  -- - IP6: The drill axis and each bore axis shall be congruent with the z axis of the placement.;;;
-  -- - IP7: If a limits_and_fits is provided for the diameter tolerance the limits_and_fits shall be for a hole.;;;
-  -- - IP8: counterbore_hole_definitin and explicit_round_hole geometry are defined in the same context.;;;
+  -- Informal proposition;
+  -- - IP1: counterbore members shall in ascending order in the list organized according to their drilled_hole_diameter;
+  -- - IP2: counterbore[1] shall have a larger diameter than drilled_hole_diameter.;
+  -- - IP3: The axis2_placement_3d in the inherited placement shall define the reference position and orientation for the counterbore_hole_definition.;
+  -- - IP4: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;
+  -- - IP5: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;
+  -- - IP6: The drill axis and each bore axis shall be congruent with the z axis of the placement.;
+  -- - IP7: If a limits_and_fits is provided for the diameter tolerance the limits_and_fits shall be for a hole.;
+  -- - IP8: counterbore_hole_definitin and explicit_round_hole geometry are defined in the same context.;
 END_ENTITY;
 
 ENTITY counterbore_hole_occurrence
@@ -11105,7 +11108,7 @@ WHERE
   WR1: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.PRODUCT_DEFINITION' IN
        TYPEOF(SELF\shape_aspect.of_shape\property_definition.definition);
   WR2: SELF\shape_aspect.product_definitional = TRUE;
-  -- desc: The placement of the hole shall be on the surface of the item.;;;
+  -- desc: The placement of the hole shall be on the surface of the item.;
 END_ENTITY;
 
 ENTITY counterbore_hole_occurrence_in_assembly
@@ -11141,13 +11144,13 @@ WHERE
             TYPEOF(drilled_hole_diameter_tolerance)) OR
            ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.LENGTH_MEASURE_WITH_UNIT' IN
             TYPEOF(drilled_hole_diameter_tolerance\tolerance_value.upper_bound));
-  -- Informal proposition;;;
-  -- - IP1: The counterbore shall have a larger diameter than the drilled_hole_diameter.;;;
-  -- - IP2: The axis2_placement_3d in the inherited placement shall define the reference position and orientation for the counterbore_hole_definition.;;;
-  -- - IP3: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;;;
-  -- - IP4: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;;;
-  -- - IP5: The drill axis and the counterdrill axis and each bore axis shall be congruent with the z axis of the placement.;;;
-  -- - IP6: counterdrill_hole_definition and explicit_round_hole geometry are defined in the same context.;;;
+  -- Informal proposition;
+  -- - IP1: The counterbore shall have a larger diameter than the drilled_hole_diameter.;
+  -- - IP2: The axis2_placement_3d in the inherited placement shall define the reference position and orientation for the counterbore_hole_definition.;
+  -- - IP3: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;
+  -- - IP4: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;
+  -- - IP5: The drill axis and the counterdrill axis and each bore axis shall be congruent with the z axis of the placement.;
+  -- - IP6: counterdrill_hole_definition and explicit_round_hole geometry are defined in the same context.;
 END_ENTITY;
 
 ENTITY counterdrill_hole_occurrence
@@ -11157,7 +11160,7 @@ WHERE
   WR1: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.PRODUCT_DEFINITION' IN
        TYPEOF(SELF\shape_aspect.of_shape\property_definition.definition);
   WR2: SELF\shape_aspect.product_definitional = TRUE;
-  -- -desc: The placement shall be on the surface of the item.;;;
+  -- -desc: The placement shall be on the surface of the item.;
 END_ENTITY;
 
 ENTITY counterdrill_hole_occurrence_in_assembly
@@ -11202,14 +11205,14 @@ WHERE
             TYPEOF(drilled_hole_diameter_tolerance)) OR
            ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.LENGTH_MEASURE_WITH_UNIT' IN
             TYPEOF(drilled_hole_diameter_tolerance\tolerance_value.upper_bound));
-  -- Informal proposition;;;
-  -- - IP1: countersink_diameter shall have a larger diameter than the drilled_hole_diameter.;;;
-  -- - IP2: The axis2_placement_3d in the inherited placement shall define the reference position and orientation for the counterbore_hole_definition.;;;
-  -- - IP3: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;;;
-  -- - IP4: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;;;
-  -- - IP5: The drill axis and the countersink axis shall be congruent with the z axis of the placement.;;;
-  -- - IP6: If a limits_and_fits is provided for the diameter tolerance the limits_and_fits shall be for a hole.;;;
-  -- - IP7: countersink_hole_definition and explicit_round_hole geometry are defined in the same context.;;;
+  -- Informal proposition;
+  -- - IP1: countersink_diameter shall have a larger diameter than the drilled_hole_diameter.;
+  -- - IP2: The axis2_placement_3d in the inherited placement shall define the reference position and orientation for the counterbore_hole_definition.;
+  -- - IP3: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;
+  -- - IP4: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;
+  -- - IP5: The drill axis and the countersink axis shall be congruent with the z axis of the placement.;
+  -- - IP6: If a limits_and_fits is provided for the diameter tolerance the limits_and_fits shall be for a hole.;
+  -- - IP7: countersink_hole_definition and explicit_round_hole geometry are defined in the same context.;
 END_ENTITY;
 
 ENTITY countersink_hole_occurrence
@@ -11219,7 +11222,7 @@ WHERE
   WR1: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.PRODUCT_DEFINITION' IN
        TYPEOF(SELF\shape_aspect.of_shape\property_definition.definition);
   WR2: SELF\shape_aspect.product_definitional = TRUE;
-  -- -desc. The placement of the hole shall be on the surface of the item.;;;
+  -- -desc. The placement of the hole shall be on the surface of the item.;
 END_ENTITY;
 
 ENTITY countersink_hole_occurrence_in_assembly
@@ -11292,9 +11295,9 @@ WHERE
                        (NOT (('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.CSG_2D_SHAPE_REPRESENTATION') IN
                              TYPEOF(it\mapped_item.mapping_source.mapped_representation)))))) =
        0;
-  -- TODO does not work with the new introduced subtypes  ;;;
-  -- WR4: SIZEOF(TYPEOF(SELF) - TYPEOF(SELF\shape_representation ||;;;
-  -- SELF\csg_2d_shape_representation || SELF\representation)) = 0;;;;
+  -- TODO does not work with the new introduced subtypes  ;
+  -- WR4: SIZEOF(TYPEOF(SELF) - TYPEOF(SELF\shape_representation ||;
+  -- SELF\csg_2d_shape_representation || SELF\representation)) = 0;
 END_ENTITY;
 
 ENTITY csg_primitive_solid_2d
@@ -14587,18 +14590,18 @@ WHERE
                     <* placement\representation.items
                     | ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.AXIS2_PLACEMENT_3D' IN TYPEOF(ri)))) =
        1;
-  -- One item in the placement shall be an axis2_placement_3d;;;
+  -- One item in the placement shall be an axis2_placement_3d;
   WR2: (SIZEOF(explicit_shape) = 0) OR
        (SIZEOF(QUERY(es
                      <* explicit_shape
                      | NOT (placement = es\item_identified_representation_usage.used_representation))) =
         0);
-  -- The placement shall be the used_representation for each member of explicit_shape.;;;
-  -- Informal proposition;;;
-  -- - IP1: The axis2_placement_3d in the placement shall define the reference position and orientation for the counterbore_hole_definition.;;;
-  -- - IP2: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;;;
-  -- - IP3: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;;;
-  -- - IP4: The drill axis and each bore axis shall be congruent with the z axis of the placement.;;;
+  -- The placement shall be the used_representation for each member of explicit_shape.;
+  -- Informal proposition;
+  -- - IP1: The axis2_placement_3d in the placement shall define the reference position and orientation for the counterbore_hole_definition.;
+  -- - IP2: The z axis of the axis2_placement_3d shall point into the material of the item being machined.;
+  -- - IP3: The placement of the axis2_placement_3d shall be on the surface of the item being machined.;
+  -- - IP4: The drill axis and each bore axis shall be congruent with the z axis of the placement.;
 END_ENTITY;
 
 ENTITY explicit_constraint
@@ -14679,8 +14682,8 @@ WHERE
                     <* placement\representation.items
                     | ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.AXIS2_PLACEMENT_3D' IN TYPEOF(ri)))) =
        1;
-  -- One item in the placement shall be an axis2_placement_3d;;;
-  -- There is no explicit shape needed for an explicit round hole.;;;
+  -- One item in the placement shall be an axis2_placement_3d;
+  -- There is no explicit shape needed for an explicit round hole.;
   WR2: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.LENGTH_MEASURE_WITH_UNIT' IN
        TYPEOF(depth_tolerance\tolerance_value.lower_bound);
   WR3: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.LENGTH_MEASURE_WITH_UNIT' IN
@@ -17412,7 +17415,7 @@ WHERE
             toleranced_shape_aspect\shape_aspect_relationship.related_shape_aspect.of_shape);
   WR4: SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.ID_ATTRIBUTE.IDENTIFIED_ITEM')) <= 1;
   WR5: SIZEOF(QUERY(tr <* tolerance_relationship | tr.name = 'composite tolerance')) <= 1;
-  -- description a) A Geometric_tolerance shall be used at most once by geometric_tolerance_relationship.related with the name "composite tolerance";;;
+  -- description a) A Geometric_tolerance shall be used at most once by geometric_tolerance_relationship.related with the name "composite tolerance";
 END_ENTITY;
 
 ENTITY geometric_tolerance_auxiliary_classification;
@@ -17439,16 +17442,16 @@ WHERE
              TYPEOF(relating_geometric_tolerance)) AND
             ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.SURFACE_PROFILE_TOLERANCE' IN
              TYPEOF(related_geometric_tolerance)));
-  -- description   b) For a geometric_tolerance_relationship with the name "composite tolerance";;;
-  -- the related and the relating subtype should be both either position_tolerance or line_profile_tolerance or surface_profile_tolerance;;;
+  -- description   b) For a geometric_tolerance_relationship with the name "composite tolerance";
+  -- the related and the relating subtype should be both either position_tolerance or line_profile_tolerance or surface_profile_tolerance;
   WR2: NOT (name = 'composite tolerance') OR
            (relating_geometric_tolerance\geometric_tolerance.toleranced_shape_aspect :=:
             related_geometric_tolerance\geometric_tolerance.toleranced_shape_aspect);
-  -- description c) For a geometric_tolerance_relationship with the name "composite tolerance";;;
-  -- the the related and relating geometric_tolerances shall refer to the same target.;;;
+  -- description c) For a geometric_tolerance_relationship with the name "composite tolerance";
+  -- the the related and relating geometric_tolerances shall refer to the same target.;
   WR3: acyclic_geometric_tolerance_relationship(SELF, [related_geometric_tolerance],
                                                 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.GEOMETRIC_TOLERANCE');
-  -- The geometric_tolerance_relationship structure shall be acylic.;;;
+  -- The geometric_tolerance_relationship structure shall be acylic.;
 END_ENTITY;
 
 ENTITY geometric_tolerance_with_datum_reference
@@ -17774,9 +17777,9 @@ WHERE
                            TYPEOF(it)))) =
        0;
   WR2: NOT ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.DEFINITIONAL_REPRESENTATION_RELATIONSHIP' IN TYPEOF(SELF));
-  -- IP1: A member of geometry_to_topology_model_association shall be associated;;;
-  -- only with a product_definition whose ;;;
-  -- application_context_element.name = 'wiring harness assembly design' ;;;
+  -- IP1: A member of geometry_to_topology_model_association shall be associated;
+  -- only with a product_definition whose ;
+  -- application_context_element.name = 'wiring harness assembly design' ;
 END_ENTITY;
 
 ENTITY geometry_with_local_irregularity
@@ -17828,7 +17831,7 @@ WHERE
                     geometric_tolerance_modifier.standard_deviation] *
                    owner\gps_filtration_specification.base_target\geometric_tolerance_with_modifiers.modifiers) <>
             0);
-  -- IP1 : The content of the data set is governed by ISO 1101 or other GPS standards.;;;
+  -- IP1 : The content of the data set is governed by ISO 1101 or other GPS standards.;
 END_ENTITY;
 
 ENTITY gps_filtration_specification;
@@ -17867,44 +17870,42 @@ ENTITY group_relationship;
   related_group  : group;
 END_ENTITY;
 
-ENTITY guid_attribute
+--updated from uuid_schema_20230518_01
+ENTITY uuid_attribute
   ABSTRACT SUPERTYPE OF(ONEOF(
-    v5_guid_attribute,
-    v4_guid_attribute)
-    ANDOR guid_attribute_with_approximate_geometric_location);
-  identifier              : guid;
-  identified_item : LIST [1 : ?] OF UNIQUE guid_attribute_select;
+    v5_uuid_attribute,
+    v4_uuid_attribute)
+    ANDOR uuid_attribute_with_approximate_geometric_location);
+  identifier      : isolated_or_leaf_uuid_node;
+  identified_item : LIST [1 : ?] OF UNIQUE uuid_attribute_select;
  UNIQUE
   UR1 : identifier;
 END_ENTITY;
 
-ENTITY v5_guid_attribute
-  SUBTYPE OF (guid_attribute);
+--no change
+ENTITY v5_uuid_attribute
+  SUBTYPE OF (uuid_attribute);
 END_ENTITY;
 
-ENTITY hash_based_v5_guid_attribute
-  SUBTYPE OF (v5_guid_attribute);
-  hash_function : STRING;
-DERIVE
-  root_for_aggregate : guid_attribute_select := SELF\guid_attribute.identified_item[1];
-WHERE
-  WR1 : hash_function <> '';
+-- ENTITY hash_based_v5_uuid_attribute was removed.
+
+--no change
+ENTITY v4_uuid_attribute
+  SUBTYPE OF (uuid_attribute);
 END_ENTITY;
 
-ENTITY v4_guid_attribute
-  SUBTYPE OF (guid_attribute);
-END_ENTITY;
-
-ENTITY guid_attribute_with_approximate_geometric_location
-  SUBTYPE OF(guid_attribute);
+--no change
+ENTITY uuid_attribute_with_approximate_geometric_location
+  SUBTYPE OF(uuid_attribute);
   approximate_location    : cartesian_point;
   location_representation : shape_representation;
 WHERE
   WR1: location_representation in using_representations(approximate_location);
 END_ENTITY;
 
-ENTITY guid_context_role;
-  identifier : guid;
+--no change
+ENTITY uuid_context_role;
+  identifier : uuid;
   role : STRING;
  UNIQUE
   UR1 : identifier;
@@ -17912,37 +17913,89 @@ ENTITY guid_context_role;
   WR1 : role <> '';
 END_ENTITY;
 
-ENTITY guid_provenance;
-  identifier : guid;
-  content : LIST [1:?] OF UNIQUE guid_relationship;
+--no change
+ENTITY uuid_provenance;
+  identifier : uuid;
+  content : LIST [1:?] OF UNIQUE uuid_relationship;
  UNIQUE
   UR1 : identifier;
 END_ENTITY;
 
-ENTITY guid_relationship;
- identifier : guid;
- guid_1 : guid;
- guid_2 : guid;
- role : guid_relationship_role;
- tree_root  : OPTIONAL guid_tree_root;
+--updated from uuid_schema_20230518_01
+ENTITY uuid_relationship;
+ identifier : uuid;
+ uuid_1 : uuid;
+ uuid_2 : uuid;
+ role : uuid_relationship_role;
 UNIQUE
  UR1 : identifier;
 WHERE 
- WR1 : guid_1 <> guid_2;
- WR2 : guid_1 <> identifier;
- WR3 : identifier <> guid_2;
- WR4 : NOT ((parent_child) = role) OR EXISTS(tree_root);
--- WR5 : acyclic_guid_relationship(SELF, guid_1, guid_2);
--- A guid_relationship shall be acyclic
+ WR1 : uuid_1 <> uuid_2;
+ WR2 : uuid_1 <> identifier;
+ WR3 : identifier <> uuid_2;
+-- WR4 : acyclic_uuid_relationship(SELF, uuid_1, uuid_2);
+-- A uuid_relationship shall be acyclic
 END_ENTITY;
 
-ENTITY guid_tree_root
-  SUBTYPE OF (guid_context_role);
-DERIVE
- SELF\guid_context_role.role : STRING := 'root';
-  INVERSE
-   members : SET [1:?] OF guid_relationship FOR tree_root;
-END_ENTITY;
+--updated from uuid_schema_20230518_01
+  ENTITY uuid_isolated_node
+    SUBTYPE OF(uuid_tree_node);
+      hash_function : OPTIONAL STRING;
+    WHERE
+      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
+      WR2 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE.NODE_1')) = 0;
+      WR3 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE.NODE_2')) = 0;
+  END_ENTITY;
+--updated from uuid_schema_20230518_01
+  ENTITY uuid_tree_node
+    ABSTRACT
+    SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_isolated_node, uuid_internal_node));
+      identifier : uuid;
+      node_2     : OPTIONAL uuid_tree_node;
+      node_1     : OPTIONAL uuid_tree_node;
+    WHERE
+      WR1 : node_1 <> node_2;
+  END_ENTITY;
+
+--updated from uuid_schema_20230518_01
+  ENTITY uuid_leaf_node
+    SUBTYPE OF(uuid_tree_node);
+    DERIVE
+      leaf_operand : STRING (1) FIXED := '0';
+    WHERE
+      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
+      WR2 :
+      (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1)
+      XOR
+      (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2'))=1);
+  END_ENTITY;
+
+
+
+--updated from uuid_schema_20230518_01
+  ENTITY uuid_internal_node
+    SUBTYPE OF(uuid_tree_node);
+    DERIVE
+      internal_operand : STRING (1) FIXED := '1';
+    WHERE
+      WR1 : EXISTS(node_1) AND EXISTS(node_2);
+      WR2 : ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE' IN TYPEOF(SELF)) OR (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1) XOR (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2')) = 1);
+  END_ENTITY;
+
+--updated from uuid_schema_20230518_01
+  ENTITY uuid_root_node
+    SUBTYPE OF(uuid_internal_node);
+      hash_function : STRING;
+    WHERE
+      WR1 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1')) = 0;
+      WR2 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2')) = 0;
+  END_ENTITY;
+
+
+
+
+
+-- ENTITY uuid_tree_root removed
 
 ENTITY half_space_2d
   SUBTYPE OF (primitive_2d);
@@ -19356,8 +19409,8 @@ WHERE
                     | NOT ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.GEOMETRIC_REPRESENTATION_CONTEXT_WITH_PARAMETER' IN
                            TYPEOF(using_rep.context_of_items)))) =
        0;
-  -- WR2 - parameters are increasing;;;
-  -- WR3 - different end positions;;;
+  -- WR2 - parameters are increasing;
+  -- WR3 - different end positions;
 END_ENTITY;
 
 ENTITY kinematic_path_defined_by_curves
@@ -19463,9 +19516,9 @@ ENTITY language
   SUBTYPE OF (group);
 WHERE
   WR1: SELF\group.name <> '';
-  -- Informal proposition;;;
-  -- - IP1: The name attribute of the language shall be an alpha-3 bibliographic code of ISO 639-2.;;;
-  -- - IP2: If present, the description attribute shall identify a country with an alpha-2 code specified in ISO 3166-1. ;;;
+  -- Informal proposition;
+  -- - IP1: The name attribute of the language shall be an alpha-3 bibliographic code of ISO 639-2.;
+  -- - IP2: If present, the description attribute shall identify a country with an alpha-2 code specified in ISO 3166-1. ;
 END_ENTITY;
 
 ENTITY leader_curve
@@ -24291,13 +24344,13 @@ ENTITY path_area_with_parameters
   SUBTYPE OF (complex_area, mapped_item);
 WHERE
   WR1: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.CURVE' IN TYPEOF(SELF\mapped_item.mapping_target);
-  -- the mapping source must be a curve (open or closed);;;
-  -- no the mapping target must be a curve (open or closed);;;
-  -- wr2: the mapping_source.mapped_representation must be curve_style_parameters_representation;;;;
+  -- the mapping source must be a curve (open or closed);
+  -- no the mapping target must be a curve (open or closed);
+  -- wr2: the mapping_source.mapped_representation must be curve_style_parameters_representation;
   WR2: 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.CURVE_STYLE_PARAMETERS_REPRESENTATION' IN
        TYPEOF(SELF\mapped_item.mapping_source\representation_map.mapped_representation);
   WR3: SELF\mapped_item.mapping_source\representation_map.mapping_origin\representation_item.name = 'curve width';
-  -- don't reall care on mapping_source.mapping_origin. Best to make it the line-width;;;
+  -- don't reall care on mapping_source.mapping_origin. Best to make it the line-width;
 END_ENTITY;
 
 ENTITY path_feature_component
@@ -29985,21 +30038,21 @@ ENTITY simplified_counterbore_hole_definition
   SUBTYPE OF (counterbore_hole_definition);
 WHERE
   WR1: SIZEOF(SELF\explicit_composite_hole.placement\representation.items) = 1;
-  -- There shall be exactly one item in the representation.;;;
+  -- There shall be exactly one item in the representation.;
 END_ENTITY;
 
 ENTITY simplified_counterdrill_hole_definition
   SUBTYPE OF (counterdrill_hole_definition);
 WHERE
   WR1: SIZEOF(SELF\explicit_composite_hole.placement\representation.items) = 1;
-  -- There shall be exactly one item in the representation.;;;
+  -- There shall be exactly one item in the representation.;
 END_ENTITY;
 
 ENTITY simplified_countersink_hole_definition
   SUBTYPE OF (countersink_hole_definition);
 WHERE
   WR1: SIZEOF(SELF\explicit_composite_hole.placement\representation.items) = 1;
-  -- There shall be exactly one item in the representation.;;;
+  -- There shall be exactly one item in the representation.;
 END_ENTITY;
 
 ENTITY simplified_spotface_hole_definition
@@ -33435,9 +33488,9 @@ WHERE
                            TYPEOF(it)))) =
        0;
   WR2: NOT ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.DEFINITIONAL_REPRESENTATION_RELATIONSHIP' IN TYPEOF(SELF));
-  -- IP1: A member of topology_to_geometry_model_association shall be associated;;;
-  -- only with a product_definition whose ;;;
-  -- application_context_element.name = 'wiring harness assembly design' ;;;
+  -- IP1: A member of topology_to_geometry_model_association shall be associated;
+  -- only with a product_definition whose ;
+  -- application_context_element.name = 'wiring harness assembly design' ;
 END_ENTITY;
 
 ENTITY toroidal_surface
