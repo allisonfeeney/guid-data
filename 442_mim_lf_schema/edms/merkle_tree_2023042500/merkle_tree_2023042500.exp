@@ -1,0 +1,113 @@
+SCHEMA MERKLE_TREE;
+
+(*
+[[uuid_tree_node]]
+Only leaf node specifies data content, which is proposed to be a
+v5_uuid_attribute.
+*)
+  ENTITY uuid_tree_node
+    ABSTRACT;
+      node_1 : uuid_tree_node;
+      node_2 : uuid_tree_node;
+      uuid   : STRING (36) FIXED;
+    INVERSE
+      owner  : SET [0:1] OF uuid_tree_node FOR node_1;
+    WHERE
+      WR1 : node_1 <> node_2;
+  END_ENTITY;
+
+(*
+[[uuid_leaf_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+  ENTITY uuid_leaf_node
+    SUBTYPE OF(uuid_tree_node);
+      data         : v5_uuid_attribute;
+    DERIVE
+      leaf_operand : STRING (1) FIXED := '0';
+    WHERE
+      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
+      WR2 : SIZEOF(owner) = 1;
+  END_ENTITY;
+
+  ENTITY v5_uuid_attribute;
+  END_ENTITY;
+
+(*
+[[uuid_internal_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+  ENTITY uuid_internal_node
+    SUBTYPE OF(uuid_tree_node);
+    DERIVE
+      internal_operand : STRING (1) FIXED := '1';
+    WHERE
+      WR1 : EXISTS(node_1) AND EXISTS(node_2);
+      WR2 : SIZEOF(owner) = 1;
+  END_ENTITY;
+
+(*
+[[uuid_root_node]]
+The root node hash shall be different from the leaf node hash.
+reference: Tree Hash EXchange format (THEX)
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
+  ENTITY uuid_root_node
+    SUBTYPE OF(uuid_internal_node);
+      hash_function : STRING;
+    WHERE
+      WR1 : SIZEOF(owner) = 0;
+  END_ENTITY;
+(*
+*Attribute definitions*
+[[hash_function]]
+temporarily typing hash function as a string. Need to specialize as a urn.
+*Item Property Description Constraint*
+[[WR1]]
+There shall be no owner for a root node.
+*)
+
+END_SCHEMA;

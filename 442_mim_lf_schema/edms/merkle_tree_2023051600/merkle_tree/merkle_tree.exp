@@ -1,0 +1,46 @@
+SCHEMA MERKLE_TREE;
+
+  TYPE uuid = ERROR___OBJECT___;
+  END_TYPE;
+
+  ENTITY uuid_tree_node;
+      node_1        : uuid_tree_node;
+      node_2        : uuid_tree_node;
+      hash_function : STRING;
+      uuid          : uuid;
+    INVERSE
+      owner         : SET OF uuid_tree_node FOR node_1;
+  END_ENTITY;
+(*
+*Attribute definitions*
+[[hash_function]]
+temporarily typing hash function as a string. Need to specialize as a urn.
+*)
+
+  ENTITY uuid_leaf_node
+    SUBTYPE OF(uuid_tree_node);
+      data : v5_uuid_attribute;
+    WHERE
+      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2);;
+      WR2 : SIZEOF(owner) = 1;;
+  END_ENTITY;
+
+  ENTITY v5_uuid_attribute;
+  END_ENTITY;
+
+  ENTITY uuid_root_node
+    SUBTYPE OF(uuid_tree_node);
+    WHERE
+      WR1 : EXISTS (node_1) AND EXISTS(node_2);;
+      WR2 : SIZEOF(owner) = 0;;
+  END_ENTITY;
+(*
+*Item Property Description Constraint*
+[[WR1]]
+Both child nodes shall exist for the root note.
+
+[[WR2]]
+There shall be no owner for a root node.
+*)
+
+END_SCHEMA;
