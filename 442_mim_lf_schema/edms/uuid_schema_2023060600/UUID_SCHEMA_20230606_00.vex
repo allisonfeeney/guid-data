@@ -1,0 +1,1210 @@
+ISO-10303-21;
+HEADER;
+
+/******************************************************************************************
+* STEP Physical File produced by: The EXPRESS Data Manager Version 5.94.203 RC1 : 12 Aug 2022
+* Module:                         EDMstepFileFactory/EDMstandAlone
+* Creation date:                  Thu Jun  8 17:26:52 2023
+* Host:                           WIN-RQDBUSR1IPU
+* Database:                       C:\edms\edmdb\db_2022_08_17_00
+* Database version:               5207
+* Database creation date:         Wed Aug 17 10:34:33 2022
+* Schema:                         EXPRESS_G
+* Model:                          EDMvisualExpress.UUID_SCHEMA_20230606_00
+* Model creation date:            Thu Jun  8 17:05:24 2023
+* Header model:                   
+* EDMuser:                        sdai-user
+* EDMgroup:                       sdai-group
+* License ID and type:            10542 : Project license. Expiry date: 10 Aug 2032
+* EDMstepFileFactory options:     00
+******************************************************************************************/
+
+FILE_DESCRIPTION((''),'2;1');
+FILE_NAME(
+'C:\\edms\\edmdb\\db_2022_08_17_00.EDMvisualExpress.UUID_SCHEMA_20230606_00'
+
+,
+          '2023-06-08T17:26:52',
+          ('ANONYMOUS USER'),
+          ('ANONYMOUS ORGANISATION'),
+          'The EXPRESS Data Manager Version 5.94.203 RC1 : 12 Aug 2022',
+          '',
+          '');
+FILE_SCHEMA(('EXPRESS_G'));
+ENDSEC;
+
+DATA;
+#1= SCHEMATA(268435584,'UUID_SCHEMA_20230606_00',$,65614,$,$,0,#2,0.3,
+246.66667,175.86667,(#320,#330,#340,#350,#587,#606,#630,#646,#666,#697,
+#709,#725,#368,#359,#566,#387,#398,#416,#429,#445,#481,#490,#503,#791,
+#801,#811,#821,#831,#841,#851,#861,#871,#881,#891,#901,#911,#921,#931,
+#941,#951,#961,#971,#981,#991,#1001,#1011,#1021,#1031,#1041,#1051,#1061,
+#1071,#1081,#1091,#1136,#1157,#1161,#1197,#1203,#1209,#1246,#758,#1258,
+#1264),$,$,$,2,(),$,2,'','');
+#2= SETTINGS(0,16577284,16577280,#3,$,#5,#15,#24,#34,#44,#54,#64,#74,#84
+,#93,#102,#111,#120,#129,#138,#140,10.,10.,#153,#154,#6,#317,#143);
+#3= BACKGROUND_SET(#4,1);
+#4= COLOR(255,255,255);
+#5= SELECTION_SET(7);
+#6= RECT_SET(#7,#9,#11,128,#12,#14);
+#7= LINE_SET(#8,3.,0);
+#8= COLOR(0,0,0);
+#9= TEXT_SET(1,40,40.,'Times New Roman',#10);
+#10= COLOR(0,0,0);
+#11= VLINE(0,0.);
+#12= BACKGROUND_SET(#13,1);
+#13= COLOR(255,255,255);
+#14= WORLD_POINT(250.,100.);
+#15= RECT_SET(#16,#18,#20,128,#21,#23);
+#16= LINE_SET(#17,3.,0);
+#17= COLOR(0,0,0);
+#18= TEXT_SET(1,6,40.,'Times New Roman',#19);
+#19= COLOR(0,0,0);
+#20= VLINE(0,0.);
+#21= BACKGROUND_SET(#22,1);
+#22= COLOR(255,255,255);
+#23= WORLD_POINT(250.,100.);
+#24= PLINE_SET(#25,#27,#29);
+#25= LINE_SET(#26,10.,0);
+#26= COLOR(0,0,0);
+#27= TEXT_SET(1,6,40.,'Times New Roman',#28);
+#28= COLOR(0,0,0);
+#29= CIRCLE_SET(#30,#32,12.,0);
+#30= LINE_SET(#31,3.,0);
+#31= COLOR(0,0,0);
+#32= BACKGROUND_SET(#33,0);
+#33= COLOR(255,255,255);
+#34= PLINE_SET(#35,#37,#39);
+#35= LINE_SET(#36,3.,0);
+#36= COLOR(0,0,0);
+#37= TEXT_SET(1,66,30.,'Arial',#38);
+#38= COLOR(0,0,0);
+#39= CIRCLE_SET(#40,#42,12.,0);
+#40= LINE_SET(#41,3.,0);
+#41= COLOR(0,0,0);
+#42= BACKGROUND_SET(#43,0);
+#43= COLOR(255,255,255);
+#44= PLINE_SET(#45,#47,#49);
+#45= LINE_SET(#46,3.,1);
+#46= COLOR(0,0,0);
+#47= TEXT_SET(1,66,30.,'Arial',#48);
+#48= COLOR(0,0,0);
+#49= CIRCLE_SET(#50,#52,12.,0);
+#50= LINE_SET(#51,3.,0);
+#51= COLOR(0,0,0);
+#52= BACKGROUND_SET(#53,0);
+#53= COLOR(255,255,255);
+#54= PLINE_SET(#55,#57,#59);
+#55= LINE_SET(#56,3.,0);
+#56= COLOR(0,0,0);
+#57= TEXT_SET(1,66,30.,'Arial',#58);
+#58= COLOR(0,0,0);
+#59= CIRCLE_SET(#60,#62,12.,0);
+#60= LINE_SET(#61,3.,0);
+#61= COLOR(0,0,0);
+#62= BACKGROUND_SET(#63,0);
+#63= COLOR(255,255,255);
+#64= PLINE_SET(#65,#67,#69);
+#65= LINE_SET(#66,3.,0);
+#66= COLOR(0,0,0);
+#67= TEXT_SET(1,40,30.,'Times new roman',#68);
+#68= COLOR(0,0,0);
+#69= CIRCLE_SET(#70,#72,12.,0);
+#70= LINE_SET(#71,3.,0);
+#71= COLOR(0,0,0);
+#72= BACKGROUND_SET(#73,0);
+#73= COLOR(255,255,255);
+#74= PLINE_SET(#75,#77,#79);
+#75= LINE_SET(#76,6.,0);
+#76= COLOR(0,0,255);
+#77= TEXT_SET(1,40,30.,'Times new roman',#78);
+#78= COLOR(0,0,0);
+#79= CIRCLE_SET(#80,#82,12.,0);
+#80= LINE_SET(#81,3.,0);
+#81= COLOR(0,0,255);
+#82= BACKGROUND_SET(#83,0);
+#83= COLOR(255,255,255);
+#84= RECT_SET(#85,#87,#89,128,#90,#92);
+#85= LINE_SET(#86,3.,4);
+#86= COLOR(0,0,0);
+#87= TEXT_SET(1,6,30.,'Times New Roman',#88);
+#88= COLOR(0,0,0);
+#89= VLINE(0,0.);
+#90= BACKGROUND_SET(#91,1);
+#91= COLOR(255,255,255);
+#92= WORLD_POINT(150.,50.);
+#93= RECT_SET(#94,#96,#98,128,#99,#101);
+#94= LINE_SET(#95,3.,4);
+#95= COLOR(0,0,0);
+#96= TEXT_SET(1,6,30.,'Times New Roman',#97);
+#97= COLOR(0,0,0);
+#98= VLINE(1,20.);
+#99= BACKGROUND_SET(#100,1);
+#100= COLOR(255,255,255);
+#101= WORLD_POINT(150.,50.);
+#102= RECT_SET(#103,#105,#107,128,#108,#110);
+#103= LINE_SET(#104,3.,4);
+#104= COLOR(0,0,0);
+#105= TEXT_SET(1,6,30.,'Times New Roman',#106);
+#106= COLOR(0,0,0);
+#107= VLINE(2,20.);
+#108= BACKGROUND_SET(#109,1);
+#109= COLOR(255,255,255);
+#110= WORLD_POINT(150.,50.);
+#111= RECT_SET(#112,#114,#116,128,#117,#119);
+#112= LINE_SET(#113,3.,0);
+#113= COLOR(0,0,0);
+#114= TEXT_SET(1,6,30.,'Times New Roman',#115);
+#115= COLOR(0,0,0);
+#116= VLINE(2,20.);
+#117= BACKGROUND_SET(#118,1);
+#118= COLOR(255,255,255);
+#119= WORLD_POINT(150.,50.);
+#120= RECT_SET(#121,#123,#125,256,#126,#128);
+#121= LINE_SET(#122,3.,0);
+#122= COLOR(0,0,0);
+#123= TEXT_SET(1,6,30.,'Times New Roman',#124);
+#124= COLOR(0,0,0);
+#125= VLINE(0,30.);
+#126= BACKGROUND_SET(#127,1);
+#127= COLOR(255,255,255);
+#128= WORLD_POINT(200.,100.);
+#129= RECT_SET(#130,#132,#134,256,#135,#137);
+#130= LINE_SET(#131,3.,0);
+#131= COLOR(0,0,0);
+#132= TEXT_SET(1,6,30.,'Times New Roman',#133);
+#133= COLOR(0,0,0);
+#134= VLINE(0,30.);
+#135= BACKGROUND_SET(#136,1);
+#136= COLOR(255,255,255);
+#137= WORLD_POINT(200.,100.);
+#138= VISIBLE_SET(());
+#140= PAGE_SET(#141,250.,250.,250.,250.,50.,50.,1600.,2370.,3,1,2159.,
+2794.,0,0);
+#141= LINE_SET(#142,15.,0);
+#142= COLOR(0,128,128);
+#143= PLINE_SET(#144,#146,#148);
+#144= LINE_SET(#145,10.,0);
+#145= COLOR(0,0,0);
+#146= TEXT_SET(0,0,0.,'',#147);
+#147= COLOR(0,0,0);
+#148= CIRCLE_SET(#149,#151,12.,0);
+#149= LINE_SET(#150,3.,0);
+#150= COLOR(0,0,0);
+#151= BACKGROUND_SET(#152,0);
+#152= COLOR(255,255,255);
+#153= SAVE_SET(1,600,1,10);
+#154= REPORT_SET(1.,63,(0,4,0,1,3,2,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,6,7,8,0,0,0,0),(#157,#159,#161,#163,#165,#167,#169,#171,#173,
+#175,#177,#179,#181,#183,#185,#187,#189,#191,#193,#195,#197,#199,#201,
+#203,#205,#207,#209),'$LICENSE_TO - $DATE',
+'Figure D.$PAGE_NR  - $SCHEMA_NAME  EXPRESS-G diagram $PAGE_NR  of $LAST_PAGE_NR'
+,('EXPRESS specification:','EXPRESS specification:',
+'EXPRESS specification:','EXPRESS specification:',
+'EXPRESS specification:','EXPRESS specification:',
+'EXPRESS specification:','EXPRESS specification:',
+'EXPRESS specification:','Attribute definitions:','Formal Propositions:'
+,'EXPRESS specification:','EXPRESS specification:'),#212);
+#157= STYLE_SET('Express_g Header','Times New Roman',4.,0,0,256,0.,0.,0.
+,0.,());
+#159= STYLE_SET('Express_g Footer','Times New Roman',4.,0,0,256,0.,0.,0.
+,0.,());
+#161= STYLE_SET('Heading 1','Times New Roman',6.,0,0,264,0.,0.,4.,4.,()
+);
+#163= STYLE_SET('Heading 2','Times New Roman',6.,0,0,256,0.,0.,4.,4.,()
+);
+#165= STYLE_SET('Annex','Times New Roman',6.,0,0,256,0.,0.,4.,4.,());
+#167= STYLE_SET('Item Description','Times New Roman',4.,0,0,0,0.,0.,0.,
+0.,());
+#169= STYLE_SET('Item Property Description','Times New Roman',4.,0,0,0,
+60.,-55.,4.,0.,(57.5));
+#171= STYLE_SET('Item Property Description Constraint','Times New Roman'
+,4.,0,0,0,40.,-35.,4.,0.,());
+#173= STYLE_SET('Item Specification','Times New Roman',4.,0,0,512,0.,0.,
+2.,2.,());
+#175= STYLE_SET('Definition','Courier New',3.8,0,0,0,0.,0.,0.,0.,());
+#177= STYLE_SET('Item Definition','Courier New',3.8,0,0,0,10.,-5.,0.,0.,
+());
+#179= STYLE_SET('Item Definition Heading','Courier New',3.8,0,0,0,50.,
+-40.,0.,0.,());
+#181= STYLE_SET('Item Definition Scope','Courier New',3.8,0,0,0,5.,0.,0.
+,0.,());
+#183= STYLE_SET('Item Expression','Courier New',3.8,0,0,0,10.,0.,0.,0.,(
+));
+#185= STYLE_SET('Item Content','Courier New',3.8,0,0,0,72.5,-62.5,0.,0.,
+(70.));
+#187= STYLE_SET('Item Content Constraint','Courier New',3.8,0,0,0,32.5,
+-22.5,0.,0.,(30.));
+#189= STYLE_SET('Heading 2','Times New Roman',6.,0,0,256,0.,0.,4.,4.,()
+);
+#191= STYLE_SET('User Style 1','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#193= STYLE_SET('User Style 2','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#195= STYLE_SET('User Style 3','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#197= STYLE_SET('User Style 4','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#199= STYLE_SET('User Style 5','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#201= STYLE_SET('User Style 6','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#203= STYLE_SET('User Style 7','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#205= STYLE_SET('User Style 8','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#207= STYLE_SET('User Style 9','Times New Roman',4.,0,0,0,0.,0.,0.,0.,()
+);
+#209= STYLE_SET('User Style 10','Times New Roman',4.,0,0,0,0.,0.,0.,0.,(
+));
+#212= REPORT_HTML('http://www.epmtech.jotne.com/',(#214,#216,#218,#220,
+#222,#224,#226,#228,#230,#232,#234,#236),(#239,#243),#247,#248,#250,$);
+#214= FONT_HTML('Times New Roman',4,#215);
+#215= OUTLOOK_HTML(1,0);
+#216= FONT_HTML('Arial',3,#217);
+#217= OUTLOOK_HTML(8,255);
+#218= FONT_HTML('Times New Roman',5,#219);
+#219= OUTLOOK_HTML(1,0);
+#220= FONT_HTML('Times New Roman',5,#221);
+#221= OUTLOOK_HTML(1,0);
+#222= FONT_HTML('Times New Roman',3,#223);
+#223= OUTLOOK_HTML(0,0);
+#224= FONT_HTML('Times New Roman',3,#225);
+#225= OUTLOOK_HTML(4,0);
+#226= FONT_HTML('Courier New',3,#227);
+#227= OUTLOOK_HTML(0,0);
+#228= FONT_HTML('Times New Roman',4,#229);
+#229= OUTLOOK_HTML(1,0);
+#230= FONT_HTML('Times New Roman',3,#231);
+#231= OUTLOOK_HTML(1,0);
+#232= FONT_HTML('Times New Roman',3,#233);
+#233= OUTLOOK_HTML(0,0);
+#234= FONT_HTML('Times New Roman',4,#235);
+#235= OUTLOOK_HTML(1,0);
+#236= FONT_HTML('Times New Roman',4,#237);
+#237= OUTLOOK_HTML(1,0);
+#239= DESCRIPTION_CONTENT_HTML(#240,#242,30);
+#240= FONT_HTML('Times New Roman',3,#241);
+#241= OUTLOOK_HTML(0,0);
+#242= OUTLOOK_HTML(1,0);
+#243= DESCRIPTION_CONTENT_HTML(#244,#246,20);
+#244= FONT_HTML('Times New Roman',3,#245);
+#245= OUTLOOK_HTML(0,0);
+#246= OUTLOOK_HTML(1,0);
+#247= BACKGROUND_HTML(1,'.\\html\\img\\background.gif',16777215);
+#248= EXPRESS_HTML(63,#249,100,2,2,2,30,20);
+#249= OUTLOOK_HTML(1,0);
+#250= DIAGRAM_HTML(6,5,50,1,1,0,600);
+#251= NAVBAR_HTML('home-navbar',
+'.\\visualExpress\\html\\img\\home_navbar.gif',500,24,(#253,#254,#255,
+#256));
+#253= IMAGE_MAP_HTML('$HOME',0,0,89,23);
+#254= IMAGE_MAP_HTML('$SCHEMA',90,0,199,23);
+#255= IMAGE_MAP_HTML('$EXPRESS-G',200,0,349,23);
+#256= IMAGE_MAP_HTML('$REFERENCES',350,0,499,23);
+#257= NAVBAR_HTML('schema-navbar',
+'.\\visualExpress\\html\\img\\schema_navbar_e2.gif',629,46,(#259,#260,
+#261,#262,#263,#264,#265,#266,#267,#268,#269));
+#259= IMAGE_MAP_HTML('$HOME',0,0,63,22);
+#260= IMAGE_MAP_HTML('$SCHEMA INTERFACES',64,0,197,22);
+#261= IMAGE_MAP_HTML('$CONSTANTS',198,0,287,22);
+#262= IMAGE_MAP_HTML('$ENTITIES',288,0,356,22);
+#263= IMAGE_MAP_HTML('$DEFINED TYPES',357,0,475,22);
+#264= IMAGE_MAP_HTML('$SELECT TYPES',0,23,70,44);
+#265= IMAGE_MAP_HTML('$ENUMERATIONS TYPES',71,23,171,44);
+#266= IMAGE_MAP_HTML('$RULES',172,23,231,44);
+#267= IMAGE_MAP_HTML('$FUNCTIONS',232,23,315,44);
+#268= IMAGE_MAP_HTML('$PROCEDURES',316,23,475,44);
+#269= IMAGE_MAP_HTML('$SUBTYPE CONSTRAINTS',476,0,628,22);
+#270= NAVBAR_HTML('entity-navbar',
+'.\\visualExpress\\html\\img\\entity_navbar.gif',625,24,(#272,#273,#274,
+#275,#276,#277,#278,#279));
+#272= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#273= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#274= IMAGE_MAP_HTML('$DIAGRAM',142,0,244,23);
+#275= IMAGE_MAP_HTML('$DEFINITION',245,0,323,23);
+#276= IMAGE_MAP_HTML('$ATTRIBUTE DESCRIPTION',324,0,398,23);
+#277= IMAGE_MAP_HTML('$CONSTRAINT DESCRIPTION',399,0,442,23);
+#278= IMAGE_MAP_HTML('$INHERITANCE',443,0,526,23);
+#279= IMAGE_MAP_HTML('$REFERENCES',527,0,623,23);
+#280= NAVBAR_HTML('type-navbar',
+'.\\visualExpress\\html\\img\\type_navbar.gif',466,24,(#282,#283,#284,
+#285,#286,#287));
+#282= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#283= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#284= IMAGE_MAP_HTML('$DIAGRAM',142,0,244,23);
+#285= IMAGE_MAP_HTML('$DEFINITION',245,0,323,23);
+#286= IMAGE_MAP_HTML('$CONSTRAINT DESCRIPTION',324,0,367,23);
+#287= IMAGE_MAP_HTML('$REFERENCES',368,0,464,23);
+#288= NAVBAR_HTML('rule-navbar',
+'.\\visualExpress\\html\\img\\rule_navbar.gif',363,24,(#290,#291,#292,
+#293,#294));
+#290= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#291= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#292= IMAGE_MAP_HTML('$DEFINITION',142,0,220,23);
+#293= IMAGE_MAP_HTML('$CONSTRAINT DESCRIPTION',221,0,264,23);
+#294= IMAGE_MAP_HTML('$REFERENCES',265,0,361,23);
+#295= NAVBAR_HTML('expression-navbar',
+'.\\visualExpress\\html\\img\\expression_navbar.gif',319,24,(#297,#298,
+#299,#300));
+#297= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#298= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#299= IMAGE_MAP_HTML('$DEFINITION',142,0,221,23);
+#300= IMAGE_MAP_HTML('$REFERENCES',222,0,318,23);
+#301= NAVBAR_HTML('Diagram-Navbar',
+'.\\visualExpress\\html\\img\\diagram_navbar.gif',224,24,(#303,#304,#305
+));
+#303= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#304= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#305= IMAGE_MAP_HTML('$DIAGRAM OVERVIEW',142,0,222,23);
+#306= NAVBAR_HTML('Diagram-Overview-Navbar',
+'.\\visualExpress\\html\\img\\diagram_overview_navbar.gif',143,24,(#308,
+#309));
+#308= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#309= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#310= NAVBAR_HTML('Subtype-Constraint-Navbar',
+'.\\visualExpress\\html\\img\\subtype_constraint_navbar.gif',422,24,(
+#312,#313,#314,#315,#316));
+#312= IMAGE_MAP_HTML('$HOME',0,0,62,23);
+#313= IMAGE_MAP_HTML('$SCHEMA',63,0,141,23);
+#314= IMAGE_MAP_HTML('$DIAGRAM',142,0,244,23);
+#315= IMAGE_MAP_HTML('$DEFINITION',245,0,323,23);
+#316= IMAGE_MAP_HTML('$REFERENCES',324,0,420,23);
+#317= EXPRESS_SET(256);
+#320= ENTITIES(1,165,$,$,#322,(),(),(),$,$,0,#328,$,#321);
+#321= INTERFACE_TO($,$);
+#322= TEXT(22,5,$,$,'characterized_object',
+'characterized_\X\0D\X\0Aobject',#323);
+#323= TEXT_LAYOUT(125.,55.333335,229.,92.,#324);
+#324= TEXT_TYPE(1,6);
+#328= TYPE_LAYOUT(#329);
+#329= RECTANGLE(3858.6667,56.791663,250.,110.66667);
+#330= ENTITIES(1,165,$,$,#332,(),(),(),$,$,0,#338,$,#331);
+#331= INTERFACE_TO($,$);
+#332= TEXT(22,5,$,$,'general_property','general_\X\0D\X\0Aproperty',#333
+);
+#333= TEXT_LAYOUT(125.,55.333335,136.,92.,#334);
+#334= TEXT_TYPE(1,6);
+#338= TYPE_LAYOUT(#339);
+#339= RECTANGLE(3268.,26.725,250.,110.66667);
+#340= ENTITIES(1,165,$,$,#342,(),(),(),$,$,0,#348,$,#341);
+#341= INTERFACE_TO($,$);
+#342= TEXT(22,5,$,$,'product','product',#343);
+#343= TEXT_LAYOUT(125.,51.133335,120.,46.,#344);
+#344= TEXT_TYPE(1,6);
+#348= TYPE_LAYOUT(#349);
+#349= RECTANGLE(3550.6667,46.858333,250.,102.26667);
+#350= ENTITIES(1,205,#758,$,#354,(#358),(#583,#629),(#691),(#754),$,0,
+#756,#352,#351);
+#351= INTERFACE_TO($,$);
+#352= COMMENT(0,33,$,$,#353,$);
+#353= TEXT(22,33,$,$,
+'A guid_attribute associates a UUID with an ordered collection of product data items.'
+,$,$);
+#354= TEXT(22,5,$,$,'uuid_attribute','(AE)\X\0D\X\0Auuid_attribute',#355
+);
+#355= TEXT_LAYOUT(328.33333,55.,223.,92.,#356);
+#356= TEXT_TYPE(1,6);
+#358= SUPERTYPE_DEF(11,1,$,$,#359);
+#359= ENTITIES(1,229,$,$,#363,(#367),(#548),(#561),$,(#578,#579),0,#580,
+#361,#360);
+#360= INTERFACE_TO($,$);
+#361= COMMENT(0,33,$,$,#362,$);
+#362= TEXT(22,33,$,$,
+'The inherited hash function for leaf nodes shall differ from that for internal and root nodes.\X\0D\X\0A\X\0D\X\0Areference: Tree Hash EXchange format (THEX)\X\0D\X\0A\X\0D\X\0AIn order to protect against collisions between leaf hashes and internal hashes, different hash constructs are used to hash the leaf nodes and the internal nodes. The same hash algorithm is used as the basis of each construct, but a single ''1'' byte in network byte order, or 0x01 is prepended to the input of the internal node hashes, and a single ''0'' byte, or 0x00 is prepended to the input of the leaf node hashes.\X\0D\X\0A\X\0D\X\0ALet H() be the secure hash algorithm, for example SHA-1.\X\0D\X\0A\X\0D\X\0Ainternal hash function = IH(X) = H(0x01, X)\X\0D\X\0A\X\0D\X\0Aleaf hash function = LH(X) = H(0x00, X)'
+,$,$);
+#363= TEXT(22,5,$,$,'uuid_leaf_node','*uuid_leaf_node',#364);
+#364= TEXT_LAYOUT(155.66667,55.333334,264.,46.,#365);
+#365= TEXT_TYPE(1,6);
+#367= SUPERTYPE_DEF(11,1,$,$,#368);
+#368= ENTITIES(1,197,$,$,#372,(),(#377),(#472,#523,#533),$,(#544),0,#545
+,#370,#369);
+#369= INTERFACE_TO($,$);
+#370= COMMENT(0,33,$,$,#371,$);
+#371= TEXT(22,33,$,$,
+'Only leaf node specifies data content, which is proposed to be a v5_uuid_attribute.'
+,$,$);
+#372= TEXT(22,5,$,$,'uuid_tree_node','(AE)\X\0D\X\0A*uuid_tree_node',
+#373);
+#373= TEXT_LAYOUT(285.,112.66667,264.,92.,#374);
+#374= TEXT_TYPE(1,6);
+#377= SUBTYPE_DEF(13,5,$,$,#378,#466);
+#378= TREE(14,5,$,$,2,(#380,#386));
+#380= SUBTYPE_DEF(13,5,$,$,#359,#381);
+#381= OBJECT_LINE_LAYOUT(#382,#383);
+#382= TEXT_PLACEMENT(0,0);
+#383= WORLD_PLINE(#384,1,$,(442.33333),-1.,0.);
+#384= WORLD_POINT(2045.7333,690.33334);
+#386= SUBTYPE_DEF(13,5,$,$,#387,#461);
+#387= ENTITIES(1,229,$,$,#391,(#395),(#397),(#440),$,(#457,#458),0,#459,
+#389,#388);
+#388= INTERFACE_TO($,$);
+#389= COMMENT(0,33,$,$,#390,$);
+#390= TEXT(22,33,$,$,
+'The inherited hash function for leaf nodes shall differ from that for internal and root nodes.\X\0D\X\0A\X\0D\X\0Areference: Tree Hash EXchange format (THEX)\X\0D\X\0A\X\0D\X\0AIn order to protect against collisions between leaf hashes and internal hashes, different hash constructs are used to hash the leaf nodes and the internal nodes. The same hash algorithm is used as the basis of each construct, but a single ''1'' byte in network byte order, or 0x01 is prepended to the input of the internal node hashes, and a single ''0'' byte, or 0x00 is prepended to the input of the leaf node hashes.\X\0D\X\0A\X\0D\X\0ALet H() be the secure hash algorithm, for example SHA-1.\X\0D\X\0A\X\0D\X\0Ainternal hash function = IH(X) = H(0x01, X)\X\0D\X\0A\X\0D\X\0Aleaf hash function = LH(X) = H(0x00, X)'
+,$,$);
+#391= TEXT(22,5,$,$,'uuid_internal_node','*uuid_internal_\X\0D\X\0Anode'
+,#392);
+#392= TEXT_LAYOUT(163.66667,55.333334,251.,92.,#393);
+#393= TEXT_TYPE(1,6);
+#395= SUPERTYPE_DEF(11,1,$,$,#368);
+#397= SUBTYPE_DEF(13,5,$,$,#398,#434);
+#398= ENTITIES(1,229,$,$,#402,(#406),(),(#409),$,(#428,#431),0,#432,#400
+,#399);
+#399= INTERFACE_TO($,$);
+#400= COMMENT(0,33,$,$,#401,$);
+#401= TEXT(22,33,$,$,
+'The root node hash shall be different from the leaf node hash.\X\0D\X\0Areference: Tree Hash EXchange format (THEX)\X\0D\X\0AIn order to protect against collisions between leaf hashes and internal hashes, different hash constructs are used to hash the leaf nodes and the internal nodes. The same hash algorithm is used as the basis of each construct, but a single ''1'' byte in network byte order, or 0x01 is prepended to the input of the internal node hashes, and a single ''0'' byte, or 0x00 is prepended to the input of the leaf node hashes.\X\0D\X\0A\X\0D\X\0ALet H() be the secure hash algorithm, for example SHA-1.\X\0D\X\0A\X\0D\X\0Ainternal hash function = IH(X) = H(0x01, X)\X\0D\X\0A\X\0D\X\0Aleaf hash function = LH(X) = H(0x00, X)'
+,$,$);
+#402= TEXT(22,5,$,$,'uuid_root_node','*uuid_root_node',#403);
+#403= TEXT_LAYOUT(161.,55.333334,268.,46.,#404);
+#404= TEXT_TYPE(1,6);
+#406= SUPERTYPE_DEF(11,1,$,$,#387);
+#409= ATTRIBUTE_DEF(12,5,$,$,#412,$,$,0,$,(),$,#416,#422,#410,$,$);
+#410= COMMENT(0,33,$,$,#411,$);
+#411= TEXT(22,33,$,$,
+'temporarily typing hash function as a string. Need to specialize as a urn.'
+,$,$);
+#412= TEXT(22,5,$,$,'hash_function','hash_function ',#413);
+#413= TEXT_LAYOUT(-4.1510363,-20.725793,195.,35.,#414);
+#414= TEXT_TYPE(1,66);
+#416= PRIMITIVE_TYPE(2,133,$,$,#417,4,#420,0);
+#417= TEXT(22,5,$,$,'STRING','STRING',#418);
+#418= TEXT_LAYOUT(65.,27.,109.,34.,#419);
+#419= TEXT_TYPE(1,6);
+#420= TYPE_LAYOUT(#421);
+#421= RECTANGLE(2952.0667,928.,150.,54.);
+#422= OBJECT_LINE_LAYOUT(#423,#424);
+#423= TEXT_PLACEMENT(1,1);
+#424= WORLD_PLINE(#425,1,$,(-108.27421,133.46238,-1.3924596,65.537623),
+-1.,0.);
+#425= WORLD_POINT(2753.0667,1064.6667);
+#428= WHERE_RULE('WR1',
+'SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1)) = 0;',#429);
+#429= COMMENT(0,33,$,$,#430,$);
+#430= TEXT(22,33,$,$,'There shall be no owner for a root node.',$,$);
+#431= WHERE_RULE('WR2',
+'SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 0;',$);
+#432= TYPE_LAYOUT(#433);
+#433= RECTANGLE(2535.4,1064.6667,322.,110.66667);
+#434= OBJECT_LINE_LAYOUT(#435,#436);
+#435= TEXT_PLACEMENT(0,0);
+#436= WORLD_PLINE(#437,1,$,(90.333332,0.,90.333334),-1.,0.);
+#437= WORLD_POINT(2696.4,884.);
+#440= ATTRIBUTE_DEF(12,5,$,$,#441,$,'''1''',0,$,(),$,#445,#451,$,$,$);
+#441= TEXT(22,5,$,$,'internal_operand','(DER) internal_operand ',#442);
+#442= TEXT_LAYOUT(2.9873018,-54.,324.,35.,#443);
+#443= TEXT_TYPE(1,66);
+#445= PRIMITIVE_TYPE(2,197,$,$,#446,4,#449,-1);
+#446= TEXT(22,5,$,$,'STRING','*STRING',#447);
+#447= TEXT_LAYOUT(71.666667,27.,124.,34.,#448);
+#448= TEXT_TYPE(1,6);
+#449= TYPE_LAYOUT(#450);
+#450= RECTANGLE(2929.4,636.66667,163.33333,54.);
+#451= OBJECT_LINE_LAYOUT(#452,#453);
+#452= TEXT_PLACEMENT(3,1);
+#453= WORLD_PLINE(#454,1,$,(-111.03465,136.0254,1.3679805,35.64127),-1.,
+0.);
+#454= WORLD_POINT(2757.7333,773.33333);
+#457= WHERE_RULE('WR1','EXISTS(node_1) AND EXISTS(node_2)',$);
+#458= WHERE_RULE('WR2',
+'(''UUID_SCHEMA.UUID.TREE_ROOT_NODE'' IN TYPEOF(SELF)) OR (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 1);'
+,$);
+#459= TYPE_LAYOUT(#460);
+#460= RECTANGLE(2532.7333,773.33333,327.33333,110.66667);
+#461= OBJECT_LINE_LAYOUT(#462,#463);
+#462= TEXT_PLACEMENT(0,0);
+#463= WORLD_PLINE(#464,1,$,(82.999999),-1.,0.);
+#464= WORLD_POINT(2696.4,690.33334);
+#466= OBJECT_LINE_LAYOUT(#467,#468);
+#467= TEXT_PLACEMENT(0,0);
+#468= WORLD_PLINE(#469,1,$,(169.),182.66667,650.66667);
+#469= WORLD_POINT(2228.4,521.33333);
+#472= ATTRIBUTE_DEF(12,5,$,$,#473,$,$,0,$,(),$,#477,#518,$,$,$);
+#473= TEXT(22,5,$,$,'identifier','identifier ',#474);
+#474= TEXT_LAYOUT(-90.,0.,121.,35.,#475);
+#475= TEXT_TYPE(1,66);
+#477= PAGE_REF_TO(7,5,$,$,#478,1,#481,0,#516,4);
+#478= TEXT(22,5,$,$,'1,2  uuid','1,2  uuid',#479);
+#479= TEXT_LAYOUT(100.,50.,106.,34.,#480);
+#480= TEXT_TYPE(1,6);
+#481= DEFINED_TYPE(3,205,#503,$,#483,#486,$,#501,$,#482);
+#482= INTERFACE_TO($,$);
+#483= TEXT(22,5,$,$,'uuid','uuid',#484);
+#484= TEXT_LAYOUT(529.,27.,52.,34.,#485);
+#485= TEXT_TYPE(1,6);
+#486= DEFINED_DEF(15,5,$,$,$,#490,#496,#487);
+#487= TEXT(22,5,$,$,'','',#488);
+#488= TEXT_LAYOUT(0.,0.,0.,0.,#489);
+#489= TEXT_TYPE(1,66);
+#490= PRIMITIVE_TYPE(2,197,$,$,#491,4,#494,-36);
+#491= TEXT(22,5,$,$,'STRING','*STRING',#492);
+#492= TEXT_LAYOUT(71.666667,27.,124.,34.,#493);
+#493= TEXT_TYPE(1,6);
+#494= TYPE_LAYOUT(#495);
+#495= RECTANGLE(642.5,23.533333,163.33333,54.);
+#496= OBJECT_LINE_LAYOUT(#497,#498);
+#497= TEXT_PLACEMENT(0,1);
+#498= WORLD_PLINE(#499,1,$,(-76.333333,152.66667,-76.333333),-1.,0.);
+#499= WORLD_POINT(571.5,230.2);
+#501= TYPE_LAYOUT(#502);
+#502= RECTANGLE(42.5,230.2,1058.,54.);
+#503= PAGE_REF(6,5,$,$,#504,0,1,1,#507,(#477),#514);
+#504= TEXT(22,5,$,$,'1,2(2)','1,2(2)',#505);
+#505= TEXT_LAYOUT(100.,50.,73.,34.,#506);
+#506= TEXT_TYPE(1,6);
+#507= PAGE_REF_LINE(10,5,$,$,#481,#508);
+#508= OBJECT_LINE_LAYOUT(#509,#510);
+#509= TEXT_PLACEMENT(0,0);
+#510= WORLD_PLINE(#511,1,$,(-100.66667),-1.,0.);
+#511= WORLD_POINT(184.33333,384.86667);
+#514= TYPE_LAYOUT(#515);
+#515= RECTANGLE(68.166667,384.86667,200.,100.);
+#516= TYPE_LAYOUT(#517);
+#517= RECTANGLE(1826.0667,45.333333,200.,100.);
+#518= OBJECT_LINE_LAYOUT(#519,#520);
+#519= TEXT_PLACEMENT(0,1);
+#520= WORLD_PLINE(#521,1,$,(-150.66667),-1.,0.);
+#521= WORLD_POINT(1924.4,296.);
+#523= ATTRIBUTE_DEF(12,5,$,$,#524,$,$,1,$,(),$,#368,#528,$,$,$);
+#524= TEXT(22,5,$,$,'node_2','node_2 ',#525);
+#525= TEXT_LAYOUT(0.,0.,108.,35.,#526);
+#526= TEXT_TYPE(1,66);
+#528= OBJECT_LINE_LAYOUT(#529,#530);
+#529= TEXT_PLACEMENT(2,1);
+#530= WORLD_PLINE(#531,0,$,(316.66667,-396.,-648.33333,216.66667),-1.,0.
+);
+#531= WORLD_POINT(2426.0667,475.33333);
+#533= ATTRIBUTE_DEF(12,5,$,$,#534,$,$,1,$,(),$,#368,#538,$,$,$);
+#534= TEXT(22,5,$,$,'node_1','node_1 ',#535);
+#535= TEXT_LAYOUT(0.,0.,108.,35.,#536);
+#536= TEXT_TYPE(1,66);
+#538= OBJECT_LINE_LAYOUT(#539,#540);
+#539= TEXT_PLACEMENT(2,1);
+#540= WORLD_PLINE(#541,0,$,(150.,-212.66667,-435.,100.),-1.,0.);
+#541= WORLD_POINT(2426.0667,408.66667);
+#544= WHERE_RULE('WR1','node_1 <> node_2',$);
+#545= TYPE_LAYOUT(#546);
+#546= RECTANGLE(1856.0667,296.,570.,225.33333);
+#548= SUBTYPE_DEF(13,5,$,$,#549,#555);
+#549= PAGE_REF_TO(7,69,$,$,#550,1,#350,0,#553,-1);
+#550= TEXT(22,5,$,$,'1,1  uuid_attribute','1,1  uuid_attribute',#551);
+#551= TEXT_LAYOUT(139.,50.,218.,34.,#552);
+#552= TEXT_TYPE(1,6);
+#553= TYPE_LAYOUT(#554);
+#554= RECTANGLE(1906.7333,1343.3333,278.,100.);
+#555= OBJECT_LINE_LAYOUT(#556,#557);
+#556= TEXT_PLACEMENT(0,0);
+#557= WORLD_PLINE(#558,1,$,(50.,0.,50.),-1.,0.);
+#558= WORLD_POINT(2045.7333,1243.3333);
+#561= ATTRIBUTE_DEF(12,5,$,$,#562,$,'''0''',0,$,(),$,#566,#572,$,$,$);
+#562= TEXT(22,5,$,$,'leaf_operand','(DER) leaf_operand ',#563);
+#563= TEXT_LAYOUT(-52.866778,-52.,273.,35.,#564);
+#564= TEXT_TYPE(1,66);
+#566= PRIMITIVE_TYPE(2,197,$,$,#567,4,#570,-1);
+#567= TEXT(22,5,$,$,'STRING','*STRING',#568);
+#568= TEXT_LAYOUT(74.5,27.,124.,34.,#569);
+#569= TEXT_TYPE(1,6);
+#570= TYPE_LAYOUT(#571);
+#571= RECTANGLE(1693.4,1040.,169.,54.);
+#572= OBJECT_LINE_LAYOUT(#573,#574);
+#573= TEXT_PLACEMENT(1,2);
+#574= WORLD_PLINE(#575,1,$,(-65.666667,-90.933111),-1.,0.);
+#575= WORLD_POINT(1953.3331,1132.6667);
+#578= WHERE_RULE('WR1','NOT (EXISTS (node_1) OR EXISTS(node_2))',$);
+#579= WHERE_RULE('WR2',
+'(SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 1);'
+,$);
+#580= TYPE_LAYOUT(#581);
+#581= RECTANGLE(1890.0667,1132.6667,311.33333,110.66667);
+#583= SUBTYPE_DEF(13,5,$,$,#584,#624);
+#584= TREE(14,5,$,$,2,(#586,#605));
+#586= SUBTYPE_DEF(13,5,$,$,#587,#600);
+#587= ENTITIES(1,229,$,$,#591,(#595),(),(),$,$,0,#598,#589,#588);
+#588= INTERFACE_TO($,$);
+#589= COMMENT(0,33,$,$,#590,$);
+#590= TEXT(22,33,$,$,
+'A v5_guid_attribute is a guid_attribute that provides a UUID that conforms to version 5 of the relevant rfc. The name is not provided. The namespace may not be provided.'
+,$,$);
+#591= TEXT(22,5,$,$,'v5_uuid_attribute','v5_uuid_attribute',#592);
+#592= TEXT_LAYOUT(185.,55.,282.,46.,#593);
+#593= TEXT_TYPE(1,6);
+#595= SUPERTYPE_DEF(11,1,$,$,#350);
+#598= TYPE_LAYOUT(#599);
+#599= RECTANGLE(255.83334,1919.8667,370.,110.);
+#600= OBJECT_LINE_LAYOUT(#601,#602);
+#601= TEXT_PLACEMENT(0,0);
+#602= WORLD_PLINE(#603,1,$,(53.870834),-1.,0.);
+#603= WORLD_POINT(440.83334,1865.9958);
+#605= SUBTYPE_DEF(13,5,$,$,#606,#619);
+#606= ENTITIES(1,229,$,$,#610,(#614),(),(),$,$,0,#617,#608,#607);
+#607= INTERFACE_TO($,$);
+#608= COMMENT(0,33,$,$,#609,$);
+#609= TEXT(22,33,$,$,
+'A v4_guid_attribute is a guid_attribute that provides a UUID that conforms to version 4 of the relevant rfc.'
+,$,$);
+#610= TEXT(22,5,$,$,'v4_uuid_attribute','v4_uuid_attribute',#611);
+#611= TEXT_LAYOUT(185.,55.,282.,46.,#612);
+#612= TEXT_TYPE(1,6);
+#614= SUPERTYPE_DEF(11,1,$,$,#350);
+#617= TYPE_LAYOUT(#618);
+#618= RECTANGLE(500.03334,2043.2334,370.,110.);
+#619= OBJECT_LINE_LAYOUT(#620,#621);
+#620= TEXT_PLACEMENT(0,0);
+#621= WORLD_PLINE(#622,1,$,(177.2375),-1.,0.);
+#622= WORLD_POINT(685.03334,1865.9958);
+#624= OBJECT_LINE_LAYOUT(#625,#626);
+#625= TEXT_PLACEMENT(0,0);
+#626= WORLD_PLINE(#627,1,$,(70.5375),98.7567,244.2);
+#627= WORLD_POINT(539.59004,1795.4583);
+#629= SUBTYPE_DEF(13,5,$,$,#630,#685);
+#630= ENTITIES(1,229,$,$,#634,(#638),(),(#641,#661),$,(#682),0,#683,#632
+,#631);
+#631= INTERFACE_TO($,$);
+#632= COMMENT(0,33,$,$,#633,$);
+#633= TEXT(22,33,$,$,
+'A guid_attribute_with_approximate_location is a guid_attribute that provides an approximate location in cartesian space of an item or items that has a UUID assigned.'
+,$,$);
+#634= TEXT(22,5,$,$,'uuid_attribute_with_approximate_location',
+'*uuid_attribute_with_approximate_location',#635);
+#635= TEXT_LAYOUT(376.66667,68.333335,696.,46.,#636);
+#636= TEXT_TYPE(1,6);
+#638= SUPERTYPE_DEF(11,1,$,$,#350);
+#641= ATTRIBUTE_DEF(12,5,$,$,#642,$,$,0,$,(),$,#646,#656,$,$,$);
+#642= TEXT(22,5,$,$,'location_representation','location_representation '
+,#643);
+#643= TEXT_LAYOUT(-26.666667,-10.,316.,35.,#644);
+#644= TEXT_TYPE(1,66);
+#646= ENTITIES(1,101,$,$,#648,(),(),(),$,$,0,#654,$,#647);
+#647= INTERFACE_TO($,$);
+#648= TEXT(22,5,$,$,'shape_representation','shape_representation',#649);
+#649= TEXT_LAYOUT(190.,50.,334.,46.,#650);
+#650= TEXT_TYPE(1,6);
+#654= TYPE_LAYOUT(#655);
+#655= RECTANGLE(1152.2667,2008.,380.,100.);
+#656= OBJECT_LINE_LAYOUT(#657,#658);
+#657= TEXT_PLACEMENT(1,1);
+#658= WORLD_PLINE(#659,1,$,(-37.258064,246.66667,-72.741935),-1.,0.);
+#659= WORLD_POINT(1095.6,2218.);
+#661= ATTRIBUTE_DEF(12,5,$,$,#662,$,$,0,$,(),$,#666,#676,$,$,$);
+#662= TEXT(22,5,$,$,'approximate_location','approximate_location ',#663
+);
+#663= TEXT_LAYOUT(-16.666667,-13.333333,289.,35.,#664);
+#664= TEXT_TYPE(1,66);
+#666= ENTITIES(1,101,$,$,#668,(),(),(),$,$,0,#674,$,#667);
+#667= INTERFACE_TO($,$);
+#668= TEXT(22,5,$,$,'cartesian_point','cartesian_point',#669);
+#669= TEXT_LAYOUT(175.,50.,242.,46.,#670);
+#670= TEXT_TYPE(1,6);
+#674= TYPE_LAYOUT(#675);
+#675= RECTANGLE(1192.2667,1818.,350.,100.);
+#676= OBJECT_LINE_LAYOUT(#677,#678);
+#677= TEXT_PLACEMENT(1,1);
+#678= WORLD_PLINE(#679,1,$,(-241.42857,341.66667,-58.571429),-1.,0.);
+#679= WORLD_POINT(1025.6,2218.);
+#682= WHERE_RULE('WR1',
+'location_representation IN using_representations(approximate_location)'
+,$);
+#683= TYPE_LAYOUT(#684);
+#684= RECTANGLE(575.6,2218.,753.33333,136.66667);
+#685= OBJECT_LINE_LAYOUT(#686,#687);
+#686= TEXT_PLACEMENT(0,0);
+#687= WORLD_PLINE(#688,1,$,(168.95756,95.933334,253.58412),-1.,256.259);
+#688= WORLD_POINT(856.33333,1795.4583);
+#691= ATTRIBUTE_DEF(12,5,$,$,#692,#695,$,0,$,(),$,#697,#748,$,$,$);
+#692= TEXT(22,5,$,$,'identified_item','identified_item  *L[1:?] ',#693);
+#693= TEXT_LAYOUT(-22.733333,-35.604167,304.,35.,#694);
+#694= TEXT_TYPE(1,66);
+#695= AGGREGATES($,0,'1','0',2);
+#697= SELECTS(4,197,$,$,#701,(#705),$,#746,#699,#698,$,(),.F.,.F.);
+#698= INTERFACE_TO($,$);
+#699= COMMENT(0,33,$,$,#700,$);
+#700= TEXT(22,33,$,$,
+'A guid_attribute_select provides a selection of id_attribute or identification assignment.'
+,$,$);
+#701= TEXT(22,5,$,$,'uuid_attribute_select','uuid_attribute_select',#702
+);
+#702= TEXT_LAYOUT(193.33334,45.333334,244.,34.,#703);
+#703= TEXT_TYPE(1,6);
+#705= SELECT_DEF(16,5,$,$,#706,#740);
+#706= TREE(14,5,$,$,0,(#708,#724));
+#708= SELECT_DEF(16,5,$,$,#709,#719);
+#709= ENTITIES(1,37,$,$,#711,(),(),(),$,$,0,#717,$,#710);
+#710= INTERFACE_TO($,$);
+#711= TEXT(22,5,$,$,'id_attribute','id_attribute',#712);
+#712= TEXT_LAYOUT(125.,50.,183.,46.,#713);
+#713= TEXT_TYPE(1,6);
+#717= TYPE_LAYOUT(#718);
+#718= RECTANGLE(1290.7667,932.26663,250.,100.);
+#719= OBJECT_LINE_LAYOUT(#720,#721);
+#720= TEXT_PLACEMENT(0,0);
+#721= WORLD_PLINE(#722,1,$,(-62.866667),-1.,0.);
+#722= WORLD_POINT(1415.7667,1095.1333);
+#724= SELECT_DEF(16,5,$,$,#725,#735);
+#725= ENTITIES(1,165,$,$,#727,(),(),(),$,$,0,#733,$,#726);
+#726= INTERFACE_TO($,$);
+#727= TEXT(22,5,$,$,'identification_assignment',
+'identification_\X\0D\X\0Aassignment',#728);
+#728= TEXT_LAYOUT(125.,55.,229.,92.,#729);
+#729= TEXT_TYPE(1,6);
+#733= TYPE_LAYOUT(#734);
+#734= RECTANGLE(1004.1,928.93333,250.,110.);
+#735= OBJECT_LINE_LAYOUT(#736,#737);
+#736= TEXT_PLACEMENT(0,0);
+#737= WORLD_PLINE(#738,1,$,(-56.2),-1.,0.);
+#738= WORLD_POINT(1129.1,1095.1333);
+#740= OBJECT_LINE_LAYOUT(#741,#742);
+#741= TEXT_PLACEMENT(0,0);
+#742= WORLD_PLINE(#743,1,$,(-82.866667),159.8334,286.6667);
+#743= WORLD_POINT(1288.9334,1178.);
+#746= TYPE_LAYOUT(#747);
+#747= RECTANGLE(1105.6,1178.,366.66667,90.666667);
+#748= OBJECT_LINE_LAYOUT(#749,#750);
+#749= TEXT_PLACEMENT(1,1);
+#750= WORLD_PLINE(#751,1,$,(-462.125,535.46663),-1.,0.);
+#751= WORLD_POINT(570.13334,1685.4583);
+#754= UNIQUE_RULE('UR1',());
+#756= TYPE_LAYOUT(#757);
+#757= RECTANGLE(271.33333,1685.4583,656.66667,110.);
+#758= PAGE_REF(6,5,$,$,#759,0,0,1,#762,(#549),#769);
+#759= TEXT(22,5,$,$,'1,1(2)','1,1(2)',#760);
+#760= TEXT_LAYOUT(100.,50.,73.,34.,#761);
+#761= TEXT_TYPE(1,6);
+#762= PAGE_REF_LINE(10,5,$,$,#350,#763);
+#763= OBJECT_LINE_LAYOUT(#764,#765);
+#764= TEXT_PLACEMENT(0,0);
+#765= WORLD_PLINE(#766,1,$,(66.,5.62513E-14,66.),-1.,0.);
+#766= WORLD_POINT(373.,1553.4583);
+#769= TYPE_LAYOUT(#770);
+#770= RECTANGLE(273.,1453.4583,200.,100.);
+#771= TEXT(22,5,$,$,'identifier','identifier ',#772);
+#772= TEXT_LAYOUT(0.,0.,121.,35.,#773);
+#773= TEXT_TYPE(1,66);
+#774= TEXT(22,5,$,$,'2,1  isolated_or_leaf_uuid_node',
+'2,1  isolated_or_leaf_uuid_node',#775);
+#775= TEXT_LAYOUT(220.5,50.,381.,34.,#776);
+#776= TEXT_TYPE(1,6);
+#777= TEXT(22,5,$,$,'isolated_or_leaf_uuid_node',
+'isolated_or_leaf_uuid_node',#778);
+#778= TEXT_LAYOUT(271.66667,40.333333,327.,34.,#779);
+#779= TEXT_TYPE(1,6);
+#780= COMMENT(0,33,$,$,#781,$);
+#781= TEXT(22,33,$,$,
+'The inherited hash function for leaf nodes shall differ from that for internal and root nodes.\X\0D\X\0A\X\0D\X\0Areference: Tree Hash EXchange format (THEX)\X\0D\X\0A\X\0D\X\0AIn order to protect against collisions between leaf hashes and internal hashes, different hash constructs are used to hash the leaf nodes and the internal nodes. The same hash algorithm is used as the basis of each construct, but a single ''1'' byte in network byte order, or 0x01 is prepended to the input of the internal node hashes, and a single ''0'' byte, or 0x00 is prepended to the input of the leaf node hashes.\X\0D\X\0A\X\0D\X\0ALet H() be the secure hash algorithm, for example SHA-1.\X\0D\X\0A\X\0D\X\0Ainternal hash function = IH(X) = H(0x01, X)\X\0D\X\0A\X\0D\X\0Aleaf hash function = LH(X) = H(0x00, X)'
+,$,$);
+#782= TEXT(22,5,$,$,'uuid_isolated_node','*uuid_isolated_node',#783);
+#783= TEXT_LAYOUT(190.66667,55.333334,329.,46.,#784);
+#784= TEXT_TYPE(1,6);
+#785= TEXT(22,5,$,$,'hash_function','hash_function ',#786);
+#786= TEXT_LAYOUT(-84.816667,-16.666667,195.,35.,#787);
+#787= TEXT_TYPE(1,66);
+#788= TEXT(22,5,$,$,'2,1(1)','2,1(1)',#789);
+#789= TEXT_LAYOUT(100.,50.,73.,34.,#790);
+#790= TEXT_TYPE(1,6);
+#791= ENTITIES(1,165,$,$,#793,(),(),(),$,$,0,#799,$,#792);
+#792= INTERFACE_TO($,$);
+#793= TEXT(22,5,$,$,'dimensional_location',
+'dimensional_\X\0D\X\0Alocation',#794);
+#794= TEXT_LAYOUT(125.,55.333333,214.,92.,#795);
+#795= TEXT_TYPE(1,6);
+#799= TYPE_LAYOUT(#800);
+#800= RECTANGLE(3913.,586.65833,250.,110.66667);
+#801= ENTITIES(1,229,$,$,#803,(),(),(),$,$,0,#809,$,#802);
+#802= INTERFACE_TO($,$);
+#803= TEXT(22,5,$,$,'characterized_object_relationship',
+'characterized_\X\0D\X\0Aobject_relationship',#804);
+#804= TEXT_LAYOUT(174.33334,66.,302.,92.,#805);
+#805= TEXT_TYPE(1,6);
+#809= TYPE_LAYOUT(#810);
+#810= RECTANGLE(3936.,786.65833,348.66667,132.);
+#811= ENTITIES(1,37,$,$,#813,(),(),(),$,$,0,#819,$,#812);
+#812= INTERFACE_TO($,$);
+#813= TEXT(22,5,$,$,'datum_feature','datum_feature',#814);
+#814= TEXT_LAYOUT(125.,50.,228.,46.,#815);
+#815= TEXT_TYPE(1,6);
+#819= TYPE_LAYOUT(#820);
+#820= RECTANGLE(3710.,176.85833,250.,100.);
+#821= ENTITIES(1,37,$,$,#823,(),(),(),$,$,0,#829,$,#822);
+#822= INTERFACE_TO($,$);
+#823= TEXT(22,5,$,$,'datum_system','datum_system',#824);
+#824= TEXT_LAYOUT(125.,50.,229.,46.,#825);
+#825= TEXT_TYPE(1,6);
+#829= TYPE_LAYOUT(#830);
+#830= RECTANGLE(3989.1667,176.85833,250.,100.);
+#831= ENTITIES(1,165,$,$,#833,(),(),(),$,$,0,#839,$,#832);
+#832= INTERFACE_TO($,$);
+#833= TEXT(22,5,$,$,'dimension_related_tolerance_zone_element',
+'dimension_\X\0D\X\0Arelated_\X\0D\X\0Atolerance_\X\0D\X\0Azone_element'
+,#834);
+#834= TEXT_LAYOUT(125.,102.,217.,184.,#835);
+#835= TEXT_TYPE(1,6);
+#839= TYPE_LAYOUT(#840);
+#840= RECTANGLE(4321.3333,753.39167,250.,204.);
+#841= ENTITIES(1,165,$,$,#843,(),(),(),$,$,0,#849,$,#842);
+#842= INTERFACE_TO($,$);
+#843= TEXT(22,5,$,$,'dimensional_characteristic_representation',
+'dimensional_\X\0D\X\0Acharacteristic_\X\0D\X\0Arepresentation',#844);
+#844= TEXT_LAYOUT(125.,78.,230.,138.,#845);
+#845= TEXT_TYPE(1,6);
+#849= TYPE_LAYOUT(#850);
+#850= RECTANGLE(3390.3333,586.69167,250.,156.);
+#851= ENTITIES(1,165,$,$,#853,(),(),(),$,$,0,#859,$,#852);
+#852= INTERFACE_TO($,$);
+#853= TEXT(22,5,$,$,'dimensional_size','dimensional_\X\0D\X\0Asize',#854
+);
+#854= TEXT_LAYOUT(125.,55.333333,214.,92.,#855);
+#855= TEXT_TYPE(1,6);
+#859= TYPE_LAYOUT(#860);
+#860= RECTANGLE(3649.,586.725,250.,110.66667);
+#861= ENTITIES(1,165,$,$,#863,(),(),(),$,$,0,#869,$,#862);
+#862= INTERFACE_TO($,$);
+#863= TEXT(22,5,$,$,'general_property_relationship',
+'general_\X\0D\X\0Aproperty_\X\0D\X\0Arelationship',#864);
+#864= TEXT_LAYOUT(125.,78.,187.,138.,#865);
+#865= TEXT_TYPE(1,6);
+#869= TYPE_LAYOUT(#870);
+#870= RECTANGLE(4371.6667,176.85833,250.,156.);
+#871= ENTITIES(1,165,$,$,#873,(),(),(),$,$,0,#879,$,#872);
+#872= INTERFACE_TO($,$);
+#873= TEXT(22,5,$,$,'geometric_tolerance',
+'geometric_\X\0D\X\0Atolerance',#874);
+#874= TEXT_LAYOUT(125.,55.333335,176.,92.,#875);
+#875= TEXT_TYPE(1,6);
+#879= TYPE_LAYOUT(#880);
+#880= RECTANGLE(4117.3333,359.95834,250.,110.66667);
+#881= ENTITIES(1,165,$,$,#883,(),(),(),$,$,0,#889,$,#882);
+#882= INTERFACE_TO($,$);
+#883= TEXT(22,5,$,$,'geometric_tolerance_auxiliary_classification',
+'geometric_\X\0D\X\0Atolerance_\X\0D\X\0Aauxiliary_\X\0D\X\0Aclassification'
+,#884);
+#884= TEXT_LAYOUT(125.,102.,208.,184.,#885);
+#885= TEXT_TYPE(1,6);
+#889= TYPE_LAYOUT(#890);
+#890= RECTANGLE(3386.8333,753.325,250.,204.);
+#891= ENTITIES(1,37,$,$,#893,(),(),(),$,$,0,#899,$,#892);
+#892= INTERFACE_TO($,$);
+#893= TEXT(22,5,$,$,'gps_filter','gps_filter',#894);
+#894= TEXT_LAYOUT(125.,50.,151.,46.,#895);
+#895= TEXT_TYPE(1,6);
+#899= TYPE_LAYOUT(#900);
+#900= RECTANGLE(3652.6666,786.625,250.,100.);
+#901= ENTITIES(1,165,$,$,#903,(),(),(),$,$,0,#909,$,#902);
+#902= INTERFACE_TO($,$);
+#903= TEXT(22,5,$,$,'gps_filtration_specification',
+'gps_\X\0D\X\0Afiltration_\X\0D\X\0Aspecification',#904);
+#904= TEXT_LAYOUT(125.,78.,200.,138.,#905);
+#905= TEXT_TYPE(1,6);
+#909= TYPE_LAYOUT(#910);
+#910= RECTANGLE(3301.,980.95833,250.,156.);
+#911= ENTITIES(1,101,$,$,#913,(),(),(),$,$,0,#919,$,#912);
+#912= INTERFACE_TO($,$);
+#913= TEXT(22,5,$,$,'limits_and_fits','limits_and_fits',#914);
+#914= TEXT_LAYOUT(129.,50.,239.,46.,#915);
+#915= TEXT_TYPE(1,6);
+#919= TYPE_LAYOUT(#920);
+#920= RECTANGLE(3563.1667,981.02503,258.,100.);
+#921= ENTITIES(1,165,$,$,#923,(),(),(),$,$,0,#929,$,#922);
+#922= INTERFACE_TO($,$);
+#923= TEXT(22,5,$,$,'placed_datum_target_feature',
+'placed_\X\0D\X\0Adatum_target_\X\0D\X\0Afeature',#924);
+#924= TEXT_LAYOUT(125.,78.,230.,138.,#925);
+#925= TEXT_TYPE(1,6);
+#929= TYPE_LAYOUT(#930);
+#930= RECTANGLE(3432.,176.79167,250.,156.);
+#931= ENTITIES(1,165,$,$,#933,(),(),(),$,$,0,#939,$,#932);
+#932= INTERFACE_TO($,$);
+#933= TEXT(22,5,$,$,'plus_minus_tolerance',
+'plus_minus_\X\0D\X\0Atolerance',#934);
+#934= TEXT_LAYOUT(125.,55.333335,205.,92.,#935);
+#935= TEXT_TYPE(1,6);
+#939= TYPE_LAYOUT(#940);
+#940= RECTANGLE(3338.6666,1168.125,250.,110.66667);
+#941= ENTITIES(1,165,$,$,#943,(),(),(),$,$,0,#949,$,#942);
+#942= INTERFACE_TO($,$);
+#943= TEXT(22,5,$,$,'product_definition','product_\X\0D\X\0Adefinition',
+#944);
+#944= TEXT_LAYOUT(125.,55.333333,152.,92.,#945);
+#945= TEXT_TYPE(1,6);
+#949= TYPE_LAYOUT(#950);
+#950= RECTANGLE(3260.3333,336.825,250.,110.66667);
+#951= ENTITIES(1,165,$,$,#953,(),(),(),$,$,0,#959,$,#952);
+#952= INTERFACE_TO($,$);
+#953= TEXT(22,5,$,$,'product_definition_formation',
+'product_\X\0D\X\0Adefinition_\X\0D\X\0Aformation',#954);
+#954= TEXT_LAYOUT(125.,78.,172.,138.,#955);
+#955= TEXT_TYPE(1,6);
+#959= TYPE_LAYOUT(#960);
+#960= RECTANGLE(3517.3333,336.825,250.,156.);
+#961= ENTITIES(1,165,$,$,#963,(),(),(),$,$,0,#969,$,#962);
+#962= INTERFACE_TO($,$);
+#963= TEXT(22,5,$,$,'product_definition_formation_relationship',
+'product_\X\0D\X\0Adefinition_\X\0D\X\0Aformation_\X\0D\X\0Arelationship'
+,#964);
+#964= TEXT_LAYOUT(125.,102.,187.,184.,#965);
+#965= TEXT_TYPE(1,6);
+#969= TYPE_LAYOUT(#970);
+#970= RECTANGLE(3776.8333,336.89167,250.,204.);
+#971= ENTITIES(1,165,$,$,#973,(),(),(),$,$,0,#979,$,#972);
+#972= INTERFACE_TO($,$);
+#973= TEXT(22,5,$,$,'product_definition_relationship',
+'product_\X\0D\X\0Adefinition_\X\0D\X\0Arelationship',#974);
+#974= TEXT_LAYOUT(125.,78.,187.,138.,#975);
+#975= TEXT_TYPE(1,6);
+#979= TYPE_LAYOUT(#980);
+#980= RECTANGLE(3830.6667,981.02503,250.,156.);
+#981= ENTITIES(1,165,$,$,#983,(),(),(),$,$,0,#989,$,#982);
+#982= INTERFACE_TO($,$);
+#983= TEXT(22,5,$,$,'property_definition',
+'property_\X\0D\X\0Adefinition',#984);
+#984= TEXT_LAYOUT(125.,55.333335,152.,92.,#985);
+#985= TEXT_TYPE(1,6);
+#989= TYPE_LAYOUT(#990);
+#990= RECTANGLE(3607.6666,1168.125,250.,110.66667);
+#991= ENTITIES(1,37,$,$,#993,(),(),(),$,$,0,#999,$,#992);
+#992= INTERFACE_TO($,$);
+#993= TEXT(22,5,$,$,'representation','representation',#994);
+#994= TEXT_LAYOUT(125.,50.,223.,46.,#995);
+#995= TEXT_TYPE(1,6);
+#999= TYPE_LAYOUT(#1000);
+#1000= RECTANGLE(4100.,981.05833,250.,100.);
+#1001= ENTITIES(1,165,$,$,#1003,(),(),(),$,$,0,#1009,$,#1002);
+#1002= INTERFACE_TO($,$);
+#1003= TEXT(22,5,$,$,'representation_item',
+'representation\X\0D\X\0A_item',#1004);
+#1004= TEXT_LAYOUT(125.,55.333335,223.,92.,#1005);
+#1005= TEXT_TYPE(1,6);
+#1009= TYPE_LAYOUT(#1010);
+#1010= RECTANGLE(3869.,1168.0583,250.,110.66667);
+#1011= ENTITIES(1,165,$,$,#1013,(),(),(),$,$,0,#1019,$,#1012);
+#1012= INTERFACE_TO($,$);
+#1013= TEXT(22,5,$,$,'runout_zone_orientation',
+'runout_zone_\X\0D\X\0Aorientation',#1014);
+#1014= TEXT_LAYOUT(125.,55.333335,216.,92.,#1015);
+#1015= TEXT_TYPE(1,6);
+#1019= TYPE_LAYOUT(#1020);
+#1020= RECTANGLE(4360.1667,980.95833,250.,110.66667);
+#1021= ENTITIES(1,165,$,$,#1023,(),(),(),$,$,0,#1029,$,#1022);
+#1022= INTERFACE_TO($,$);
+#1023= TEXT(22,5,$,$,'topological_representation_item',
+'topological_\X\0D\X\0Arepresentation\X\0D\X\0A_item',#1024);
+#1024= TEXT_LAYOUT(125.,78.,223.,138.,#1025);
+#1025= TEXT_TYPE(1,6);
+#1029= TYPE_LAYOUT(#1030);
+#1030= RECTANGLE(4399.,1168.225,250.,156.);
+#1031= ENTITIES(1,165,$,$,#1033,(),(),(),$,$,0,#1039,$,#1032);
+#1032= INTERFACE_TO($,$);
+#1033= TEXT(22,5,$,$,'tolerance_with_statistical_distribution',
+'tolerance_\X\0D\X\0Awith_\X\0D\X\0Astatistical_\X\0D\X\0Adistribution',
+#1034);
+#1034= TEXT_LAYOUT(125.,102.,183.,184.,#1035);
+#1035= TEXT_TYPE(1,6);
+#1039= TYPE_LAYOUT(#1040);
+#1040= RECTANGLE(3258.,1427.625,250.,204.);
+#1041= ENTITIES(1,165,$,$,#1043,(),(),(),$,$,0,#1049,$,#1042);
+#1042= INTERFACE_TO($,$);
+#1043= TEXT(22,5,$,$,'tolerance_value','tolerance_\X\0D\X\0Avalue',#1044
+);
+#1044= TEXT_LAYOUT(125.,55.333335,163.,92.,#1045);
+#1045= TEXT_TYPE(1,6);
+#1049= TYPE_LAYOUT(#1050);
+#1050= RECTANGLE(4135.8333,1168.0916,250.,110.66667);
+#1051= ENTITIES(1,37,$,$,#1053,(),(),(),$,$,0,#1059,$,#1052);
+#1052= INTERFACE_TO($,$);
+#1053= TEXT(22,5,$,$,'shape_aspect','shape_aspect',#1054);
+#1054= TEXT_LAYOUT(125.,50.,210.,46.,#1055);
+#1055= TEXT_TYPE(1,6);
+#1059= TYPE_LAYOUT(#1060);
+#1060= RECTANGLE(3516.5,1427.625,250.,100.);
+#1061= ENTITIES(1,165,$,$,#1063,(),(),(),$,$,0,#1069,$,#1062);
+#1062= INTERFACE_TO($,$);
+#1063= TEXT(22,5,$,$,'shape_aspect_relationship',
+'shape_aspect_\X\0D\X\0Arelationship',#1064);
+#1064= TEXT_LAYOUT(125.,55.333333,230.,92.,#1065);
+#1065= TEXT_TYPE(1,6);
+#1069= TYPE_LAYOUT(#1070);
+#1070= RECTANGLE(3383.3333,1704.8583,250.,110.66667);
+#1071= ENTITIES(1,165,$,$,#1073,(),(),(),$,$,0,#1079,$,#1072);
+#1072= INTERFACE_TO($,$);
+#1073= TEXT(22,5,$,$,'tolerance_zone_form',
+'tolerance_\X\0D\X\0Azone_form',#1074);
+#1074= TEXT_LAYOUT(125.,55.333333,168.,92.,#1075);
+#1075= TEXT_TYPE(1,6);
+#1079= TYPE_LAYOUT(#1080);
+#1080= RECTANGLE(3788.1667,1427.625,250.,110.66667);
+#1081= ENTITIES(1,229,$,$,#1083,(),(),(),$,$,0,#1089,$,#1082);
+#1082= INTERFACE_TO($,$);
+#1083= TEXT(22,5,$,$,'tolerance_zone_definition',
+'tolerance_\X\0D\X\0Azone_definition',#1084);
+#1084= TEXT_LAYOUT(131.66667,55.333333,245.,92.,#1085);
+#1085= TEXT_TYPE(1,6);
+#1089= TYPE_LAYOUT(#1090);
+#1090= RECTANGLE(3644.6667,1704.8583,263.33333,110.66667);
+#1091= ENTITIES(1,229,$,$,#1095,(),(),(#1101,#1111,#1121,#1131),(#1153),
+(#1156),0,#1159,#1093,#1092);
+#1092= INTERFACE_TO($,$);
+#1093= COMMENT(0,33,$,$,#1094,$);
+#1094= TEXT(22,33,$,$,
+'A guid_relationship relates two guids and provides a role for that relationship.'
+,$,$);
+#1095= TEXT(22,5,$,$,'uuid_relationship','*uuid_relationship',#1096);
+#1096= TEXT_LAYOUT(215.,66.666665,297.,46.,#1097);
+#1097= TEXT_TYPE(1,6);
+#1101= ATTRIBUTE_DEF(12,5,$,$,#1102,$,$,2,$,(),$,#481,#1106,$,$,$);
+#1102= TEXT(22,5,$,$,'identifier','*identifier ',#1103);
+#1103= TEXT_LAYOUT(6.1666667,-13.333333,133.,35.,#1104);
+#1104= TEXT_TYPE(1,66);
+#1106= OBJECT_LINE_LAYOUT(#1107,#1108);
+#1107= TEXT_PLACEMENT(0,2);
+#1108= WORLD_PLINE(#1109,1,$,(-115.72098,131.34255,-323.61235),-1.,0.);
+#1109= WORLD_POINT(870.83333,723.53333);
+#1111= ATTRIBUTE_DEF(12,5,$,$,#1112,$,$,0,$,(),$,#481,#1116,$,$,$);
+#1112= TEXT(22,5,$,$,'uuid_2','uuid_2 ',#1113);
+#1113= TEXT_LAYOUT(0.,-10.,100.,35.,#1114);
+#1114= TEXT_TYPE(1,66);
+#1116= OBJECT_LINE_LAYOUT(#1117,#1118);
+#1117= TEXT_PLACEMENT(1,1);
+#1118= WORLD_PLINE(#1119,1,$,(-188.27455,169.76805,-251.05878),-1.,0.);
+#1119= WORLD_POINT(730.83333,723.53333);
+#1121= ATTRIBUTE_DEF(12,5,$,$,#1122,$,$,0,$,(),$,#481,#1126,$,$,$);
+#1122= TEXT(22,5,$,$,'uuid_1','uuid_1 ',#1123);
+#1123= TEXT_LAYOUT(-16.666667,-13.333333,100.,35.,#1124);
+#1124= TEXT_TYPE(1,66);
+#1126= OBJECT_LINE_LAYOUT(#1127,#1128);
+#1127= TEXT_PLACEMENT(1,1);
+#1128= WORLD_PLINE(#1129,1,$,(-252.2311,179.65284,-187.10223),-1.,0.);
+#1129= WORLD_POINT(627.5,723.53333);
+#1131= ATTRIBUTE_DEF(12,5,$,$,#1132,$,$,0,$,(),$,#1136,#1147,$,$,$);
+#1132= TEXT(22,5,$,$,'role','role ',#1133);
+#1133= TEXT_LAYOUT(10.,-24.9,57.,35.,#1134);
+#1134= TEXT_TYPE(1,66);
+#1136= ENUMERATIONS(5,197,$,$,#1140,('SUPERSEDES','MERGE','SPLIT',
+'DERIVE_FROM','SAME_AS','SIMILAR_TO'),$,#1145,#1138,#1137,$,(),.F.);
+#1137= INTERFACE_TO($,$);
+#1138= COMMENT(0,33,$,$,#1139,$);
+#1139= TEXT(22,33,$,$,
+'A guid_relationship_role enumerates the permitted roles associated with a guid_relationship.'
+,$,$);
+#1140= TEXT(22,5,$,$,'uuid_relationship_role','uuid_relationship_role',
+#1141);
+#1141= TEXT_LAYOUT(178.33334,32.,263.,34.,#1142);
+#1142= TEXT_TYPE(1,6);
+#1145= TYPE_LAYOUT(#1146);
+#1146= RECTANGLE(1149.1667,593.06666,376.66667,64.);
+#1147= OBJECT_LINE_LAYOUT(#1148,#1149);
+#1148= TEXT_PLACEMENT(0,1);
+#1149= WORLD_PLINE(#1150,0,$,(216.96297,-133.13333),-1.,0.);
+#1150= WORLD_POINT(999.16667,790.2);
+#1153= UNIQUE_RULE('UR1',(#1101));
+#1156= WHERE_RULE('IP1',
+'(* acyclic_guid_relationship(SELF, guid_1, guid_2) *) ',#1157);
+#1157= COMMENT(0,33,$,$,#1158,$);
+#1158= TEXT(22,33,$,$,'-- A guid_relationship shall be acyclic.',$,$);
+#1159= TYPE_LAYOUT(#1160);
+#1160= RECTANGLE(569.16667,723.53333,430.,133.33333);
+#1161= ENTITIES(1,229,$,$,#1165,(),(),(#1171,#1182),(#1193),$,0,#1195,
+#1163,#1162);
+#1162= INTERFACE_TO($,$);
+#1163= COMMENT(0,33,$,$,#1164,$);
+#1164= TEXT(22,33,$,$,
+'A guid_provenance is the specification of a sequence of guid_relationships that provides historical record of those relationshps. The sequence is a simple list form.'
+,$,$);
+#1165= TEXT(22,5,$,$,'uuid_provenance','uuid_provenance',#1166);
+#1166= TEXT_LAYOUT(163.33334,55.,271.,46.,#1167);
+#1167= TEXT_TYPE(1,6);
+#1171= ATTRIBUTE_DEF(12,5,$,$,#1172,#1175,$,0,$,(),$,#1091,#1177,$,$,$);
+#1172= TEXT(22,5,$,$,'content','content  *L[1:?] ',#1173);
+#1173= TEXT_LAYOUT(-23.333333,-13.333333,208.,35.,#1174);
+#1174= TEXT_TYPE(1,66);
+#1175= AGGREGATES($,0,'1','0',2);
+#1177= OBJECT_LINE_LAYOUT(#1178,#1179);
+#1178= TEXT_PLACEMENT(1,1);
+#1179= WORLD_PLINE(#1180,1,$,(-46.662516,241.48889,-72.604148),-1.,0.);
+#1180= WORLD_POINT(639.34444,976.13333);
+#1182= ATTRIBUTE_DEF(12,5,$,$,#1183,$,$,2,$,(),$,#481,#1187,$,$,$);
+#1183= TEXT(22,5,$,$,'identifier','*identifier ',#1184);
+#1184= TEXT_LAYOUT(-50.5,-18.333333,133.,35.,#1185);
+#1185= TEXT_TYPE(1,66);
+#1187= OBJECT_LINE_LAYOUT(#1188,#1189);
+#1188= TEXT_PLACEMENT(0,2);
+#1189= WORLD_PLINE(#1190,1,$,(-507.73488,32.333334,-184.19846),-1.,0.);
+#1190= WORLD_POINT(539.16666,976.13333);
+#1193= UNIQUE_RULE('UR1',(#1182));
+#1195= TYPE_LAYOUT(#1196);
+#1196= RECTANGLE(375.83333,976.13333,326.66667,110.);
+#1197= PRIMITIVE_TYPE(2,133,$,$,#1198,4,#1201,0);
+#1198= TEXT(22,5,$,$,'STRING','STRING',#1199);
+#1199= TEXT_LAYOUT(75.,27.,109.,34.,#1200);
+#1200= TEXT_TYPE(1,6);
+#1201= TYPE_LAYOUT(#1202);
+#1202= RECTANGLE(1395.6,363.06667,150.,54.);
+#1203= COMMENT(0,197,$,$,#1204,#1207);
+#1204= TEXT(22,5,$,$,'file:\X\0D\X\0Aguid_schema_20230606_00',
+'file:\X\0D\X\0Aguid_schema_20230606_00',#1205);
+#1205= TEXT_LAYOUT(10.,10.,450.,92.,#1206);
+#1206= TEXT_TYPE(1,40);
+#1207= TYPE_LAYOUT(#1208);
+#1208= RECTANGLE(38.933333,2179.7333,515.,156.66667);
+#1209= ENTITIES(1,101,$,$,#1213,(),(),(#1219,#1229),(#1240),(#1243),0,
+#1244,#1211,#1210);
+#1210= INTERFACE_TO($,$);
+#1211= COMMENT(0,33,$,$,#1212,$);
+#1212= TEXT(22,33,$,$,
+'A guid_context_role associates a role to an guid.',$,$);
+#1213= TEXT(22,5,$,$,'uuid_context_role','*uuid_context_role',#1214);
+#1214= TEXT_LAYOUT(161.66666,50.,304.,46.,#1215);
+#1215= TEXT_TYPE(1,6);
+#1219= ATTRIBUTE_DEF(12,5,$,$,#1220,$,$,0,$,(),$,#1197,#1224,$,$,$);
+#1220= TEXT(22,5,$,$,'role','role ',#1221);
+#1221= TEXT_LAYOUT(-21.666667,-10.,57.,35.,#1222);
+#1222= TEXT_TYPE(1,66);
+#1224= OBJECT_LINE_LAYOUT(#1225,#1226);
+#1225= TEXT_PLACEMENT(1,1);
+#1226= WORLD_PLINE(#1227,1,$,(-43.,83.488889),-1.,0.);
+#1227= WORLD_POINT(1312.1111,436.4);
+#1229= ATTRIBUTE_DEF(12,5,$,$,#1230,$,$,2,$,(),$,#481,#1234,$,$,$);
+#1230= TEXT(22,5,$,$,'identifier','*identifier ',#1231);
+#1231= TEXT_LAYOUT(0.,-13.333333,133.,35.,#1232);
+#1232= TEXT_TYPE(1,66);
+#1234= OBJECT_LINE_LAYOUT(#1235,#1236);
+#1235= TEXT_PLACEMENT(1,1);
+#1236= WORLD_PLINE(#1237,1,$,(-40.968254,-166.33502,-111.23175),-1.,0.);
+#1237= WORLD_POINT(1217.2667,436.4);
+#1240= UNIQUE_RULE('UR1',(#1229));
+#1243= WHERE_RULE('WR1','role <> ''''',$);
+#1244= TYPE_LAYOUT(#1245);
+#1245= RECTANGLE(1055.6,436.4,323.33333,100.);
+#1246= COMMENT(0,197,$,$,#1247,#1250);
+#1247= TEXT(22,5,$,$,
+'*The items on this page will be added to identification_item if not available in identification_item or id_attribute.\X\0D\X\0AThey are not shown connected to reduce diagram clutter. \X\0D\X\0A(The ENTITY types applied_identification_assignment and id_attribute are providing the actual instances because of  STEP integration requirements.)'
+,
+'*The items on this page will be added to identification_item if \X\0D\X\0Anot available in identification_item or id_attribute.\X\0D\X\0AThey are not shown connected to reduce diagram clutter. \X\0D\X\0A(The ENTITY types applied_identification_assignment and id_\X\0D\X\0Aattribute are providing the actual instances because of  STEP \X\0D\X\0Aintegration requirements.)'
+,#1248);
+#1248= TEXT_LAYOUT(10.,10.,1001.,276.,#1249);
+#1249= TEXT_TYPE(1,40);
+#1250= TYPE_LAYOUT(#1251);
+#1251= RECTANGLE(3656.3999,1825.5999,1028.3333,350.);
+#1252= TEXT(22,5,$,$,'file:\X\0D\X\0Aguid_schema_20230518_01',
+'file:\X\0D\X\0Aguid_schema_20230518_01',#1253);
+#1253= TEXT_LAYOUT(10.,10.,450.,92.,#1254);
+#1254= TEXT_TYPE(1,40);
+#1255= TEXT(22,5,$,$,'file:\X\0D\X\0Aguid_schema_20230518_01',
+'file:\X\0D\X\0Aguid_schema_20230518_01',#1256);
+#1256= TEXT_LAYOUT(10.,10.,450.,92.,#1257);
+#1257= TEXT_TYPE(1,40);
+#1258= COMMENT(0,197,$,$,#1259,#1262);
+#1259= TEXT(22,5,$,$,'file:\X\0D\X\0Aguid_schema_20230606_00',
+'file:\X\0D\X\0Aguid_schema_20230606_00',#1260);
+#1260= TEXT_LAYOUT(10.,10.,450.,92.,#1261);
+#1261= TEXT_TYPE(1,40);
+#1262= TYPE_LAYOUT(#1263);
+#1263= RECTANGLE(1650.0333,2176.7,515.,156.66667);
+#1264= COMMENT(0,197,$,$,#1265,#1268);
+#1265= TEXT(22,5,$,$,'file:\X\0D\X\0Aguid_schema_20230606_00',
+'file:\X\0D\X\0Aguid_schema_20230606_00',#1266);
+#1266= TEXT_LAYOUT(10.,10.,450.,92.,#1267);
+#1267= TEXT_TYPE(1,40);
+#1268= TYPE_LAYOUT(#1269);
+#1269= RECTANGLE(3240.0333,2190.0333,515.,156.66667);
+ENDSEC;
+
+END-ISO-10303-21;
