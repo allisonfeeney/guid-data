@@ -1,6 +1,10 @@
 (*
    Modified from ISO TC184/SC4/WG12 N10962 - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
    Based on UUID_SCHEMA_20230518_01.exp commit id -- 2de6da90.
+Updated June 6, 2023 to merge uuid_attribute and uuid_leaf_node as a uuid_leaf_node always
+specifies a uuid_attribute and a merkle tree that has only one leaf node will use the leaf has twice in the algorithm,
+so there is no need for an isolated node.
+There may be some tweaking of the domain rules needed in the merkle tree based on no longer being a strict binary tree.
 *)
 
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
@@ -3678,11 +3682,6 @@ END_TYPE;
 TYPE uuid_attribute_select = SELECT
     (id_attribute,
     identification_assignment);
-END_TYPE;
-
-TYPE isolated_or_leaf_uuid_node = SELECT
-  (uuid_isolated_node,
-   uuid_leaf_node);
 END_TYPE;
 
 --updated from uuid_schema_20230518_01
@@ -17875,8 +17874,8 @@ ENTITY uuid_attribute
   ABSTRACT SUPERTYPE OF(ONEOF(
     v5_uuid_attribute,
     v4_uuid_attribute)
-    ANDOR uuid_attribute_with_approximate_geometric_location);
-  identifier      : isolated_or_leaf_uuid_node;
+    ANDOR uuid_attribute_with_approximate_geometric_location)
+  SUBTYPE OF (uuid_leaf_node);
   identified_item : LIST [1 : ?] OF UNIQUE uuid_attribute_select;
  UNIQUE
   UR1 : identifier;
@@ -17938,18 +17937,20 @@ WHERE
 END_ENTITY;
 
 --updated from uuid_schema_20230518_01
-  ENTITY uuid_isolated_node
-    SUBTYPE OF(uuid_tree_node);
-      hash_function : OPTIONAL STRING;
-    WHERE
-      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
-      WR2 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE.NODE_1')) = 0;
-      WR3 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE.NODE_2')) = 0;
-  END_ENTITY;
+--updated 20230606_01
+--  ENTITY uuid_isolated_node
+--    SUBTYPE OF(uuid_tree_node);
+--      hash_function : OPTIONAL STRING;
+--    WHERE
+--      WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
+--      WR2 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE.NODE_1')) = 0;
+--      WR3 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE.NODE_2')) = 0;
+--  END_ENTITY;
+
 --updated from uuid_schema_20230518_01
   ENTITY uuid_tree_node
     ABSTRACT
-    SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_isolated_node, uuid_internal_node));
+    SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_internal_node));
       identifier : uuid;
       node_2     : OPTIONAL uuid_tree_node;
       node_1     : OPTIONAL uuid_tree_node;
