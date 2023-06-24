@@ -3,11 +3,12 @@
    Based on UUID_SCHEMA_20230518_01.exp commit id -- 2de6da90.
 Updated June 24, 2023 to 
      revert hash_based_v5-uuid_attribute
+     redistribute uuid tree into ONEOF structure to simplify model.
+     removed data attribute from uuid_root_node.
+     made uuid_attribute.identified_item a LIST[1:?] as the has_based_v5_uuid_attribute requires a List [1:?] and a subtype can't extend a supertype domain.
+     The merkle tree is only used where there is more than on leaf node as the singular item is supported by the hash_based_v5_uuid_attribute. (This approach continues to eliminate the need for an extra instance from previous modifications.)
+     The uuid_tree_node hash format will need to be defined in an IP as there was a decision to remove the uuid_tree_node identifier that specified a UUID. 
 
-Updated June 6, 2023 to merge uuid_attribute and uuid_leaf_node as a uuid_leaf_node always
-specifies a uuid_attribute and a merkle tree that has only one leaf node will use the leaf has twice in the algorithm,
-so there is no need for an isolated node.
-There may be some tweaking of the domain rules needed in the merkle tree based on no longer being a strict binary tree.
 *)
 -- Schema ap242_managed_model_based_3d_engineering_mim_lf;
 SCHEMA Ap242_managed_model_based_3d_engineering_mim_lf;
@@ -16528,7 +16529,7 @@ END_ENTITY;
       internal_operand : STRING (1) FIXED := '1';
     WHERE
       WR1 : EXISTS(node_1) AND EXISTS(node_2);
-      WR2 : ('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_ROOT_NODE' IN TYPEOF(SELF)) OR (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1) XOR (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2')) = 1);
+      WR2 : (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1) AND (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2')) = 1);
   END_ENTITY;
 --updated from uuid_schema_2023062400
   ENTITY uuid_root_node
