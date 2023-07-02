@@ -2,9 +2,9 @@
    Modified from ISO TC184/SC4/WG12 Ntbd - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
    Based on branch TRThurman-patch-1 uuid schema
 Modify 
-   uuid_leaf_node.wr2
+   uuid_leaf_node.data attribute and wr2
    uuid_internal_node.wr2
-   uuid_tree_node swapped position of node_1, node_2; added value attribute so uuid is generated for all nodes.
+   uuid_tree_node swapped position of node_1, node_2; added uuid_value attribute so uuid is generated for all nodes.
    uuid_root_node added rule that hash_function cannot be emptry string;
    
 --eaarlier
@@ -16510,7 +16510,7 @@ END_ENTITY;
   ENTITY uuid_tree_node
     ABSTRACT
     SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_internal_node, uuid_root_node));
-      identifier : uuid;
+      uuid_value : uuid;
       node_1     : OPTIONAL uuid_tree_node;
       node_2     : OPTIONAL uuid_tree_node;
     WHERE
@@ -16519,7 +16519,7 @@ END_ENTITY;
 --updated July 2, 2023
   ENTITY uuid_leaf_node
     SUBTYPE OF(uuid_tree_node);
-      data         : uuid_attribute;
+      data         : uuid_attribute_select;
     DERIVE
       leaf_operand : STRING (1) FIXED := '0';
     WHERE
