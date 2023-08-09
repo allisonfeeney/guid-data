@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QIFDocument xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qifstandards.org/xsd/qif3 file:///C:/QIF30/xsd/QIFApplications/QIFDocument.xsd" versionQIF="3.0.0" idMax="35" xmlns="http://qifstandards.org/xsd/qif3">
+  <QPId>044d1c43-24c3-41f4-b511-e7761865cd24</QPId>
+  <Header>
+    <Application>
+      <Name>MeasurLink application</Name>
+      <Organization>Mitutoyo America Corporation</Organization>
+    </Application>
+  </Header>
+  <StandardsDefinitions n="1">
+    <Standard id="1">
+      <Organization>
+        <OtherStandardsOrganization>Mitutoyo</OtherStandardsOrganization>
+      </Organization>
+      <Designator>ML9.5</Designator>
+    </Standard>
+  </StandardsDefinitions>
+  <FileUnits>
+    <PrimaryUnits />
+    <OtherUnits n="1">
+      <LinearUnit>
+        <SIUnitName>meter</SIUnitName>
+        <UnitName>millimeter</UnitName>
+        <UnitConversion>
+          <Factor>0.001</Factor>
+          <Offset>0</Offset>
+        </UnitConversion>
+      </LinearUnit>
+    </OtherUnits>
+  </FileUnits>
+  <DatumReferenceFrames n="1">
+    <DatumReferenceFrame id="2" />
+  </DatumReferenceFrames>
+  <Product>
+    <Header>
+      <Name>FAIR_Test</Name>
+    </Header>
+    <PartSet n="1">
+      <Part id="5">
+        <Header>
+          <Name>FAIR_Test</Name>
+        </Header>
+        <UUID>a88617f1-ba9e-4f39-a288-566c6a521f53</UUID>
+        <CharacteristicNominalIds n="5">
+          <Id>4</Id>
+          <Id>8</Id>
+          <Id>11</Id>
+          <Id>14</Id>
+          <Id>17</Id>
+        </CharacteristicNominalIds>
+      </Part>
+    </PartSet>
+  </Product>
+  <Characteristics>
+    <FormalStandardId>1</FormalStandardId>
+    <CharacteristicDefinitions n="5">
+      <DiameterCharacteristicDefinition id="3">
+        <Name>Diameter 2</Name>
+        <Tolerance>
+          <MaxValue linearUnit="millimeter">40.001</MaxValue>
+          <MinValue linearUnit="millimeter">39.999</MinValue>
+          <DefinedAsLimit>true</DefinedAsLimit>
+        </Tolerance>
+      </DiameterCharacteristicDefinition>
+      <PerpendicularityCharacteristicDefinition id="7">
+        <Name>Perpendicularity 1</Name>
+        <ToleranceValue>0.001</ToleranceValue>
+        <MaterialCondition>NONE</MaterialCondition>
+        <ZoneShape>
+          <DiametricalZone />
+        </ZoneShape>
+        <EachElement>false</EachElement>
+      </PerpendicularityCharacteristicDefinition>
+      <PerpendicularityCharacteristicDefinition id="10">
+        <Name>Perpendicularity 2</Name>
+        <ToleranceValue>0.001</ToleranceValue>
+        <MaterialCondition>NONE</MaterialCondition>
+        <ZoneShape>
+          <DiametricalZone />
+        </ZoneShape>
+        <EachElement>false</EachElement>
+      </PerpendicularityCharacteristicDefinition>
+      <DiameterCharacteristicDefinition id="13">
+        <Name>Diameter 1</Name>
+        <Tolerance>
+          <MaxValue linearUnit="millimeter">100.005</MaxValue>
+          <MinValue linearUnit="millimeter">99.995</MinValue>
+          <DefinedAsLimit>true</DefinedAsLimit>
+        </Tolerance>
+      </DiameterCharacteristicDefinition>
+      <DistanceBetweenCharacteristicDefinition id="16">
+        <Name>Distance 1</Name>
+        <Tolerance>
+          <MaxValue linearUnit="millimeter">25.001</MaxValue>
+          <MinValue linearUnit="millimeter">24.999</MinValue>
+          <DefinedAsLimit>true</DefinedAsLimit>
+        </Tolerance>
+      </DistanceBetweenCharacteristicDefinition>
+    </CharacteristicDefinitions>
+    <CharacteristicNominals n="5">
+      <DiameterCharacteristicNominal id="4">
+        <CharacteristicDefinitionId>3</CharacteristicDefinitionId>
+        <TargetValue linearUnit="millimeter">40</TargetValue>
+      </DiameterCharacteristicNominal>
+      <PerpendicularityCharacteristicNominal id="8">
+        <CharacteristicDefinitionId>7</CharacteristicDefinitionId>
+      </PerpendicularityCharacteristicNominal>
+      <PerpendicularityCharacteristicNominal id="11">
+        <CharacteristicDefinitionId>10</CharacteristicDefinitionId>
+      </PerpendicularityCharacteristicNominal>
+      <DiameterCharacteristicNominal id="14">
+        <CharacteristicDefinitionId>13</CharacteristicDefinitionId>
+        <TargetValue linearUnit="millimeter">100</TargetValue>
+      </DiameterCharacteristicNominal>
+      <DistanceBetweenCharacteristicNominal id="17">
+        <CharacteristicDefinitionId>16</CharacteristicDefinitionId>
+        <TargetValue linearUnit="millimeter">25</TargetValue>
+        <AnalysisMode>ONEDIMENSIONAL</AnalysisMode>
+      </DistanceBetweenCharacteristicNominal>
+    </CharacteristicNominals>
+    <CharacteristicItems n="5">
+      <DiameterCharacteristicItem id="6">
+        <Description>FAIR_Test.Diameter 2</Description>
+        <Name>Diameter 2</Name>
+        <CharacteristicDesignator>
+          <Designator>112</Designator>
+          <UUID>a0dce501-fbde-456f-90c1-7fb127e3b5ab</UUID>
+        </CharacteristicDesignator>
+        <CharacteristicNominalId>4</CharacteristicNominalId>
+      </DiameterCharacteristicItem>
+      <PerpendicularityCharacteristicItem id="9">
+        <Description>FAIR_Test.Perpendicularity 1</Description>
+        <Name>Perpendicularity 1</Name>
+        <CharacteristicDesignator>
+          <Designator>113</Designator>
+          <UUID>4fdd2728-7124-4764-8235-d9cec152247d</UUID>
+        </CharacteristicDesignator>
+        <CharacteristicNominalId>8</CharacteristicNominalId>
+      </PerpendicularityCharacteristicItem>
+      <PerpendicularityCharacteristicItem id="12">
+        <Description>FAIR_Test.Perpendicularity 2</Description>
+        <Name>Perpendicularity 2</Name>
+        <CharacteristicDesignator>
+          <Designator>114</Designator>
+          <UUID>5ee8178c-49bf-4562-8d92-e334e48b8b8f</UUID>
+        </CharacteristicDesignator>
+        <CharacteristicNominalId>11</CharacteristicNominalId>
+      </PerpendicularityCharacteristicItem>
+      <DiameterCharacteristicItem id="15">
+        <Description>FAIR_Test.Diameter 1</Description>
+        <Name>Diameter 1</Name>
+        <CharacteristicDesignator>
+          <Designator>115</Designator>
+          <UUID>70d69775-d4d5-4366-9a46-803480989df1</UUID>
+        </CharacteristicDesignator>
+        <CharacteristicNominalId>14</CharacteristicNominalId>
+      </DiameterCharacteristicItem>
+      <DistanceBetweenCharacteristicItem id="18">
+        <Description>FAIR_Test.Distance 1</Description>
+        <Name>Distance 1</Name>
+        <CharacteristicDesignator>
+          <Designator>116</Designator>
+          <UUID>54a096a3-96fe-43d5-879f-b9d6a510f6c7</UUID>
+        </CharacteristicDesignator>
+        <CharacteristicNominalId>17</CharacteristicNominalId>
+      </DistanceBetweenCharacteristicItem>
+    </CharacteristicItems>
+  </Characteristics>
+  <Results>
+    <MeasurementResultsSet n="1">
+      <MeasurementResults id="19">
+        <InspectionTraceability>
+          <Attributes n="2">
+            <AttributeStr name="Sublot" value="" />
+            <AttributeStr name="Operator" value="Admin" />
+          </Attributes>
+        </InspectionTraceability>
+        <MeasuredCharacteristics>
+          <CharacteristicMeasurements n="5">
+            <DiameterCharacteristicMeasurement id="20">
+              <Attributes n="1">
+                <AttributeUser name="Mitutoyo.MeasurLink.Traceability" nameUserAttribute="MLTraceability">
+                  <UserDataXML>
+                    <ml:Traceability xmlns:ml="http://www.measurlink.com" />
+                  </UserDataXML>
+                </AttributeUser>
+              </Attributes>
+              <Status>
+                <CharacteristicStatusEnum>PASS</CharacteristicStatusEnum>
+              </Status>
+              <CharacteristicItemId>6</CharacteristicItemId>
+              <TimeStamp>2021-05-27T18:20:17.5013636-05:00</TimeStamp>
+              <Value>40</Value>
+            </DiameterCharacteristicMeasurement>
+            <PerpendicularityCharacteristicMeasurement id="21">
+              <Attributes n="1">
+                <AttributeUser name="Mitutoyo.MeasurLink.Traceability" nameUserAttribute="MLTraceability">
+                  <UserDataXML>
+                    <ml:Traceability xmlns:ml="http://www.measurlink.com" />
+                  </UserDataXML>
+                </AttributeUser>
+              </Attributes>
+              <Status>
+                <CharacteristicStatusEnum>PASS</CharacteristicStatusEnum>
+              </Status>
+              <CharacteristicItemId>9</CharacteristicItemId>
+              <TimeStamp>2021-05-27T18:20:17.9870069-05:00</TimeStamp>
+              <Value>0</Value>
+            </PerpendicularityCharacteristicMeasurement>
+            <PerpendicularityCharacteristicMeasurement id="22">
+              <Attributes n="1">
+                <AttributeUser name="Mitutoyo.MeasurLink.Traceability" nameUserAttribute="MLTraceability">
+                  <UserDataXML>
+                    <ml:Traceability xmlns:ml="http://www.measurlink.com" />
+                  </UserDataXML>
+                </AttributeUser>
+              </Attributes>
+              <Status>
+                <CharacteristicStatusEnum>PASS</CharacteristicStatusEnum>
+              </Status>
+              <CharacteristicItemId>12</CharacteristicItemId>
+              <TimeStamp>2021-05-27T18:20:18.2500363-05:00</TimeStamp>
+              <Value>0</Value>
+            </PerpendicularityCharacteristicMeasurement>
+            <DiameterCharacteristicMeasurement id="23">
+              <Attributes n="1">
+                <AttributeUser name="Mitutoyo.MeasurLink.Traceability" nameUserAttribute="MLTraceability">
+                  <UserDataXML>
+                    <ml:Traceability xmlns:ml="http://www.measurlink.com" />
+                  </UserDataXML>
+                </AttributeUser>
+              </Attributes>
+              <Status>
+                <CharacteristicStatusEnum>PASS</CharacteristicStatusEnum>
+              </Status>
+              <CharacteristicItemId>15</CharacteristicItemId>
+              <TimeStamp>2021-05-27T18:20:17.8333609-05:00</TimeStamp>
+              <Value>100</Value>
+            </DiameterCharacteristicMeasurement>
+            <DistanceBetweenCharacteristicMeasurement id="24">
+              <Attributes n="1">
+                <AttributeUser name="Mitutoyo.MeasurLink.Traceability" nameUserAttribute="MLTraceability">
+                  <UserDataXML>
+                    <ml:Traceability xmlns:ml="http://www.measurlink.com" />
+                  </UserDataXML>
+                </AttributeUser>
+              </Attributes>
+              <Status>
+                <CharacteristicStatusEnum>PASS</CharacteristicStatusEnum>
+              </Status>
+              <CharacteristicItemId>18</CharacteristicItemId>
+              <TimeStamp>2021-05-27T18:20:18.3880474-05:00</TimeStamp>
+              <Value>25</Value>
+            </DistanceBetweenCharacteristicMeasurement>
+          </CharacteristicMeasurements>
+        </MeasuredCharacteristics>
+        <InspectionStatus>
+          <InspectionStatusEnum>PASS</InspectionStatusEnum>
+        </InspectionStatus>
+        <ActualComponentIds n="1">
+          <Id>25</Id>
+        </ActualComponentIds>
+      </MeasurementResults>
+    </MeasurementResultsSet>
+    <ActualComponentSets n="1">
+      <ActualComponentSet n="1">
+        <ActualComponent id="25">
+          <Status>
+            <InspectionStatusEnum>PASS</InspectionStatusEnum>
+          </Status>
+        </ActualComponent>
+      </ActualComponentSet>
+    </ActualComponentSets>
+  </Results>
+</QIFDocument>
