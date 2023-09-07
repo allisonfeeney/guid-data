@@ -1,18 +1,16 @@
-SCHEMA UUID_SCHEMA_20230624_00;
+SCHEMA UUID_SCHEMA_20230702_00;
+
+  TYPE uuid = STRING (36) FIXED;
+  END_TYPE;
 
 (*
 [[uuid_attribute_select]]
 A guid_attribute_select provides a selection of id_attribute or identification
 assignment.
 *)
---ok
   TYPE uuid_attribute_select = SELECT
     (id_attribute_select,
      identification_item);
-  END_TYPE;
-
---ok
-  TYPE uuid = STRING (36) FIXED;
   END_TYPE;
 
 (*
@@ -20,7 +18,6 @@ assignment.
 A guid_relationship_role enumerates the permitted roles associated with a
 guid_relationship.
 *)
---ok
   TYPE uuid_relationship_role = ENUMERATION OF
     (SUPERSEDES,
      MERGE,
@@ -44,7 +41,6 @@ guid_relationship.
 A guid_attribute associates a UUID with an ordered collection of product data
 items.
 *)
--ok
   ENTITY uuid_attribute
     ABSTRACT
     SUPERTYPE OF (ONEOF(v5_uuid_attribute, v4_uuid_attribute) ANDOR uuid_attribute_with_approximate_location);
@@ -62,6 +58,19 @@ be provided.
 *)
   ENTITY v5_uuid_attribute
     SUBTYPE OF(uuid_attribute);
+  END_ENTITY;
+
+(*
+[[hash_based_v5_uuid_attribute]]
+A hash_based_v5_guid_attribute is a v5_guid_attribute that provides a UUID that
+is a hash of the data items specified in the identified_items list attribute in
+the applied_guid_attribute.
+*)
+  ENTITY hash_based_v5_uuid_attribute
+    SUBTYPE OF(v5_uuid_attribute);
+      hash_function : STRING;
+    WHERE
+      WR1 : hash_function <> '';
   END_ENTITY;
 
 (*
@@ -99,31 +108,71 @@ assigned.
   ENTITY identification_item;
   END_ENTITY;
 
+(*
+[[uuid_leaf_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
   ENTITY uuid_leaf_node
     SUBTYPE OF(uuid_tree_node);
-      data         : uuid_attribute;
+      data         : uuid_attribute_select;
     DERIVE
       leaf_operand : STRING (1) FIXED := '0';
     WHERE
       WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
---modified
-      WR2 : (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR
-            (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2))=1);
+      WR2 : (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 1);;
   END_ENTITY;
 
-
+(*
+[[uuid_tree_node]]
+Only leaf node specifies data content, which is proposed to be a
+v5_uuid_attribute.
+*)
   ENTITY uuid_tree_node
     ABSTRACT
     SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_internal_node, uuid_root_node));
---modified order
-      node_1 : OPTIONAL uuid_tree_node;
-      node_2 : OPTIONAL uuid_tree_node;
---added value
-      value : uuid;
+      node_2     : OPTIONAL uuid_tree_node;
+      node_1     : OPTIONAL uuid_tree_node;
+      uuid_value : uuid;
     WHERE
       WR1 : node_1 <> node_2;
   END_ENTITY;
 
+(*
+[[uuid_internal_node]]
+The inherited hash function for leaf nodes shall differ from that for internal
+and root nodes.
+
+reference: Tree Hash EXchange format (THEX)
+
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
   ENTITY uuid_internal_node
     SUBTYPE OF(uuid_tree_node);
     DERIVE
@@ -133,18 +182,41 @@ assigned.
       WR2 : (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1))=1) XOR (SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 1);;
   END_ENTITY;
 
+(*
+[[uuid_root_node]]
+The root node hash shall be different from the leaf node hash.
+reference: Tree Hash EXchange format (THEX)
+In order to protect against collisions between leaf hashes and internal hashes,
+different hash constructs are used to hash the leaf nodes and the internal
+nodes. The same hash algorithm is used as the basis of each construct, but a
+single '1' byte in network byte order, or 0x01 is prepended to the input of the
+internal node hashes, and a single '0' byte, or 0x00 is prepended to the input
+of the leaf node hashes.
+
+Let H() be the secure hash algorithm, for example SHA-1.
+
+internal hash function = IH(X) = H(0x01, X)
+
+leaf hash function = LH(X) = H(0x00, X)
+*)
   ENTITY uuid_root_node
     SUBTYPE OF(uuid_tree_node);
       hash_function : STRING;
     DERIVE
       root_operand  : STRING := '1';
     WHERE
-      WR1 : SIZEOF(USED_IN('UUID_SCHEMA.UUID_TREE_NODE.NODE_1)) = 0;
-      WR2 : SIZEOF(USED_IN('UUID_SCHEMA.UUID_TREE_NODE.NODE_2)) = 0;
-      WR3 : EXISTS(node_1) AND EXISTS(node_2);
---added
-      WR4 : hash_function <> '';
+      WR1 : SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_1)) = 0;;
+      WR2 : SIZEOF(USED_IN(UUID_SCHEMA.UUID.TREE_NODE.NODE_2)) = 0;;
+      WR3 : NOT(EXISTS(node_1) OR EXISTS(node_2)) OR EXISTS(data);
   END_ENTITY;
+(*
+*Attribute definitions*
+[[hash_function]]
+temporarily typing hash function as a string. Need to specialize as a urn.
+*Item Property Description Constraint*
+[[WR1]]
+There shall be no owner for a root node.
+*)
 
   ENTITY dimensional_location;
   END_ENTITY;
@@ -280,20 +352,6 @@ A guid_context_role associates a role to an guid.
       UR1 : identifier;
     WHERE
       WR1 : role <> '';
-  END_ENTITY;
-
---ok
-(*
-[[hash_based_v5_uuid_attribute]]
-A hash_based_v5_guid_attribute is a v5_guid_attribute that provides a UUID that
-is a hash of the data items specified in the identified_items list attribute in
-the applied_guid_attribute.
-*)
-  ENTITY hash_based_v5_uuid_attribute
-    SUBTYPE OF(v5_uuid_attribute);
-      hash_function : STRING;
-    WHERE
-      WR1 : hash_function <> '';
   END_ENTITY;
 
 END_SCHEMA;

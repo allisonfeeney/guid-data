@@ -1,5 +1,13 @@
 (*
-   Modified from ISO TC184/SC4/WG12 N10962 - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
+   Modified from ISO TC184/SC4/WG12 Ntbd - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
+   Based on branch TRThurman-patch-1 uuid schema
+Modify 
+   uuid_leaf_node.data attribute and wr2
+   uuid_internal_node.wr2
+   uuid_tree_node swapped position of node_1, node_2; added uuid_value attribute so uuid is generated for all nodes.
+   uuid_root_node added rule that hash_function cannot be emptry string;
+   
+--eaarlier
    Based on UUID_SCHEMA_20230518_01.exp commit id -- 2de6da90.
 Updated June 24, 2023 to 
      revert hash_based_v5-uuid_attribute
@@ -16498,28 +16506,27 @@ WHERE
 -- WR4 : acyclic_uuid_relationship(SELF, uuid_1, uuid_2);
 -- A uuid_relationship shall be acyclic
 END_ENTITY;
---updated from uuid_schema_2023062400
+--updated July 2, 2023
   ENTITY uuid_tree_node
     ABSTRACT
     SUPERTYPE OF (ONEOF(uuid_leaf_node, uuid_internal_node, uuid_root_node));
-      identifier : uuid;
-      node_2     : OPTIONAL uuid_tree_node;
+      uuid_value : uuid;
       node_1     : OPTIONAL uuid_tree_node;
+      node_2     : OPTIONAL uuid_tree_node;
     WHERE
       WR1 : node_1 <> node_2;
   END_ENTITY;
---updated from uuid_schema_2023062400
---reverted data to only be on leaf node
+--updated July 2, 2023
   ENTITY uuid_leaf_node
     SUBTYPE OF(uuid_tree_node);
-      data         : uuid_attribute;
+      data         : uuid_attribute_select;
     DERIVE
       leaf_operand : STRING (1) FIXED := '0';
     WHERE
       WR1 : NOT (EXISTS (node_1) OR EXISTS(node_2));
       WR2 :
       (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1)
-      AND 
+      XOR 
       (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2'))=1);
   END_ENTITY;
 --updated from uuid_schema_20230518_01
@@ -16529,7 +16536,8 @@ END_ENTITY;
       internal_operand : STRING (1) FIXED := '1';
     WHERE
       WR1 : EXISTS(node_1) AND EXISTS(node_2);
-      WR2 : (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1) AND (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2')) = 1);
+      WR2 : (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1'))=1) XOR
+            (SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2'))=1);
   END_ENTITY;
 --updated from uuid_schema_2023062400
   ENTITY uuid_root_node
@@ -16541,6 +16549,7 @@ DERIVE
       WR1 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_1')) = 0;
       WR2 : SIZEOF(USEDIN(SELF, 'AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF.UUID_TREE_NODE.NODE_2')) = 0;
       WR3 : EXISTS(SELF\uuid_tree_node.node_1) AND EXISTS(SELF\uuid_tree_node.node_2);
+      WR4 : hash_function <> '';
   END_ENTITY;
 ENTITY half_space_2d
   SUBTYPE OF (primitive_2d);
