@@ -14,7 +14,7 @@ cturing Information (PMI)---4.0---2014-10-13',
 /* implementation_level */ '2;1');
 
 FILE_NAME(
-/* name */ 'NX_Plate_w_Hole_Moved_Rev-C',
+/* name */ 'NX_Plate_w_Hole_Moved_Rev-.3',
 /* time_stamp */ '2023-08-09T15:17:16-04:00',
 /* author */ (''),
 /* organization */ (''),
@@ -1750,7 +1750,7 @@ SI_UNIT(.MILLI.,.METRE.)
 #527=PRODUCT_DEFINITION_SHAPE('','',#528);
 #528=PRODUCT_DEFINITION('','',#530,#529);
 #529=PRODUCT_DEFINITION_CONTEXT('',#536,'design');
-#530=PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE('Rev C','',#532,
+#530=PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE('-.3','',#532,
  .NOT_KNOWN.);
 #531=PRODUCT_RELATED_PRODUCT_CATEGORY('','',(#532));
 #532=PRODUCT('part_number=123456','NX_Plate_w_Hole',
