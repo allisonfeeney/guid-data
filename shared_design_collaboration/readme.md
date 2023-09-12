@@ -13,4 +13,4 @@ Rev -.2: Delete the point and create a new point
 
 Rev -.3: Delete the hole and create a new hole at a new location
 
-Rev -.4: need description
+Rev -.4: Add a chamfer to a corner. 
