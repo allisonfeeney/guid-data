@@ -1,6 +1,6 @@
 (*
    Modified from ISO TC184/SC4/WG12 Ntbd - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
-   Based on branch TRThurman-patch-1 uuid schema
+2023-10-24 changed uuid_attribute.   from LIST to LIST OF LIST
 Modify 
    uuid_leaf_node.data attribute and wr2
    uuid_internal_node.wr2
@@ -16443,13 +16443,14 @@ END_ENTITY;
 --updated from uuid_schema_2023062400
 --added back identifier
 --reverted identified_item to a LIST[1:?]
+--2023-10-24::changed identified_item to a LIST OF LIST to support aggregate tree
 ENTITY uuid_attribute
   ABSTRACT SUPERTYPE OF(ONEOF(
     v5_uuid_attribute,
     v4_uuid_attribute)
     ANDOR uuid_attribute_with_approximate_geometric_location);
   identifier      : uuid;
-  identified_item : LIST [1 : ?] OF UNIQUE uuid_attribute_select;
+  identified_item : LIST [1 : ?] OF LIST [1:?] OF UNIQUE uuid_attribute_select;
  UNIQUE
   UR1 : identifier;
 END_ENTITY;
