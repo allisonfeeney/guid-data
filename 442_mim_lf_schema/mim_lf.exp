@@ -1,6 +1,7 @@
 (*
    Modified from ISO TC184/SC4/WG12 Ntbd - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
 2023-10-24 changed uuid_attribute.   from LIST to LIST OF LIST
+2023-10-24-01 changed uuid_attribute.  added UNIQUE keyword. 
 Modify 
    uuid_leaf_node.data attribute and wr2
    uuid_internal_node.wr2
@@ -16450,7 +16451,7 @@ ENTITY uuid_attribute
     v4_uuid_attribute)
     ANDOR uuid_attribute_with_approximate_geometric_location);
   identifier      : uuid;
-  identified_item : LIST [1 : ?] OF LIST [1:?] OF UNIQUE uuid_attribute_select;
+  identified_item : LIST [1 : ?] OF UNIQUE LIST [1:?] OF UNIQUE uuid_attribute_select;
  UNIQUE
   UR1 : identifier;
 END_ENTITY;
