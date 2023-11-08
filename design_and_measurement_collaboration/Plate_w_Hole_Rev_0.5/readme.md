@@ -1,1 +1,0 @@
-This directory support communication about rev 0.5
