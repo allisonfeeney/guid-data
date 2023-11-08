@@ -8,4 +8,4 @@ Datum A in the positive direction
 
 Creo absolute accuracy = .009906 mm
 
-![Initial model configuration](images/0-0.png)
+![Initial model configuration](images/0-0_v2.png)
