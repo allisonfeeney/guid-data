@@ -1,0 +1,460 @@
+digraph {
+  "97" [label="#97=SHAPE_DIMENSION
+REPRESENTATION(''
+(#100),#673);", shape="rectangle"];
+  "694" [label="#694=PRODUCT_DEFINITION
+SHAPE('',''
+#695);", shape="rectangle"];
+  "422" [label="#422=EDGE_LOOP('',(#387));", shape="rectangle"];
+  "427" [label="#427=EDGE_LOOP('',(#394));", shape="rectangle"];
+  "604" [label="#604=CARTESIAN
+POINT(''
+(-3.46944695195361E-15,-34.9999999999884
+35.7071421427256));", shape="rectangle"];
+  "352" [label="
+#352=SHAPE
+ASPECT('Radial Dimension (3)'
+'',#694,.T.);", shape="rectangle"];
+  "417" [label="#417=VECTOR('',#534,1000.);", shape="rectangle"];
+  "400" [label="#400=EDGE_CURVE('',#409,#407,#379,.T.);", shape="rectangle"];
+  "379" [label="#379=CIRCLE('',#490,50.);", shape="rectangle"];
+  "414" [label="#414=LINE('',#609,#418);", shape="rectangle"];
+  "496" [label="#496=AXIS2_PLACEMENT
+3D('',#619,#549
+#550);", shape="rectangle"];
+  "619" [label="#619=CARTESIAN_POINT('',(0.,0.,0.));", shape="rectangle"];
+  "439" [label="#439=ADVANCED_FACE('',(#429),#437,.T.);", shape="rectangle"];
+  "436" [label="#436=FACE_BOUND('',#428,.T.);", shape="rectangle"];
+  "389" [label="#389=ORIENTED_EDGE('',*,*,#405,.F.);", shape="rectangle"];
+  "367" [label="
+#367=ADVANCED_BREP_SHAPE
+REPRESENTATION(''
+(#485),#673);", shape="rectangle"];
+  "609" [label="#609=CARTESIAN
+POINT(''
+(3.46944695195361E-15,-35.0000000000418
+-35.7071421426733));", shape="rectangle"];
+  "618" [label="#618=CARTESIAN
+POINT('',(25.,-35.
+-35.7071421427143));", shape="rectangle"];
+  "485" [label="#485=MANIFOLD_SOLID
+BREP('Extrude (2)'
+#444);", shape="rectangle"];
+  "434" [label="#434=FACE_BOUND('',#426,.T.);", shape="rectangle"];
+  "397" [label="#397=ORIENTED_EDGE('',*,*,#406,.F.);", shape="rectangle"];
+  "430" [label="#430=FACE_BOUND('',#422,.T.);", shape="rectangle"];
+  "387" [label="#387=ORIENTED_EDGE('',*,*,#403,.T.);", shape="rectangle"];
+  "424" [label="#424=EDGE_LOOP('',(#389,#390));", shape="rectangle"];
+  "48" [label="#48=DIMENSIONAL_SIZE(#352,'diameter');", shape="rectangle"];
+  "404" [label="#404=EDGE_CURVE('',#412,#412,#382,.T.);", shape="rectangle"];
+  "535" [label="
+#535=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "384" [label="#384=ORIENTED_EDGE('',*,*,#400,.F.);", shape="rectangle"];
+  "415" [label="#415=LINE('',#618,#419);", shape="rectangle"];
+  "613" [label="#613=CARTESIAN
+POINT('',(25.,0.
+1.53080849893419E-15));", shape="rectangle"];
+  "440" [label="#440=ADVANCED
+FACE('',(#430,#431),#438
+.F.);", shape="rectangle"];
+  "533" [label="
+#533=DIRECTION(''
+(-6.12323399573677E-17,0.,1.));", shape="rectangle"];
+  "548" [label="#548=DIRECTION('',(0.,0.,1.));", shape="rectangle"];
+  "401" [label="#401=EDGE_CURVE('',#410,#409,#414,.T.);", shape="rectangle"];
+  "388" [label="#388=ORIENTED_EDGE('',*,*,#404,.F.);", shape="rectangle"];
+  "537" [label="
+#537=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "607" [label="#607=CARTESIAN
+POINT('',(25.,0.
+1.53080849893419E-15));", shape="rectangle"];
+  "492" [label="#492=AXIS2_PLACEMENT
+3D('',#612,#540
+#541);", shape="rectangle"];
+  "701" [label="#701=PRODUCT
+CONTEXT('',#703
+'mechanical');", shape="rectangle"];
+  "549" [label="
+#549=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "605" [label="#605=CARTESIAN
+POINT('',(25.
+-34.9999999999884,35.7071421427256));", shape="rectangle"];
+  "412" [label="#412=VERTEX_POINT('',#616);", shape="rectangle"];
+  "393" [label="#393=ORIENTED_EDGE('',*,*,#406,.T.);", shape="rectangle"];
+  "546" [label="
+#546=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "490" [label="#490=AXIS2_PLACEMENT
+3D('',#607,#535
+#536);", shape="rectangle"];
+  "100" [label="
+#100=(LENGTH_MEASURE_WITH_UNIT()MEASURE
+REPRESENTATION_ITEM()MEASURE_WITH
+UNIT(POSITIVE_LENGTH
+MEASURE(40.)
+#677)REPRESENTATION
+ITEM(''));", shape="rectangle"];
+  "429" [label="#429=FACE_BOUND('',#421,.T.);", shape="rectangle"];
+  "405" [label="#405=EDGE_CURVE('',#409,#407,#415,.T.);", shape="rectangle"];
+  "621" [label="#621=CARTESIAN
+POINT('',(0.,-35.
+-35.7071421427143));", shape="rectangle"];
+  "435" [label="#435=FACE_BOUND('',#427,.T.);", shape="rectangle"];
+  "612" [label="#612=CARTESIAN
+POINT('',(25.,0.
+1.53080849893419E-15));", shape="rectangle"];
+  "410" [label="#410=VERTEX_POINT('',#610);", shape="rectangle"];
+  "423" [label="#423=EDGE_LOOP('',(#388));", shape="rectangle"];
+  "402" [label="#402=EDGE_CURVE('',#410,#408,#380,.T.);", shape="rectangle"];
+  "407" [label="#407=VERTEX_POINT('',#605);", shape="rectangle"];
+  "369" [label="#369=PLANE('',#496);", shape="rectangle"];
+  "399" [label="#399=EDGE_CURVE('',#407,#408,#413,.F.);", shape="rectangle"];
+  "552" [label="#552=DIRECTION('',(0.,1.,0.));", shape="rectangle"];
+  "673" [label="
+#673=(GEOMETRIC_REPRESENTATION
+CONTEXT(3)GLOBAL_UNCERTAINTY_ASSIGNED
+CONTEXT((#674))GLOBAL_UNIT_ASSIGNED
+CONTEXT((#677
+#676
+#675))REPRESENTATION
+CONTEXT('FAIR_Test'
+'TOP_LEVEL_ASSEMBLY
+PART'));", shape="rectangle"];
+  "494" [label="#494=AXIS2_PLACEMENT
+3D('',#615,#544
+#545);", shape="rectangle"];
+  "431" [label="#431=FACE_BOUND('',#423,.T.);", shape="rectangle"];
+  "541" [label="
+#541=DIRECTION(''
+(-6.12323399573677E-17,0.,1.));", shape="rectangle"];
+  "395" [label="#395=ORIENTED_EDGE('',*,*,#405,.T.);", shape="rectangle"];
+  "611" [label="#611=CARTESIAN_POINT('',(0.,0.,0.));", shape="rectangle"];
+  "421" [label="#421=EDGE
+LOOP('',(#383,#384,#385
+#386));", shape="rectangle"];
+  "703" [label="
+#703=APPLICATION
+CONTEXT('managed model based 3d engineering');ENDSEC;END-ISO-10303-21;", shape="rectangle"];
+  "696" [label="#696=PRODUCT_DEFINITION
+CONTEXT('',#703
+'design');", shape="rectangle"];
+  "370" [label="#370=PLANE('',#497);", shape="rectangle"];
+  "443" [label="#443=ADVANCED_FACE('',(#436),#370,.F.);", shape="rectangle"];
+  "545" [label="
+#545=DIRECTION('',(6.12323399573677E-17
+0.,-1.));", shape="rectangle"];
+  "540" [label="
+#540=DIRECTION('',(-1.,0.
+-6.12323399573677E-17));", shape="rectangle"];
+  "553" [label="#553=DIRECTION('',(0.,0.,1.));", shape="rectangle"];
+  "677" [label="
+#677=(LENGTH_UNIT()NAMED_UNIT(*)SI
+UNIT(.MILLI.
+.METRE.));", shape="rectangle"];
+  "413" [label="#413=LINE('',#604,#417);", shape="rectangle"];
+  "368" [label="#368=PLANE('',#495);", shape="rectangle"];
+  "382" [label="#382=CIRCLE('',#494,20.);", shape="rectangle"];
+  "676" [label="
+#676=(NAMED_UNIT(*)PLANE_ANGLE_UNIT()SI
+UNIT($
+.RADIAN.));", shape="rectangle"];
+  "385" [label="#385=ORIENTED_EDGE('',*,*,#401,.F.);", shape="rectangle"];
+  "550" [label="
+#550=DIRECTION('',(6.12323399573677E-17
+0.,-1.));", shape="rectangle"];
+  "428" [label="#428=EDGE
+LOOP('',(#395,#396,#397
+#398));", shape="rectangle"];
+  "491" [label="#491=AXIS2_PLACEMENT
+3D('',#611,#538
+#539);", shape="rectangle"];
+  "699" [label="#699=PRODUCT('FAIR_Test','FAIR
+Test'
+'FAIR_Test',(#701));", shape="rectangle"];
+  "406" [label="#406=EDGE_CURVE('',#410,#408,#416,.T.);", shape="rectangle"];
+  "432" [label="#432=FACE_BOUND('',#424,.T.);", shape="rectangle"];
+  "544" [label="
+#544=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "551" [label="#551=DIRECTION('',(0.,0.,1.));", shape="rectangle"];
+  "93" [label="
+#93=DIMENSIONAL_CHARACTERISTIC
+REPRESENTATION(#48
+#97);", shape="rectangle"];
+  "675" [label="#675=(NAMED_UNIT(*)SI
+UNIT($
+.STERADIAN.)SOLID_ANGLE_UNIT());", shape="rectangle"];
+  "420" [label="#420=VECTOR('',#551,1000.);", shape="rectangle"];
+  "383" [label="#383=ORIENTED_EDGE('',*,*,#399,.F.);", shape="rectangle"];
+  "391" [label="#391=ORIENTED_EDGE('',*,*,#403,.F.);", shape="rectangle"];
+  "610" [label="#610=CARTESIAN
+POINT(''
+(3.46944695195361E-15,-35.0000000000418
+-35.7071421426733));", shape="rectangle"];
+  "674" [label="
+#674=UNCERTAINTY_MEASURE_WITH
+UNIT(LENGTH
+MEASURE(0.005)
+#677,'DISTANCE_ACCURACY
+VALUE'
+'Maximum Tolerance applied to model');", shape="rectangle"];
+  "381" [label="#381=CIRCLE('',#493,20.);", shape="rectangle"];
+  "425" [label="#425=EDGE_LOOP('',(#391));", shape="rectangle"];
+  "493" [label="#493=AXIS2_PLACEMENT
+3D('',#613,#542
+#543);", shape="rectangle"];
+  "543" [label="
+#543=DIRECTION('',(6.12323399573677E-17
+0.,-1.));", shape="rectangle"];
+  "437" [label="#437=CYLINDRICAL_SURFACE('',#489,50.);", shape="rectangle"];
+  "608" [label="#608=CARTESIAN
+POINT('',(25.
+-35.0000000000418,-35.7071421426733));", shape="rectangle"];
+  "408" [label="#408=VERTEX_POINT('',#606);", shape="rectangle"];
+  "614" [label="#614=CARTESIAN_POINT('',(25.,0.,-20.));", shape="rectangle"];
+  "534" [label="
+#534=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "497" [label="#497=AXIS2_PLACEMENT
+3D('',#621,#552
+#553);", shape="rectangle"];
+  "495" [label="#495=AXIS2_PLACEMENT
+3D('',#617,#546
+#547);", shape="rectangle"];
+  "390" [label="#390=ORIENTED_EDGE('',*,*,#400,.T.);", shape="rectangle"];
+  "433" [label="#433=FACE_BOUND('',#425,.T.);", shape="rectangle"];
+  "334" [label="#334=GEOMETRIC_ITEM_SPECIFIC
+USAGE(''
+'PMI',#352,#367,#440);", shape="rectangle"];
+  "398" [label="#398=ORIENTED_EDGE('',*,*,#401,.T.);", shape="rectangle"];
+  "617" [label="#617=CARTESIAN
+POINT('',(25.,0.
+1.53080849893419E-15));", shape="rectangle"];
+  "419" [label="#419=VECTOR('',#548,1000.);", shape="rectangle"];
+  "441" [label="#441=ADVANCED
+FACE('',(#432,#433),#368
+.T.);", shape="rectangle"];
+  "603" [label="#603=CARTESIAN
+POINT('',(25.,0.
+1.53080849893419E-15));", shape="rectangle"];
+  "426" [label="#426=EDGE_LOOP('',(#392,#393));", shape="rectangle"];
+  "442" [label="#442=ADVANCED
+FACE('',(#434,#435),#369
+.F.);", shape="rectangle"];
+  "542" [label="
+#542=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "697" [label="
+#697=PRODUCT_DEFINITION_FORMATION_WITH
+SPECIFIED_SOURCE(''
+'',#699, .NOT
+KNOWN.);", shape="rectangle"];
+  "606" [label="#606=CARTESIAN
+POINT(''
+(-2.18643186658942E-15,-34.9999999999884
+35.7071421427256));", shape="rectangle"];
+  "538" [label="
+#538=DIRECTION('',(1.,0.
+6.12323399573677E-17));", shape="rectangle"];
+  "616" [label="#616=CARTESIAN
+POINT(''
+(1.22464679914735E-15,0.,-20.));", shape="rectangle"];
+  "418" [label="#418=VECTOR('',#537,1000.);", shape="rectangle"];
+  "380" [label="#380=CIRCLE('',#491,50.);", shape="rectangle"];
+  "695" [label="#695=PRODUCT
+DEFINITION('','',#697
+#696);", shape="rectangle"];
+  "620" [label="#620=CARTESIAN
+POINT('',(0.,-35.
+-35.7071421427143));", shape="rectangle"];
+  "489" [label="#489=AXIS2_PLACEMENT
+3D('',#603,#532
+#533);", shape="rectangle"];
+  "615" [label="#615=CARTESIAN_POINT('',(0.,0.,0.));", shape="rectangle"];
+  "547" [label="
+#547=DIRECTION('',(6.12323399573677E-17
+0.,-1.));", shape="rectangle"];
+  "394" [label="#394=ORIENTED_EDGE('',*,*,#404,.T.);", shape="rectangle"];
+  "416" [label="#416=LINE('',#620,#420);", shape="rectangle"];
+  "532" [label="
+#532=DIRECTION('',(-1.,0.
+-6.12323399573677E-17));", shape="rectangle"];
+  "444" [label="#444=CLOSED
+SHELL('',(#439,#440,#441
+#442,#443));", shape="rectangle"];
+  "411" [label="#411=VERTEX_POINT('',#614);", shape="rectangle"];
+  "386" [label="#386=ORIENTED_EDGE('',*,*,#402,.T.);", shape="rectangle"];
+  "409" [label="#409=VERTEX_POINT('',#608);", shape="rectangle"];
+  "403" [label="#403=EDGE_CURVE('',#411,#411,#381,.T.);", shape="rectangle"];
+  "539" [label="
+#539=DIRECTION('',(6.12323399573677E-17
+0.,-1.));", shape="rectangle"];
+  "396" [label="#396=ORIENTED_EDGE('',*,*,#399,.T.);", shape="rectangle"];
+  "392" [label="#392=ORIENTED_EDGE('',*,*,#402,.F.);", shape="rectangle"];
+  "438" [label="#438=CYLINDRICAL_SURFACE('',#492,20.);", shape="rectangle"];
+  "536" [label="
+#536=DIRECTION('',(6.12323399573677E-17
+0.,-1.));", shape="rectangle"];
+  "93" -> "48";
+  "93" -> "97";
+  "334" -> "352";
+  "334" -> "367";
+  "334" -> "440";
+  "48" -> "352";
+  "97" -> "100";
+  "97" -> "673";
+  "352" -> "694";
+  "367" -> "485";
+  "367" -> "673";
+  "440" -> "430";
+  "440" -> "431";
+  "440" -> "438";
+  "100" -> "677";
+  "673" -> "674";
+  "673" -> "675";
+  "673" -> "676";
+  "673" -> "677";
+  "694" -> "695";
+  "485" -> "444";
+  "430" -> "422";
+  "431" -> "423";
+  "438" -> "492";
+  "674" -> "677";
+  "695" -> "696";
+  "695" -> "697";
+  "444" -> "439";
+  "444" -> "440";
+  "444" -> "441";
+  "444" -> "442";
+  "444" -> "443";
+  "422" -> "387";
+  "423" -> "388";
+  "492" -> "540";
+  "492" -> "541";
+  "492" -> "612";
+  "696" -> "703";
+  "697" -> "699";
+  "439" -> "429";
+  "439" -> "437";
+  "441" -> "368";
+  "441" -> "432";
+  "441" -> "433";
+  "442" -> "369";
+  "442" -> "434";
+  "442" -> "435";
+  "443" -> "370";
+  "443" -> "436";
+  "387" -> "403";
+  "388" -> "404";
+  "699" -> "701";
+  "429" -> "421";
+  "437" -> "489";
+  "368" -> "495";
+  "432" -> "424";
+  "433" -> "425";
+  "369" -> "496";
+  "434" -> "426";
+  "435" -> "427";
+  "370" -> "497";
+  "436" -> "428";
+  "403" -> "381";
+  "403" -> "411";
+  "404" -> "382";
+  "404" -> "412";
+  "701" -> "703";
+  "421" -> "383";
+  "421" -> "384";
+  "421" -> "385";
+  "421" -> "386";
+  "489" -> "532";
+  "489" -> "533";
+  "489" -> "603";
+  "495" -> "546";
+  "495" -> "547";
+  "495" -> "617";
+  "424" -> "389";
+  "424" -> "390";
+  "425" -> "391";
+  "496" -> "549";
+  "496" -> "550";
+  "496" -> "619";
+  "426" -> "392";
+  "426" -> "393";
+  "427" -> "394";
+  "497" -> "552";
+  "497" -> "553";
+  "497" -> "621";
+  "428" -> "395";
+  "428" -> "396";
+  "428" -> "397";
+  "428" -> "398";
+  "381" -> "493";
+  "411" -> "614";
+  "382" -> "494";
+  "412" -> "616";
+  "383" -> "399";
+  "384" -> "400";
+  "385" -> "401";
+  "386" -> "402";
+  "389" -> "405";
+  "390" -> "400";
+  "391" -> "403";
+  "392" -> "402";
+  "393" -> "406";
+  "394" -> "404";
+  "395" -> "405";
+  "396" -> "399";
+  "397" -> "406";
+  "398" -> "401";
+  "493" -> "542";
+  "493" -> "543";
+  "493" -> "613";
+  "494" -> "544";
+  "494" -> "545";
+  "494" -> "615";
+  "399" -> "407";
+  "399" -> "408";
+  "399" -> "413";
+  "400" -> "379";
+  "400" -> "407";
+  "400" -> "409";
+  "401" -> "409";
+  "401" -> "410";
+  "401" -> "414";
+  "402" -> "380";
+  "402" -> "408";
+  "402" -> "410";
+  "405" -> "407";
+  "405" -> "409";
+  "405" -> "415";
+  "406" -> "408";
+  "406" -> "410";
+  "406" -> "416";
+  "407" -> "605";
+  "408" -> "606";
+  "413" -> "417";
+  "413" -> "604";
+  "379" -> "490";
+  "409" -> "608";
+  "410" -> "610";
+  "414" -> "418";
+  "414" -> "609";
+  "380" -> "491";
+  "415" -> "419";
+  "415" -> "618";
+  "416" -> "420";
+  "416" -> "620";
+  "417" -> "534";
+  "490" -> "535";
+  "490" -> "536";
+  "490" -> "607";
+  "418" -> "537";
+  "491" -> "538";
+  "491" -> "539";
+  "491" -> "611";
+  "419" -> "548";
+  "420" -> "551";
+}
