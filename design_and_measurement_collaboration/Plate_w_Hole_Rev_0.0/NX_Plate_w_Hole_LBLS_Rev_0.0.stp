@@ -9,7 +9,9 @@ FILE_DESCRIPTION(
 /* description */ (
 'CAx-IF Rec.Pracs.---Representation and Presentation of Product Manufa
 cturing Information (PMI)---4.0---2014-10-13',
-'CAx-IF Rec.Pracs.---3D Tessellated Geometry---0.4---2014-09-14','2;1'),
+'CAx-IF Rec.Pracs.---3D Tessellated Geometry---0.4---2014-09-14',
+'CAx-IF Rec.Pracs.---Persistent IDs---1.00---2023-11-28'),
+'2;1'),
 
 /* implementation_level */ '2;1');
 
@@ -22,7 +24,7 @@ FILE_NAME(
 /* originating_system */ 'SIEMENS PLM Software NX 2027',
 /* authorisation */ '');
 
-FILE_SCHEMA (('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF { 1 0 10303 442 3 1 4 }'));
+FILE_SCHEMA (('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF { 1 0 10303 442 4.0757 1 4 }'));
 ENDSEC;
 
 DATA;
@@ -1708,7 +1710,7 @@ SI_UNIT(.MILLI.,.METRE.)
 #568=PRODUCT_CATEGORY('','');
 #569=PRODUCT_CONTEXT('',#571,'mechanical');
 #570=APPLICATION_PROTOCOL_DEFINITION('international standard',
-'ap242_managed_model_based_3d_engineering',2020,#571);
+'ap242_managed_model_based_3d_engineering',20230757,#571);
 #571=APPLICATION_CONTEXT('managed model based 3d engineering');
 ENDSEC;
 END-ISO-10303-21;
