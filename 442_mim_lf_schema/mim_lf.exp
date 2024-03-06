@@ -1,5 +1,7 @@
 (*
    Modified from ISO TC184/SC4/WG12 Ntbd - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
+2024-3-6 changed name of uuid_context to remove 'role' suffix.
+
 2023-10-24 changed uuid_attribute.   from LIST to LIST OF LIST
 2023-10-24-01 changed uuid_attribute.  added UNIQUE keyword. 
 Modify 
@@ -16477,8 +16479,8 @@ ENTITY uuid_attribute_with_approximate_geometric_location
 WHERE
   WR1: location_representation in using_representations(approximate_location);
 END_ENTITY;
---no change
-ENTITY uuid_context_role;
+--2024-3-6 removed 'role' suffix from name
+ENTITY uuid_context;
   identifier : uuid;
   role : STRING;
  UNIQUE
