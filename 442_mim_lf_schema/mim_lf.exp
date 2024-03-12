@@ -3520,7 +3520,10 @@ END_TYPE;
 TYPE identification_item = SELECT
   (
 action,
-application_context,
+--2024-03-11 application_context is unnecessary to be included in identification_item so is commented out.
+--It is already available in id_attribute_select.
+--will not be added in 442 long form for AP 242 ed4.
+--application_context,
 characterized_object,
 characterized_object_relationship,
 context_dependent_shape_representation,
