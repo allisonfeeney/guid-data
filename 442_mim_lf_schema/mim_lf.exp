@@ -1,5 +1,6 @@
 (*
    Modified from ISO TC184/SC4/WG12 Ntbd - ISO/TS 10303-442 AP242 managed model based 3d engineering - EXPRESS MIM Long form
+2024-03-11 removed application_context from identification_item SELECT list
 2024-3-6 changed name of uuid_context to remove 'role' suffix.
 
 2023-10-24 changed uuid_attribute.   from LIST to LIST OF LIST
