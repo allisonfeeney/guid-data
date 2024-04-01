@@ -10,11 +10,19 @@ authors:
     given-names: "Thomas"
   -
     affiliation: "NIST"
-    family-names: "Barnard-Feeney"
+    family-names: "Barnard Feeney"
     given-names: "Allison"
   -
     affiliation: "tbd"
     family-names: "Hedlind"
     given-names: "Mikael"
+
+    affiliation: "NIST"
+    family-names: "Astheimer"
+    given-names: "Rosemary"
+
+    affiliation: "Trainer Engineering Associates"
+    family-names: "Trainer"
+    given-names: "Asa"
 title: "Research software and data for GUIDs for ISO/TC 184/SC 4"
 ...
