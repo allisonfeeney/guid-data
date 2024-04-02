@@ -10,8 +10,6 @@ Rev 0.0: initial design
 
 Rev 0.1: Keep cartesian_point instance but change the dimensions locating the hole center
 
-Rev 0.2: Delete the point locating the hole cetner and create a new point to locate the hole center
+Rev 0.2: Delete the hole feature and create a new hole at a new location
 
-Rev 0.3: Delete the hole feature and create a new hole at a new location
-
-Rev 0.4: Add a chamfer to a corner
+Rev 0.3: Add a chamfer to a corner
