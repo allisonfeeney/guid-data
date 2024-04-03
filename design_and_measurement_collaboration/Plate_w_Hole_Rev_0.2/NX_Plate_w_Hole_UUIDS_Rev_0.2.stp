@@ -10,7 +10,7 @@ FILE_DESCRIPTION(
 'CAx-IF Rec.Pracs.---Representation and Presentation of Product Manufa
 cturing Information (PMI)---4.0---2014-10-13',
 'CAx-IF Rec.Pracs.---3D Tessellated Geometry---0.4---2014-09-14',
-'CAx-IF Rec.Pracs.---Persistent IDs---1.00---2023-11-28'),
+'CAx-IF Rec.Pracs.---Persistent IDs---1.00---2023-11-28',
 '2;1'),
 
 /* implementation_level */ '2;1');
