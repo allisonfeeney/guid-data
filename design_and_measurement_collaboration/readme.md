@@ -5,7 +5,7 @@ Each source file will have its own subdirectory (by the basename of the file).
 0.0:
 - Model units: mm
 - Plate Dimensions: 50.8 x 76.2 x 10
-- 19 diameter hole located at (3.2, 6.4, 10)
+- 19 diameter hole located at (-3.2, 6.4, 10)
 - Datum A in the positive direction
 - Creo absolute accuracy = .009906 mm
 
