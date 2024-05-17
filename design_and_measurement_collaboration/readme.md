@@ -10,7 +10,7 @@ Each source file will have its own subdirectory (by the basename of the file).
 - Creo absolute accuracy = .009906 mm
 
 0.1:
-- Hole moved to (-8.3, 8.9, 10)
+- Hole moved to (8.3, 8.9, 10)
 
 0.2:
 - The hole feature was deleted and a new diameter 19 hole feature was created at (-6.3, 6.9, 10)
