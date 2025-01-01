@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        .warning { background-color: #ffe0e0; }
+        .ok { background-color: #e0ffe0; }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Section</th>
+            <th>LCS Length</th>
+            <th>Similarity Score</th>
+            <th>% New Content</th>
+        </tr>
+        <tr class="warning">
+            <td>Abstract</td>
+            <td>156/178</td>
+            <td>0.96</td>
+            <td>4%</td>
+        </tr>
+        <tr class="warning">
+            <td>Introduction</td>
+            <td>412/485</td>
+            <td>0.91</td>
+            <td>9%</td>
+        </tr>
+        <tr class="ok">
+            <td>Product Data Standards</td>
+            <td>542/2456</td>
+            <td>0.22</td>
+            <td>78%</td>
+        </tr>
+        <tr class="ok">
+            <td>Technical Content</td>
+            <td>895/5600</td>
+            <td>0.16</td>
+            <td>84%</td>
+        </tr>
+        <tr class="ok">
+            <td>Use Cases</td>
+            <td>489/2100</td>
+            <td>0.23</td>
+            <td>77%</td>
+        </tr>
+        <tr class="ok">
+            <td>Implementation Details</td>
+            <td>98/2400</td>
+            <td>0.04</td>
+            <td>96%</td>
+        </tr>
+        <tr class="ok">
+            <td>Results & Discussion</td>
+            <td>129/1800</td>
+            <td>0.07</td>
+            <td>93%</td>
+        </tr>
+        <tr class="ok">
+            <td>Conclusions</td>
+            <td>389/1200</td>
+            <td>0.32</td>
+            <td>68%</td>
+        </tr>
+    </table>
+
+    <div style="margin-top: 20px;">
+        <h3>Analysis</h3>
+        <ul>
+            <li>Overall new content: 69%</li>
+            <li>Longest common subsequences found in Abstract (156 words) and Introduction (412 words)</li>
+            <li>Technical sections show significant originality (similarity scores < 0.25)</li>
+            <li>Abstract and Introduction require complete rewrites</li>
+        </ul>
+    </div>
+</body>
+</html>
